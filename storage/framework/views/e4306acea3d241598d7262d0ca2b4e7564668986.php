@@ -1,0 +1,1 @@
+<?php /**PATH D:\File Reza\Codingan\.REAL PROJECT\nikilapol + cms\resources\views/master/root.blade.php ENDPATH**/ ?>

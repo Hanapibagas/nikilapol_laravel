@@ -1,0 +1,229 @@
+        :root {
+            --warna-dasar: #1293E4;
+            --warna-kedua: #07476f;
+            --warna-ketiga: #09507c;
+            --warna-putih1: #fff;
+            --warna-putih2: #fafafa;
+            --font-dasar: 'Poppins', sans-serif;
+            --size-font-subtitle: 50px;
+        }
+
+
+.contactUs{
+    position: relative;
+    width: 100%;
+    padding: 40px 100px;    
+}
+
+.contactUs .title-contact{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+}
+
+.contactUs .title-contact h3{
+    color: var(--warna-dasar);
+    font-size: 500;
+}
+
+
+.form{
+    grid-area: form;
+}
+
+.info{
+    grid-area: info;
+}
+
+.map{
+    grid-area: map;
+}
+
+.box-contact{
+    position: relative;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 5fr 4fr;
+    grid-template-areas: 
+    "form info"
+    "form map";
+    grid-gap: 20px;
+    margin-top: 20px;
+}
+
+.contact{
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 5px 35px rgba(0,0,0,0.15);
+}
+
+.contact h3{
+    color: var(--warna-dasar);
+    font-weight: 500;
+    font-size: 1.4em;
+    margin-bottom: 10px;
+}
+
+/* form nya */
+
+.formBox{
+    position: relative;
+    width: 100%;
+}
+
+.formBox .row50{
+    display: flex;
+    gap: 20px;
+}
+
+.inputBox{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+    width: 50%;
+}
+
+.formBox .row100 .inputBox{
+    width: 100%;
+}
+
+.inputBox span{
+    color: var(--warna-dasar);
+    margin-top: 10px;
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+
+.inputBox input{
+    padding: 10px;
+    font-size: 1.1em;
+    outline: none;
+    border: 1px solid #333;
+}
+
+.inputBox textarea{
+    padding: 10px;
+    font-size: 1.1em;
+    outline: none;
+    border: 1px solid #333;
+    resize: none;
+    min-height: 220px;
+    margin-bottom: 10px;
+}
+
+.inputBox input[type="submit"]{
+    background: var(--warna-dasar);
+    border-radius: 5px;
+    color: #fff;
+    border: none;
+    font-size: 1.1em;
+    max-width: 120px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+/* INFO KONTAK NYA */
+.info{
+    background-color: #fff;
+    border: 3px solid var(--warna-dasar);
+}
+
+.info h3{
+    color: var(--warna-dasar);
+}
+
+.info .infoBox div{
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.info .infoBox div span{
+    min-width: 40px;
+    height: 40px;
+    color: #fff;
+    background-color: var(--warna-dasar);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5em;
+    border-radius: 50%;
+    margin-right: 10px;
+    margin-top: 10px;
+}
+
+.info .infoBox div p{
+    color: #000;
+    font-size: 1.1em;
+}
+
+.info .infoBox div a{
+    color: #000;
+    text-decoration: none;
+    font-size: 1.1em;
+}
+
+.sosmed-kontak{
+    margin-top: 40px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.sosmed-kontak li{
+    list-style: none;
+    margin-right: 15px;
+}
+
+.sosmed-kontak li a {
+    color: var(--warna-dasar);
+    font-size: 2em;
+    color: var(--warna-dasar);
+}
+
+.sosmed-kontak li a:hover{
+    color: var(--warna-kedua);
+}
+
+.map{
+    padding: 0;
+}
+
+.map iframe{
+    width: 100%;
+    height: 100%;
+}
+
+/* Responsive */
+@media (max-width: 991px) {
+    .contactUs{
+        padding: 20px;
+    }
+
+    .box-contact{
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        grid-template-areas: 
+        'form'
+        'info'
+        'map';
+    }
+
+    .map{
+        min-height: 300;
+    }
+
+    .formBox .row50{
+        display: flex;
+        gap: 0;
+        flex-direction: column;
+    }
+
+    .inputBox{
+        width: 100%;
+    }
+
+    .contact{
+        padding: 30px;
+    }
+}

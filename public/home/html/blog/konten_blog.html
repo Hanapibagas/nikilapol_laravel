@@ -1,0 +1,917 @@
+<!DOCTYPE html>
+<html class="wide wow-animation" lang="en">
+  <head>
+    <title>Blog</title>
+    <meta charset="utf-8">
+    <meta name="keywords" content="NikiLa, Marketplace, Lamongan, Driver ">
+    <meta name="description" content="NikiLa POL, Marketplace yang digabungkan dengan Delivery Order">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta property="og:title" content="NikiLa POL, Marketplace yang digabungkan dengan Delivery Order" />
+    <meta property="og:description" content="NikiLa POL, Marketplace yang digabungkan dengan Delivery Order" />
+    <meta property="og:url" content="https://ezazee.github.io/NikiLa-POL/" />
+    <meta property="og:image" content="../../assets/img/banner/2.png" />
+    <link rel="icon" href="../../assets/img/logo/nikila.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" 
+    integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900%7CMerriweather:300,400,700,700i,900">
+    <link rel="stylesheet" href="../../css/home.css">
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="./konten_blog.css">
+    <style>.ie-panel{display: none;background: #212121;padding: 10px 0;box-shadow: 3px 3px 5px 0 rgba(0,0,0,.3);clear: both;text-align:center;position: relative;z-index: 1;} html.ie-10 .ie-panel, html.lt-ie-10 .ie-panel {display: block;}</style>
+ 
+    <style>
+       :root{
+    --warna-dasar: #1293E4;
+    --warna-kedua: #07476f;
+    --warna-ketiga: #09507c;
+    --warna-putih1: #fff;
+    --warna-putih2: #fafafa;
+    --font-dasar: 'Poppins', sans-serif;
+    --size-font-subtitle: 50px;
+  }
+
+  /* Button Arrow To Top Webstie */
+  .ui-to-top {
+	position: fixed;
+	right: 15px;
+	bottom: 15px;
+	z-index: 100;
+	width: 40px;
+	height: 40px;
+	font-size: 24px;
+	line-height: 36px;
+	border-radius: 50%;
+	color: #ffffff;
+	background: var(--warna-dasar);
+	overflow: hidden;
+	text-align: center;
+	text-decoration: none;
+	transition: all 0.3s ease-in-out;
+	transform: translate3d(0, 100px, 0);
+}
+
+.ui-to-top:hover {
+	color: #ffffff;
+	background: var(--warna-kedua);
+	text-decoration: none;
+}
+/* End Button ARROW  */
+
+  /* Pre Loader */
+  .cssload-speeding-wheel {
+	width: 64px;
+	height: 64px;
+	margin: 0 auto;
+	border: 3px solid var(--warna-dasar);
+	border-radius: 50%;
+	border-left-color: transparent;
+	border-bottom-color: transparent;
+	animation: cssload-spin .88s infinite linear;
+  }
+/* End Pre Loader */
+
+  
+      /* Button Belanja Sekarang & Button Selengkapnya di Kategori Layanan */
+      .button-secondary, .button-secondary:focus {
+	    color: #ffffff;
+	    background-color: var(--warna-dasar);
+	    border-color: var(--warna-dasar);
+      }
+
+      .button-secondary:hover, .button-secondary:active, .button-secondary.active {
+	    color: #ffffff;
+	    background-color: var(--warna-kedua);
+    	border-color: var(--warna-kedua);
+      }
+
+      .button-secondary.button-nuka:hover, .button-secondary.button-nuka:active, .button-secondary.button-nuka.active {
+	background-color: var(--warna-kedua);
+      }
+
+      .button-secondary.button-nuka .button-overlay {
+        background-color: var(--warna-kedua);
+      }
+      /* End Button Belanja Sekarang & Button Selengkapnya di Kategori Layanan */
+
+
+      /* Hover Text Navbar */
+      .rd-navbar-static.context-dark .rd-nav-link:hover, .rd-navbar-static.bg-gray-700 .rd-nav-link:hover, .rd-navbar-static.bg-gray-800 .rd-nav-link:hover, .rd-navbar-static.bg-primary-app .rd-nav-link:hover, .rd-navbar-static.bg-primary .rd-nav-link:hover, .rd-navbar-static.bg-primary-1 .rd-nav-link:hover, .rd-navbar-static.bg-primary-2 .rd-nav-link:hover, .rd-navbar-static.bg-wave-dark-wrap .rd-nav-link:hover, .rd-navbar-static.bg-gradient-primary .rd-nav-link:hover, .rd-navbar-static.bg-gradient-primary-1 .rd-nav-link:hover, .rd-navbar-static.rd-navbar-corporate .rd-nav-link:hover {
+	    color: var(--warna-dasar);
+      }
+      /* End Hover Text Navbar */
+
+       /* Button Seacrj */
+       .c-search__button {
+      position: absolute;
+      min-height: 2.75rem;
+      min-width: 4rem;
+      background-color: transparent;
+      font-size: 1rem;
+      color: var(--warna-kedua);
+      border: none;
+      border-top-right-radius: 24px;
+      border-bottom-right-radius: 24px;
+      text-align: center;
+      right: 0;
+      top: 0;
+      font-weight: 400;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      -webkit-box-sizing: border-box;
+      box-sizing: border-box;
+      cursor: pointer;
+      -webkit-transition: .3s;
+      transition: .3s;
+      padding: .5rem;
+      font-family: var(--font-dasar)
+  }
+
+    .c-search__button:active {
+      background-color: var(--warna-ketiga)
+  }
+
+  @media (min-width:768px) {
+      .c-search__button {
+          position: relative;
+          top: auto;
+          right: auto;
+          color: #fff;
+          background-color: var(--warna-kedua);
+          min-height: 3rem;
+          min-width: 7.5rem;
+          border-radius: 24px;
+          font-size: 1rem
+      }
+  }
+  /* End Button Search */
+
+/* Konten Blog hero  */
+  .progress-bar__fill {
+    width: 0;
+    height: inherit;
+    background: var(--warna-kedua);
+    transition: all 0.16s;
+}
+
+.progress-bar {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	color: #fff;
+	text-align: center;
+	white-space: nowrap;
+	background-color: var(--warna-dasar);
+	transition: width 0.6s ease;
+}
+
+/* End Konten Blog Hero */
+
+ /* Color Dropdown */
+  .c-select__dropdown--active {
+     border: .5px solid var(--warna-dasar)
+ }
+ /* End Color Dropdown */
+
+  /* Banner CTA */
+#cta {
+    padding: 50px 0;
+    background: var(--warna-ketiga) url(../../assets/img/Smatphone/smartphone-full.png) -200px center no-repeat;
+    background-size: 67%;
+    position: relative;
+}
+
+@media screen and (max-width: 576px) {
+    #cta {
+        padding: 50px 0;
+        background: var(--warna-kedua) url(../../assets/img/home-img.png) -110% no-repeat;
+        background-size: 20%;
+        position: relative;
+    }
+
+    #cta .box-cta {
+        width: auto;
+        margin-left: auto;
+    }
+
+    #cta .cta-text {
+        text-align: center;
+        font-size: 30px;
+        line-height: 40px;
+        font-weight: 600;
+        color: #FFF;
+        margin-bottom: 30px;
+    }
+
+    #cta a.btn-cta {
+        background: #FFF;
+        border-radius: 40px;
+        color: #222;
+        margin-left: 100px;
+        font-weight: 600;
+        padding: 8px 20px;
+    }
+  }
+
+  /* end banner CTA */
+
+
+  /* Footer */
+footer {
+    background: var(--warna-kedua);
+    padding: 50px 0 0 0;
+    color: #E9E9E9;
+}
+/* End Footer */
+    </style>
+
+
+  </head>
+  <body>
+    <div class="preloader">
+      <div class="preloader-body">
+        <div class="cssload-container">
+          <div class="cssload-speeding-wheel"></div>
+        </div>
+      </div>
+    </div>
+    <div class="page">
+
+        <!-- Header -->
+      <header class="section page-header">
+        <!--RD Navbar-->
+        <div class="rd-navbar-wrap">
+          <nav class="rd-navbar rd-navbar-corporate" data-layout="rd-navbar-fixed" data-sm-layout="rd-navbar-fixed" data-md-layout="rd-navbar-fixed" data-lg-layout="rd-navbar-static" data-xl-layout="rd-navbar-static" data-xxl-layout="rd-navbar-static" data-md-device-layout="rd-navbar-fixed" data-lg-device-layout="rd-navbar-fixed" data-xl-device-layout="rd-navbar-static" data-xxl-device-layout="rd-navbar-static" data-lg-stick-up-offset="46px" data-xl-stick-up-offset="46px" data-xxl-stick-up-offset="46px" data-lg-stick-up="true" data-xl-stick-up="true" data-xxl-stick-up="true">
+            <div class="rd-navbar-collapse-toggle rd-navbar-fixed-element-1" data-rd-navbar-toggle=".rd-navbar-collapse"><span></span></div>
+            <div class="rd-navbar-main-outer">
+              <div class="rd-navbar-main">
+                <!--RD Navbar Panel-->
+                <div class="rd-navbar-panel">
+                  <!--RD Navbar Toggle-->
+                  <button class="rd-navbar-toggle" data-rd-navbar-toggle=".rd-navbar-nav-wrap"><span></span></button>
+                  <!--RD Navbar Brand-->
+                  <div class="rd-navbar-brand">
+                    <!--Brand--><a class="brand" href="../../index.html"><img class="brand-logo-dark" src="../../assets/img/logo/Logo NIKILA_Lamongan POL.png" alt="" width="181" height="45"/><img class="brand-logo-light" src="../../assets/img/logo/Logo NIKILA_Lamongan POL.png" alt="" width="181" height="45"/></a>
+                  </div>
+                </div>
+                <div class="rd-navbar-main-element">
+                  <div class="rd-navbar-nav-wrap">
+                    <ul class="rd-navbar-nav">
+                      <li class="rd-nav-item"><a class="rd-nav-link" href="../tentang/tentang.html">Tentang Nikila</a>
+                      </li>
+                      <li class="rd-nav-item"><a class="rd-nav-link" href="#">Mitra</a>
+                        <ul class="rd-menu rd-navbar-dropdown">
+                          <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="../mitra/mitra_merchant/merchant.html">Mitra Merchant</a>
+                          </li>
+                          <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="../mitra/mitra_driver/driver.html">Mitra Driver</a>
+                          </li>
+                        </ul>
+                      </li>
+                      <li class="rd-nav-item"><a class="rd-nav-link" href="../layanan/layanan.html">Layanan</a>
+                        <!-- <ul class="rd-menu rd-navbar-dropdown">
+                          <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="#">Makanan & Belanja</a>
+                            <ul class="rd-menu rd-navbar-dropdown">
+                              <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="#">Oleh-Oleh</a></li>
+                              <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="#">Peternakan</a></li>
+                              <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="#">Pertanian</a></li>
+                              <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="#">Perkebunan</a></li>
+                              <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="#">Perikanan</a></li>
+                              <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="#">Kesehatan</a></li>
+                              <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="#">Kerajinan</a></li>
+                              <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="#">Fashion</a></li>
+                              <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="#">Elektronik</a></li>
+                            </ul>
+                          </li>
+                          <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="#">Transportasi & Logistik</a>
+                            <ul class="rd-menu rd-navbar-dropdown">
+                              <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="#">Niki Anterin</a></li>
+                              <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="#">Niki Belanjain</a></li>
+                              <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="#">Niki Delivery</a></li>
+                              <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="#">Niki Center</a></li>
+                            </ul>
+                          </li>
+                          <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="#">Wisata</a>
+                            <ul class="rd-menu rd-navbar-dropdown">
+                              <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="#">Reservasi Hotel</a></li>
+                              <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="#">Tiket Wisata</a></li>
+                              <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="#">Desa Wisata</a></li>
+                            </ul>
+                          </li>
+                          <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="#">Pembayaran</a>
+                            <ul class="rd-menu rd-navbar-dropdown">
+                              <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="#">Bayar Transaksi</a></li>
+                              <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="#">Bayar Tagihan</a></li>
+                              <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="#">TopUp Saldo Mitra</a></li>
+                              <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="#">TopUp Pulsa</a></li>
+                            </ul>
+                          </li>
+                          <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="#">Modal Kerja</a>
+                            <ul class="rd-menu rd-navbar-dropdown">
+                              <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="#">Pinjaman Modal Kerja</a></li>
+                            </ul>
+                          </li>
+                        </ul> -->
+                      </li>
+                      <li class="rd-nav-item"><a class="rd-nav-link" href="../kontak/kontak.html">Kontak</a>
+                      </li>
+                      <li class="rd-nav-item"><a class="rd-nav-link" href="../bantuan/bantuan.html">Bantuan</a>
+                      </li>
+                       <li class="rd-nav-item"><a class="rd-nav-link" href="../blog/blog.html">Blog</a>
+                      </li>
+                       <li class="rd-nav-item"><a class="rd-nav-link" href="#">
+                        <svg class="mr-2" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-translate" viewBox="0 0 16 16">
+                          <path d="M4.545 6.714 4.11 8H3l1.862-5h1.284L8 8H6.833l-.435-1.286H4.545zm1.634-.736L5.5 3.956h-.049l-.679 2.022H6.18z"/>
+                          <path d="M0 2a2 2 0 0 1 2-2h7a2 2 0 0 1 2 2v3h3a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-3H2a2 2 0 0 1-2-2V2zm2-1a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h7a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H2zm7.138 9.995c.193.301.402.583.63.846-.748.575-1.673 1.001-2.768 1.292.178.217.451.635.555.867 1.125-.359 2.08-.844 2.886-1.494.777.665 1.739 1.165 2.93 1.472.133-.254.414-.673.629-.89-1.125-.253-2.057-.694-2.82-1.284.681-.747 1.222-1.651 1.621-2.757H14V8h-3v1.047h.765c-.318.844-.74 1.546-1.272 2.13a6.066 6.066 0 0 1-.415-.492 1.988 1.988 0 0 1-.94.31z"/>
+                        </svg>IDN</a>
+                        <ul class="rd-menu rd-navbar-dropdown">
+                          <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="../../index.html"><img src="https://img.icons8.com/color/27/000000/indonesia-circular.png"/> IDN</a>
+                          </li>
+                          <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="../../html-en/index.html"><img src="https://img.icons8.com/color/27/000000/usa-circular.png"/> ENG</a>
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="rd-navbar-collapse"><a class="button button-secondary button-nuka" href="#">Belanja Sekarang<span class="button-overlay"></span></a></div>
+                </div>
+              </div>
+            </div>
+          </nav>
+        </div>
+      </header>
+
+          <!-- Blog -->
+    <div class="carousel-blog">
+  <div class="progress-bar progress-bar--primary hide-on-desktop">
+    <div class="progress-bar__fill"></div>
+  </div>
+
+<header class="main-post-wrapper">
+  
+  <div class="slides">
+    <article  class="main-post main-post--active">
+      <div class="main-post__image">
+        <img src="../../assets/img/banner/Banner Mitra Driver.jpg" alt="New McLaren wind tunnel 'critical' to future performance, says Tech Director Key" />
+      </div>
+      <div class="main-post__content">
+        <div class="main-post__tag-wrapper">
+          <span class="main-post__tag">Berita Artikel</span>
+        </div>
+        <h1 class="main-post__title">Menjadi Pahlawan Keluarga Dengan Menjadi Mitra Driver Nikila</h1>
+        <a class="main-post__link" href="../bantuan/akun/blog/blog_akun.html">
+              <span class="main-post__link-text">Selengkapnya</span>
+              <svg
+                class="main-post__link-icon main-post__link-icon--arrow"
+                width="37"
+                height="12"
+                viewBox="0 0 37 12"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M0 6H36.0001M36.0001 6L31.0001 1M36.0001 6L31.0001 11"
+                  stroke="white"
+                />
+              </svg>
+            </a>
+      </div>
+    </article>
+    <article class="main-post main-post--not-active">
+      <div class="main-post__image">
+        <img src="../../assets/img/banner/Banner Mitra Merchant.jpg" alt="What To Watch For in the 2019 Hungarian Grand Prix" />
+      </div>
+      <div class="main-post__content">
+        <div class="main-post__tag-wrapper">
+          <span class="main-post__tag">Berita Video</span>
+        </div>
+        <h1 class="main-post__title">NuKu merilis Video Baru Nya Di Youtube</h1>
+        <a class="main-post__link" href="https://youtu.be/trb7WSUwHA8" data-lightgallery="item">
+              <svg
+                class="main-post__link-icon main-post__link-icon--play-btn"
+                width="30"
+                height="30"
+                viewBox="0 0 20 20"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <circle
+                  cx="10"
+                  cy="10"
+                  r="9"
+                  stroke="#1293E4"
+                  stroke-width="2"
+                />
+                <path d="M14 10L8 6V14L14 10Z" fill="white" />
+              </svg>
+              <span class="main-post__link-text">Putar Viideo</span>
+            </a>
+      </div>
+    </article>
+    <article class="main-post main-post--not-active">
+      <div class="main-post__image">
+        <img src="../../assets/img/banner/Banner Tentang NikiLaPOL.jpg" alt="Hamilton wants harder championship fight from Leclerc and
+            Verstappen" />
+      </div>
+      <div class="main-post__content">
+        <div class="main-post__tag-wrapper">
+          <span class="main-post__tag">Berita Artikel</span>
+        </div>
+        <h1 class="main-post__title">Lamongan Resmi Merilis Aplikasi Nikila Secara Keseluruhan di Kabupaten Lamongan
+        </h1>
+        <a class="main-post__link" href="../bantuan/akun/blog/blog_akun.html">
+              <span class="main-post__link-text">Selengkapnya</span>
+              <svg
+                class="main-post__link-icon main-post__link-icon--arrow"
+                width="37"
+                height="12"
+                viewBox="0 0 37 12"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M0 6H36.0001M36.0001 6L31.0001 1M36.0001 6L31.0001 11"
+                  stroke="white"
+                />
+              </svg>
+            </a>
+      </div>
+    </article>
+  </div>
+</header>
+
+<div class="posts-wrapper hide-on-mobile">
+  <article onclick="location.href='../bantuan/akun/blog/blog_akun.html' " style="cursor: pointer;" class="post post--active">
+    <div class="progress-bar">
+      <div class="progress-bar__fill"></div>
+    </div>
+    <header class="post__header">
+      <span class="post__tag">Berita Artikel</span>
+      <p class="post__published">16 August 2019</p>
+    </header>
+    <h2 class="post__title">Menjadi Pahlawan Keluarga Dengan Menjadi Mitra Driver Nikila</h2>
+  </article>
+  <article onclick="location.href='../bantuan/akun/blog/blog_akun.html' " style="cursor: pointer;" class="post">
+    <div class="progress-bar">
+      <div class="progress-bar__fill"></div>
+    </div>
+    <header class="post__header">
+      <span class="post__tag">Berita Video</span>
+      <p class="post__published">12 August 2019</p>
+    </header>
+    <h2 class="post__title">NuKu merilis Video Baru Nya Di Youtube</h2>
+  </article>
+  <article onclick="location.href='../bantuan/akun/blog/blog_akun.html' " style="cursor: pointer;" class="post">
+    <div class="progress-bar">
+      <div class="progress-bar__fill"></div>
+    </div>
+    <header class="post__header">
+      <span class="post__tag">Berita Artkel</span>
+      <p class="post__published">08 August 2019</p>
+    </header>
+    <h2 class="post__title">Lamongan Resmi Merilis Aplikasi Nikila Secara Keseluruhan di Kabupaten Lamongan
+    </h2>
+  </article>
+</div>
+</div>
+<!-- End Blog -->
+
+
+       <main class="component-wrapper">
+    
+<section class="c-section container-fluid mb-0">
+    <div class="container">
+        <h1 class="c-heading__h1 pt-md-4 pt-3 mb-1">
+            Ada Apa di Nikila ?</h1>
+        <p class="c-heading__p pb-md-4 pb-3">
+            Berita Baru Dan Seru Untuk Dibaca
+        </p>
+    </div>
+</section>
+
+<!-- Search And Kategory -->
+<section class="pb-4 mb-0 mb-md-4">
+    <div class="container-fluid">
+        <div class="container">
+            <form action="/blog/search/" method="GET">
+                <div class="row c-filter-box p-0">
+                    
+                    <div class="col-12 col-md-3 mb-1 mb-md-0 pr-0 pr-md-2">
+                        <label class="c-filter-box__label mb-2 u-hide--mobile">Kategori</label>
+                        <div class="c-select">
+                            <input type="hidden" value="#" name="service" id="val-service" />
+                            <div class="c-select__dropdown js-dropdown">
+                                <label class="c-select__dropdown__label">
+                                    Semua
+                            </label>
+                            </div>
+                            <div class="c-select__option">
+                                <ul class="c-select__list js-colspan">
+                                            <li class="c-select__list__option  c-select__list__option--active  js-option" data-value="Niki Anterin" data-placeholder="Niki Anterin" data-target="#val-service" data-list="list__option">
+                                                <a> Niki Anterin</a>
+                                            </li>
+                                        
+                                    
+                                        
+                                            <li class="c-select__list__option  js-option" data-value="Niki Kirimin" data-placeholder="Niki Kirimin" data-target="#val-service" data-list="list__option">
+                                                <a>Niki Kirimin</a>
+                                            </li>
+                                        
+                                    
+                                        
+                                            <li class="c-select__list__option  js-option" data-value="Niki Belanjain" data-placeholder="Niki Belanjain" data-target="#val-service" data-list="list__option">
+                                                <a>Niki Belanjain</a>
+                                            </li>
+                                        
+                                    
+                                        
+                                            <li class="c-select__list__option  js-option" data-value="mitra" data-placeholder="Mitra" data-target="#val-service" data-list="list__option">
+                                                <a>Mitra</a>
+                                            </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    
+                    <div class="col-12 col-lg-6 align-self-end">
+                        <div class="c-search">
+                            
+                            <input type="text" placeholder="Cari Blog...." class="c-search__field" name="q"
+                                autocomplete="off" value="" maxlength="100" />
+                            <button class="c-search__button col-auto" type="submit">
+                                <i class="fa fa-search"></i> <span class="u-hide--mobile ml-1">Cari</span> 
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+
+
+    <!-- Card Blog -->
+<section class="c-section container-fluid pb-1 pb-md-2">
+        <div class="container-konten-blog">
+            <div class="o-row o-row--slider">
+                
+                
+                
+                <!-- Card 1 -->
+                <div class="o-row--slider__col-3 c-list-grid-item">
+                    <a href="../bantuan/akun/blog/blog_akun.html">
+                        <div class="col-12">
+    <div class="c-blog-hl-wrapper--one lazy" >
+    <picture class="lazy loaded">
+        <img src="../../assets/img/banner/Banner Mitra Driver.jpg" srcset="../../assets/img/banner/Banner Mitra Driver.jpg" data-srcset="../../assets/img/banner/Banner Mitra Driver.jpg" class="c-blog-hl-image-helper lazy loaded" alt="#" type="image/jpeg" data-was-processed="true">
+</picture>
+
+
+    <picture class="lazy loaded">
+        <img src="../../assets/img/banner/Banner Mitra Driver.jpg" data-src="../../assets/img/banner/Banner Mitra Driver.jpg" srcset="../../assets/img/banner/Banner Mitra Driver.jpg" data-srcset="../../assets/img/banner/Banner Mitra Driver.jpg" class="c-blog-hl-image lazy loaded" alt="#" type="image/jpeg" data-was-processed="true">
+</picture>
+
+
+    </div>
+</div>
+<h3 class="col-12 c-blog-highlight__title-4">Promo Loket.com: Cashback 6% (maks. Rp10.000)</h3>
+<div class="mt-auto col-12 row justify-content-between">
+    <span class="c-blog-highlight__date-large">Niki Anterin / 20 Jun 2022</span>
+</div>
+                    </a>
+                </div>
+                
+                
+                
+                <!-- Card 2 -->
+                <div class="o-row--slider__col-3 c-list-grid-item">
+                    <a href="../bantuan/akun/blog/blog_akun.html">
+<div class="col-12">
+    <div class="c-blog-hl-wrapper--one lazy">
+    <picture class="lazy loaded">     
+        <img src="../../assets/img/banner/Banner Mitra Merchant.jpg" data-src="../../assets/img/banner/Banner Mitra Merchant.jpg" srcset="../../assets/img/banner/Banner Mitra Merchant.jpg" data-srcset="../../assets/img/banner/Banner Mitra Merchant.jpg" class="c-blog-hl-image-helper lazy loaded" alt="" type="image/jpeg" data-was-processed="true">
+</picture>
+
+
+        
+
+    <picture class="lazy loaded">
+        <img src="../../assets/img/banner/Banner Mitra Merchant.jpg" data-src="../../assets/img/banner/Banner Mitra Merchant.jpg" srcset="../../assets/img/banner/Banner Mitra Merchant.jpg" data-srcset="../../assets/img/banner/Banner Mitra Merchant.jpg" class="c-blog-hl-image lazy loaded" alt="Cara Mudah Temukan #Later di Aplikasi #!" type="image/jpeg" data-was-processed="true">
+</picture>
+
+
+    </div>
+</div>
+
+<h3 class="col-12 c-blog-highlight__title-4">Cara Mudah Temukan #Later di Aplikasi #!</h3>
+<div class="mt-auto col-12 row justify-content-between">
+    <span class="c-blog-highlight__date-large">Niki Belanjain / 7 Jun 2022</span>
+</div>
+                    </a>
+                </div>
+                
+                
+                <!-- Card 3 -->
+                <div class="o-row--slider__col-3 c-list-grid-item">
+                    <a href="../bantuan/akun/blog/blog_akun.html">
+                <div class="col-12">
+    <div class="c-blog-hl-wrapper--one lazy">
+    <picture class="lazy loaded">  
+        <img src="../../assets/img/banner/Banner Tentang NikiLaPOL.jpg" data-src="../../assets/img/banner/Banner Tentang NikiLaPOL.jpg" srcset="../../assets/img/banner/Banner Tentang NikiLaPOL.jpg" data-srcset="../../assets/img/banner/Banner Tentang NikiLaPOL.jpg" class="c-blog-hl-image-helper lazy loaded" alt="#" type="image/jpeg" data-was-processed="true">
+</picture>
+
+
+        
+
+    <picture class="lazy loaded">
+        <img src="../../assets/img/banner/Banner Tentang NikiLaPOL.jpg" data-src="../../assets/img/banner/Banner Tentang NikiLaPOL.jpg" srcset="../../assets/img/banner/Banner Tentang NikiLaPOL.jpg" data-srcset="../../assets/img/banner/Banner Tentang NikiLaPOL.jpg" class="c-blog-hl-image lazy loaded" alt="#" type="image/jpeg" data-was-processed="true">
+</picture>
+
+
+    </div>
+</div>
+
+<h3 class="col-12 c-blog-highlight__title-4">Cara Mudah Temukan #Later di Aplikasi #!</h3>
+<div class="mt-auto col-12 row justify-content-between">
+    <span class="c-blog-highlight__date-large">Niki Kirimin / 3 Jun 2022</span>
+</div>
+                    </a>
+                </div>
+                
+                
+                
+                
+                <!-- Card 4 -->
+                <div class="o-row--slider__col-3 c-list-grid-item">
+                    <a href="../bantuan/akun/blog/blog_akun.html">
+<div class="col-12">
+    <div class="c-blog-hl-wrapper--one lazy" >
+      <picture class="lazy loaded">
+        <img src="../../assets/img/banner/Banner Mitra Driver.jpg" srcset="../../assets/img/banner/Banner Mitra Driver.jpg" data-srcset="../../assets/img/banner/Banner Mitra Driver.jpg" class="c-blog-hl-image-helper lazy loaded" alt="#" type="image/jpeg" data-was-processed="true">
+</picture>
+
+
+    <picture class="lazy loaded">
+        <img src="../../assets/img/banner/Banner Mitra Driver.jpg" data-src="../../assets/img/banner/Banner Mitra Driver.jpg" srcset="../../assets/img/banner/Banner Mitra Driver.jpg" data-srcset="../../assets/img/banner/Banner Mitra Driver.jpg" class="c-blog-hl-image lazy loaded" alt="#" type="image/jpeg" data-was-processed="true">
+</picture>
+
+
+    </div>
+</div>
+
+<h3 class="col-12 c-blog-highlight__title-4">Promo Travel &amp; Staycation: Ke Mana Pun Tetap Hemat Pake #</h3>
+<div class="mt-auto col-12 row justify-content-between">
+    <span class="c-blog-highlight__date-large">Mitra / 31 Mei 2022</span>
+</div>
+                    </a>
+                </div>
+                
+                
+                
+                
+                <!-- Card 5 -->
+                <div class="o-row--slider__col-3 c-list-grid-item">
+                    <a href="../bantuan/akun/blog/blog_akun.html">
+<div class="col-12">
+    <div class="c-blog-hl-wrapper--one lazy">
+     <picture class="lazy loaded">  
+        <img src="../../assets/img/banner/Banner Tentang NikiLaPOL.jpg" data-src="../../assets/img/banner/Banner Tentang NikiLaPOL.jpg" srcset="../../assets/img/banner/Banner Tentang NikiLaPOL.jpg" data-srcset="../../assets/img/banner/Banner Tentang NikiLaPOL.jpg" class="c-blog-hl-image-helper lazy loaded" alt="#" type="image/jpeg" data-was-processed="true">
+</picture>
+
+
+        
+
+    <picture class="lazy loaded">
+        <img src="../../assets/img/banner/Banner Tentang NikiLaPOL.jpg" data-src="../../assets/img/banner/Banner Tentang NikiLaPOL.jpg" srcset="../../assets/img/banner/Banner Tentang NikiLaPOL.jpg" data-srcset="../../assets/img/banner/Banner Tentang NikiLaPOL.jpg" class="c-blog-hl-image lazy loaded" alt="#" type="image/jpeg" data-was-processed="true">
+</picture>
+
+
+    </div>
+</div>
+
+<h3 class="col-12 c-blog-highlight__title-4">Aktifin lalu Sambungin #Later di </h3>
+<div class="mt-auto col-12 row justify-content-between">
+    <span class="c-blog-highlight__date-large">Niki Kirimin / 31 Mei 2022</span>
+</div>
+                    </a>
+                </div>
+                
+                
+                <!-- Card 6 -->
+<div class="o-row--slider__col-3 c-list-grid-item">
+    <a href="../bantuan/akun/blog/blog_akun.html">
+     <div class="col-12">
+    <div class="c-blog-hl-wrapper--one lazy">
+      <picture class="lazy loaded">     
+        <img src="../../assets/img/banner/Banner Mitra Merchant.jpg" data-src="../../assets/img/banner/Banner Mitra Merchant.jpg" srcset="../../assets/img/banner/Banner Mitra Merchant.jpg" data-srcset="../../assets/img/banner/Banner Mitra Merchant.jpg" class="c-blog-hl-image-helper lazy loaded" alt="#" type="image/jpeg" data-was-processed="true">
+</picture>
+
+
+        
+
+    <picture class="lazy loaded">
+        <img src="../../assets/img/banner/Banner Mitra Merchant.jpg" data-src="../../assets/img/banner/Banner Mitra Merchant.jpg" srcset="../../assets/img/banner/Banner Mitra Merchant.jpg" data-srcset="../../assets/img/banner/Banner Mitra Merchant.jpg" class="c-blog-hl-image lazy loaded" alt="#" type="image/jpeg" data-was-processed="true">
+</picture>
+
+
+    </div>
+        </div>
+
+<h3 class="col-12 c-blog-highlight__title-4">Promo  Shop: Cashback 40%</h3>
+<div class="mt-auto col-12 row justify-content-between">
+    <span class="c-blog-highlight__date-large">Niki Belanjain / 31 Mei 2022</span>
+</div>
+                    </a>
+                </div>
+                
+                
+                <!-- Card 7 -->
+                <div class="o-row--slider__col-3 c-list-grid-item">
+                    <a href="#">
+<div class="col-12">
+    <div class="c-blog-hl-wrapper--one lazy">
+        <picture class="lazy loaded">  
+        <img src="../../assets/img/banner/Banner Tentang NikiLaPOL.jpg" data-src="../../assets/img/banner/Banner Tentang NikiLaPOL.jpg" srcset="../../assets/img/banner/Banner Tentang NikiLaPOL.jpg" data-srcset="../../assets/img/banner/Banner Tentang NikiLaPOL.jpg" class="c-blog-hl-image-helper lazy loaded" alt="#" type="image/jpeg" data-was-processed="true">
+</picture>
+
+
+        
+
+    <picture class="lazy loaded">
+        <img src="../../assets/img/banner/Banner Tentang NikiLaPOL.jpg" data-src="../../assets/img/banner/Banner Tentang NikiLaPOL.jpg" srcset="../../assets/img/banner/Banner Tentang NikiLaPOL.jpg" data-srcset="../../assets/img/banner/Banner Tentang NikiLaPOL.jpg" class="c-blog-hl-image lazy loaded" alt="#" type="image/jpeg" data-was-processed="true">
+</picture>
+
+
+    </div>
+</div>
+
+<h3 class="col-12 c-blog-highlight__title-4">Bayar Transaksi di App Store Gampang Pakai # &amp; Ada Cashback 40%!</h3>
+<div class="mt-auto col-12 row justify-content-between">
+    <span class="c-blog-highlight__date-large">Mitra / 31 Mei 2022</span>
+</div>
+                    </a>
+                </div>
+                
+
+
+                <!-- Card 8 -->
+                <div class="o-row--slider__col-3 c-list-grid-item">
+                    <a href="../bantuan/akun/blog/blog_akun.html">        
+<div class="col-12">
+    <div class="c-blog-hl-wrapper--one lazy">
+        <picture class="lazy loaded">
+        <img src="../../assets/img/banner/Banner Mitra Driver.jpg" srcset="../../assets/img/banner/Banner Mitra Driver.jpg" data-srcset="../../assets/img/banner/Banner Mitra Driver.jpg" class="c-blog-hl-image-helper lazy loaded" alt="#" type="image/jpeg" data-was-processed="true">
+</picture>
+
+
+    <picture class="lazy loaded">
+        <img src="../../assets/img/banner/Banner Mitra Driver.jpg" data-src="../../assets/img/banner/Banner Mitra Driver.jpg" srcset="../../assets/img/banner/Banner Mitra Driver.jpg" data-srcset="../../assets/img/banner/Banner Mitra Driver.jpg" class="c-blog-hl-image lazy loaded" alt="#" type="image/jpeg" data-was-processed="true">
+</picture>
+
+    </div>
+</div>
+
+<h3 class="col-12 c-blog-highlight__title-4">Promo Liburan bareng #: Cashback 40%</h3>
+<div class="mt-auto col-12 row justify-content-between">
+    <span class="c-blog-highlight__date-large">Niki Anterin / 17 Mei 2022</span>
+</div>
+                    </a>
+                </div>
+                
+                
+                
+                <!-- Card 9 -->
+                <div class="o-row--slider__col-3 c-list-grid-item">
+                    <a href="../bantuan/akun/blog/blog_akun.html">
+    <div class="col-12">
+    <div class="c-blog-hl-wrapper--one lazy">
+          <picture class="lazy loaded">  
+        <img src="../../assets/img/banner/Banner Tentang NikiLaPOL.jpg" data-src="../../assets/img/banner/Banner Tentang NikiLaPOL.jpg" srcset="../../assets/img/banner/Banner Tentang NikiLaPOL.jpg" data-srcset="../../assets/img/banner/Banner Tentang NikiLaPOL.jpg" class="c-blog-hl-image-helper lazy loaded" alt="#" type="image/jpeg" data-was-processed="true">
+</picture>
+
+
+    <picture class="lazy loaded">
+        <img src="../../assets/img/banner/Banner Tentang NikiLaPOL.jpg" data-src="../../assets/img/banner/Banner Tentang NikiLaPOL.jpg" srcset="../../assets/img/banner/Banner Tentang NikiLaPOL.jpg" data-srcset="../../assets/img/banner/Banner Tentang NikiLaPOL.jpg" class="c-blog-hl-image lazy loaded" alt="#" type="image/jpeg" data-was-processed="true">
+</picture>
+
+
+    </div>
+</div>
+
+<h3 class="col-12 c-blog-highlight__title-4">Promo Taman Safari: Cashback 40% (Maksimum Rp30.000)</h3>
+<div class="mt-auto col-12 row justify-content-between">
+    <span class="c-blog-highlight__date-large">Mitra / 11 Mei 2022</span>
+</div>
+                    </a>
+                </div>
+                
+            </div>
+        </div>        
+    </section>
+    </main>
+
+    
+
+    
+<section id="cta">
+            <div class="container">
+                <div class="box-cta">
+                   <div class="cta-text" data-aos="fade-right">Cintai Produk Lamongan.<br> Cintai Produk Daerah.<br> Yuk, download<br> sekarang juga</div>
+                    <a href="#" class="btn btn-cta" title="Download NikiLa" target="_blank" data-aos="fade-down">
+                        <i class="fab fa-google-play"></i> Play store
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <div class="container">
+                <div class="row-footer">
+                    <div class="logo-bottom">
+                        <img src="../../assets/img/logo/Logo NIKILA_Lamongan POL.png" alt="NikiLa" title="NikiLa">
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="box-footer1">
+                                <div class="footer-text">
+                                    Niki Lamongan atau yang disingkat Nikila adalah Super Apps yang menggabungkan <em>Marketplace</em> dan <em>Delivery Order</em>, yang mempunyai tujuan menjadi wadah jualan produk kearifan lokal Kabupaten Lamongan serta untuk meningkatkan PAD (Pendapatan Asli Daerah) Kabupaten.</p>
+                                </div>
+                               <div class="box-sosmed">
+                                    <a href="#" title="Facebook NikiLa" target="_blank"><i class="fab fa-facebook"></i></a>
+                                    <a href="https://www.instagram.com/nuku.id_of/" title="Instagram NikiLa" target="_blank"><i class="fab fa-instagram"></i></a>
+                                    <a href="https://twitter.com/NuKu_id" title="Twitter NikiLa" target="_blank"><i class="fab fa-twitter"></i></a>
+                                    <a href="#" title="Youtube NikiLa" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+                                    <a href="https://www.tiktok.com/@nuku_id" title="TikTok NikiLa" target="_blank"><i class="fa-brands fa-tiktok"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="box-footer2">
+                                <h2 style="font-family: var(--font-dasar);">Gabung</h2>
+                                <ul class="list1 pt-4">
+                                    <li><a href="#" title="">Mitra Merchant</a></li>
+                                    <li><a href="#" title="">Mitra Driver</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="box-footer2">
+                                <h2 style="font-family: var(--font-dasar);">Pintasan</h2>
+                                <ul class="list1 pt-4">
+                                    <li><a href="../../html/mitra/mitra_driver/driver.html" title="">Mitra Driver</a></li>
+                                    <li><a href="../../html/mitra/mitra_merchant/merchant.html" title="">Mitra Merchant</a></li>
+                                    <li><a href="../../html/layanan/layanan.html" title="">Layanan</a></li>
+                                    <li><a href="../../html/tentang/tentang.html" title="">Tentang Nikila</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="box-footer3">
+                                <h2 style="font-family: var(--font-dasar);">Hubungi Kami</h2>
+                                <ul class="list1 pt-4">
+                                    <li><i class="fas fa-envelope"></i>contact@Nikila.id</li>
+                                    <li><i class="fa-brands fa-whatsapp"></i><a href="#">+62 812-812-812</li></a>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="box-copy">
+                        &copy; 2022. <b>Nikila</b>. All Rights Reserved
+                    </div>
+                  <div class="img-nuku">
+                    <img src="../../assets/img/Powered by NuKu.png" width="150px" alt="">
+                  </div>
+                </div>
+            </div>
+        </footer>
+   
+    </div>
+    <div class="snackbars" id="form-output-global"></div>
+    <script src="../../js/core.min.js"></script>
+    <script src="../../js/script.js"></script>
+    <script src="./konten_blog.js"></script>
+    <script>
+		window.addEventListener('load', function() {
+		const helpFulBtnElement = document.querySelectorAll('.js-snackbar');
+			helpFulBtnElement.forEach(function(btn) {
+				btn.addEventListener('click', function(e) {
+					setTimeout(function() {
+					$('.c-faq-detail__helpful').slideUp();
+					$('.c-faq-detail__buttons').slideUp();								
+					}, 1618)
+				});
+			});
+		});
+    </script>
+  </body>
+</html>

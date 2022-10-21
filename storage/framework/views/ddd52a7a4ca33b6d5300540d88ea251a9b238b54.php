@@ -1,0 +1,1 @@
+<?php /**PATH D:\laravel-real\coba\resources\views/master/root.blade.php ENDPATH**/ ?>

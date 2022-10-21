@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
+use App\Http\Controllers\Controller;
 use App\Models\Merctutor;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
@@ -27,7 +28,7 @@ class MerctutorController extends Controller
      */
     public function create()
     {
-    return view('panel.merctutor.create');
+        return view('panel.merctutor.create');
     }
 
     /**
@@ -46,10 +47,10 @@ class MerctutorController extends Controller
             'description' => 'required',
             'gambar1' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
         ]);
-    
+
         $input = $request->all();
 
-        
+
         if ($gambar1 = $request->file('gambar')) {
             $destinationPath = 'image/';
             $gambarName = Str::random(3) . "-" . date('Ymd') . "." . $gambar1->getClientOriginalExtension();
@@ -64,7 +65,7 @@ class MerctutorController extends Controller
         return redirect()->route('merctutor.index')->with(['Sukses menambahkan data']);
     }
 
-    
+
 
     /**
      * Display the specified resource.
@@ -95,14 +96,14 @@ class MerctutorController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update( Request $request, Merctutor $merctutor)
+    public function update(Request $request, Merctutor $merctutor)
     {
         $this->validate($request, [
             'title' => 'required|min:1',
             'description' => 'required|min:5',
             'gambar1' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
         ]);
-    
+
         $input = $request->all();
 
         if ($gambar1 = $request->file('gambar')) {
@@ -117,7 +118,7 @@ class MerctutorController extends Controller
         $merctutor->update($input);
 
         //redirect to index
-            return redirect()->route('merctutor.index')->with(['success' => 'Data Berhasil Disimpan!']);
+        return redirect()->route('merctutor.index')->with(['success' => 'Data Berhasil Disimpan!']);
     }
 
     /**
@@ -126,11 +127,10 @@ class MerctutorController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy( Merctutor $merctutor)
+    public function destroy(Merctutor $merctutor)
     {
-         if (File::exists(public_path('image/'.$merctutor->gambar))) {
-            File::delete(public_path('image/'.$merctutor->gambar));
-
+        if (File::exists(public_path('image/' . $merctutor->gambar))) {
+            File::delete(public_path('image/' . $merctutor->gambar));
         }
 
         $merctutor->delete();

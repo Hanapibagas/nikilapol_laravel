@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
+use App\Http\Controllers\Controller;
 use App\Models\Whitelabel;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
@@ -77,17 +78,15 @@ class WhitelabelController extends Controller
             $logoName = $logo->getClientOriginalName();
             $logo->move($destinationPath, $logoName);
             $input['logo'] = $logoName;
-
         } else {
             unset($input['logo']);
-        }        
-        
+        }
+
         if ($bantuan = $request->file('bantuan')) {
             $destinationPath = 'image/';
             $bantuanName = $bantuan->getClientOriginalName();
             $bantuan->move($destinationPath, $bantuanName);
             $input['bantuan'] = $bantuanName;
-
         }
 
         if ($cta = $request->file('cta')) {
@@ -95,20 +94,18 @@ class WhitelabelController extends Controller
             $ctaName = $cta->getClientOriginalName();
             $cta->move($destinationPath, $ctaName);
             $input['cta'] = $ctaName;
-
         }
         if ($favicon = $request->file('favicon')) {
             $destinationPath = 'image/';
             $faviconName = $favicon->getClientOriginalName();
             $favicon->move($destinationPath, $faviconName);
             $input['favicon'] = $faviconName;
-
         }
 
         $whitelabel->update($input);
 
         //redirect to index
-        return redirect()->route('whitelabel.edit',$whitelabel->id)->with(['success' => 'Data Berhasil Diubah!']);       
+        return redirect()->route('whitelabel.edit', $whitelabel->id)->with(['success' => 'Data Berhasil Diubah!']);
     }
 
     /**

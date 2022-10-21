@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
+use App\Http\Controllers\Controller;
 use App\Models\Faq;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
@@ -36,38 +37,38 @@ class FaqController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request, Faq $faq)
-            {
-                //Validasi input data
-                $this->validate($request, [
-                    'title'     => 'required|min:5',
-                    'slug'      => 'required|min:5',
-                    'category'  => 'required|min:5',
-                    'description' => 'required|min:5',
-                    ]);
-        
-                    // $description = $request->description;
-                    // $dom = new \DomDocument();
-                    // $dom->loadHtml($description, LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD);
-                    // $imageFile = $dom->getElementsByTagName('img');
-             
-                    // foreach($imageFile as $item => $image){
-                    //     $data = $image->getAttribute('src');
-                    //     list($type, $data) = explode(';', $data);
-                    //     list(, $data)      = explode(',', $data);
-                    //     $imgeData = base64_decode($data);
-                    //     $image_name= "/upload/" . Str::random(3) . "-" . date('Ymd').$item.'.png';
-                    //     $path = public_path() . $image_name;
-                    //     file_put_contents($path, $imgeData);
-                    //     $image->removeAttribute('src');
-                    //     $image->setAttribute('src', $image_name);
-                    //  }
-                    // $description = $dom->saveHTML();
-                    $input = $request->all();
-                    $faq->create($input);
-                
-                    //redirect to index
-                return redirect()->route('faq.index')->with(['success' => 'Data Berhasil Ditambah!']);
-            }
+    {
+        //Validasi input data
+        $this->validate($request, [
+            'title'     => 'required|min:5',
+            'slug'      => 'required|min:5',
+            'category'  => 'required|min:5',
+            'description' => 'required|min:5',
+        ]);
+
+        // $description = $request->description;
+        // $dom = new \DomDocument();
+        // $dom->loadHtml($description, LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD);
+        // $imageFile = $dom->getElementsByTagName('img');
+
+        // foreach($imageFile as $item => $image){
+        //     $data = $image->getAttribute('src');
+        //     list($type, $data) = explode(';', $data);
+        //     list(, $data)      = explode(',', $data);
+        //     $imgeData = base64_decode($data);
+        //     $image_name= "/upload/" . Str::random(3) . "-" . date('Ymd').$item.'.png';
+        //     $path = public_path() . $image_name;
+        //     file_put_contents($path, $imgeData);
+        //     $image->removeAttribute('src');
+        //     $image->setAttribute('src', $image_name);
+        //  }
+        // $description = $dom->saveHTML();
+        $input = $request->all();
+        $faq->create($input);
+
+        //redirect to index
+        return redirect()->route('faq.index')->with(['success' => 'Data Berhasil Ditambah!']);
+    }
     /**
      * Display the specified resource.
      *
@@ -104,11 +105,11 @@ class FaqController extends Controller
             'title'     => 'required|min:5',
             'category'  => 'required|min:5',
             'description' => 'required|min:5',
-            ]);
-            $input = $request->all();  
-            $faq->update($input);
-        
-            //redirect to index
+        ]);
+        $input = $request->all();
+        $faq->update($input);
+
+        //redirect to index
         return redirect()->route('faq.index')->with(['success' => 'Data Berhasil Ditambah!']);
     }
 
@@ -121,9 +122,8 @@ class FaqController extends Controller
     public function destroy(Faq $faq)
     {
         //Hapus file di public path
-        if (File::exists(public_path('media/'.$faq->upload))) {
-            File::delete(public_path('media/'.$faq->upload));
-
+        if (File::exists(public_path('media/' . $faq->upload))) {
+            File::delete(public_path('media/' . $faq->upload));
         }
 
         $faq->delete();
@@ -138,11 +138,11 @@ class FaqController extends Controller
             $fileName = pathinfo($originName, PATHINFO_FILENAME);
             $extension = $request->file('upload')->getClientOriginalExtension();
             $fileName = $fileName . '_' . time() . '.' . $extension;
-    
+
             $request->file('upload')->move(public_path('media'), $fileName);
-    
+
             $url = asset('media/' . $fileName);
-            return response()->json(['fileName' => $fileName, 'uploaded'=> 1, 'url' => $url]);
+            return response()->json(['fileName' => $fileName, 'uploaded' => 1, 'url' => $url]);
         }
     }
 }

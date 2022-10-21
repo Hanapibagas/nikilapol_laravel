@@ -1,11 +1,13 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
+use App\Http\Controllers\Controller;
+use App\Models\Service;
 use Illuminate\Http\Request;
-use App\Models\Mercbanner;
+use Illuminate\Support\Str;
 
-class MercbannerController extends Controller
+class ServiceController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +16,8 @@ class MercbannerController extends Controller
      */
     public function index()
     {
-        $mercbanner = Mercbanner::all();
-        return view('panel.mercbanner.index', compact('mercbanner'));
+        $service = Service::all();
+        return view('panel.service.index', compact('service'));
     }
 
     /**
@@ -25,7 +27,7 @@ class MercbannerController extends Controller
      */
     public function create()
     {
-
+        //
     }
 
     /**
@@ -36,17 +38,16 @@ class MercbannerController extends Controller
      */
     public function store(Request $request)
     {
+        //
     }
-
-    
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\About  $service
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Service $service)
     {
         //
     }
@@ -54,53 +55,55 @@ class MercbannerController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\About  $service
      * @return \Illuminate\Http\Response
      */
-    public function edit(Mercbanner $mercbanner)
+    public function edit(Service $service)
     {
-        return view('panel.mercbanner.edit', compact('mercbanner'));
+        return view('panel.service.edit', compact('service'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\Models\About  $service
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Mercbanner $mercbanner)
+    public function update(Request $request, Service $service)
     {
-        dd($request->all());
+        //validate form
         $this->validate($request, [
-            'title' => 'required|min:1',
-            'description' => 'required|min:5',
-            'gambar' => 'required'
+            'title'     => 'required|min:5',
+            'description'     => 'required|min:5',
+            // 'gambar'     => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
-    
+
         $input = $request->all();
 
+        //check if image is uploaded
         if ($gambar = $request->file('gambar')) {
             $destinationPath = 'image/';
-            $gambarName = $gambar->getClientOriginalName();
+            $gambarName = Str::random(3) . "-" . date('Ymd') . "." . $gambar->getClientOriginalExtension();
             $gambar->move($destinationPath, $gambarName);
             $input['gambar'] = $gambarName;
         } else {
             unset($input['gambar']);
         }
-        $mercbanner->update($input);
+
+        $service->update($input);
 
         //redirect to index
-        return redirect()->route('mercbanner.index')->with(['success' => 'Data Berhasil Disimpan!']);
+        return redirect()->route('service.index')->with(['success' => 'Data Berhasil Diubah!']);
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\Models\About  $Service
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Service $service)
     {
         //
     }

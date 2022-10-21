@@ -1,13 +1,14 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
-use App\Models\Logistic;
-use Illuminate\Support\Str;
+use App\Http\Controllers\Controller;
+use App\Models\Layanan;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
+use Illuminate\Support\Str;
 
-class LogisticController extends Controller
+class LayananController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,8 +17,8 @@ class LogisticController extends Controller
      */
     public function index()
     {
-        $logistic = Logistic::all();
-        return view('panel.layanan.logistic', compact('logistic'));
+        $layanan = Layanan::all();
+        return view('panel.layanan.index', compact('layanan'));
     }
 
     /**
@@ -27,7 +28,7 @@ class LogisticController extends Controller
      */
     public function create()
     {
-        return view('panel.layanan.createlogistic');
+        return view('panel.layanan.create');
     }
 
     /**
@@ -36,31 +37,32 @@ class LogisticController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request, Logistic $logistic)
+    public function store(Request $request, Layanan $layanan)
     {
-        //Validasi input data
+        //validate form
         $this->validate($request, [
-            'title'    => 'required|min:5',
+            'title'     => 'required|min:5',
+            'description'     => 'required|min:5',
             'link'     => 'required|min:5',
-            'cover'   => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
+            'cover'     => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
         ]);
 
-        $input = $request->all();
+        //upload image
+        $cover = request()->file('cover');
+        $coverName = Str::random(3) . "-" . date('Ymd') . "." . $cover->getClientOriginalExtension();
+        $coverPath = public_path('/images/');
+        $cover->move($coverPath, $coverName);
 
-        //cek jika ada cover yang di upload
-        if ($cover = $request->file('cover')) {
-            $destinationPath = 'image/';
-            $coverName = Str::random(3) . "-" . date('Ymd') . "." . $cover->getClientOriginalExtension();
-            $cover->move($destinationPath, $coverName);
-            $input['cover'] = $coverName;
-        } else {
-            unset($input['cover']);
-        }
-
-        $logistic->create($input);
+        //create post
+        Layanan::create([
+            'title'     => $request->title,
+            'description'     => $request->description,
+            'link'     => $request->title,
+            'cover' => "/images/" . $coverName,
+        ]);
 
         //redirect to index
-        return redirect()->route('logistic.index')->with(['success' => 'Data Berhasil Ditambah!']);
+        return redirect()->route('layanan.index')->with(['success' => 'Data Berhasil Disimpan!']);
     }
 
     /**
@@ -80,9 +82,9 @@ class LogisticController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Logistic $logistic)
+    public function edit(Layanan $layanan)
     {
-        return view('panel.layanan.editlogistic', compact('logistic'));
+        return view('panel.layanan.edit', compact('layanan'));
     }
 
     /**
@@ -92,7 +94,7 @@ class LogisticController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Logistic $logistic)
+    public function update(Request $request, Layanan $layanan)
     {
         //validate form
         $this->validate($request, [
@@ -110,12 +112,14 @@ class LogisticController extends Controller
             $coverName = Str::random(3) . "-" . date('Ymd') . "." . $cover->getClientOriginalExtension();
             $cover->move($destinationPath, $coverName);
             $input['cover'] = $coverName;
+        } else {
+            unset($input['cover']);
         }
 
-        $logistic->update($input);
+        $layanan->update($input);
 
         //redirect to index
-        return redirect()->route('logistic.index')->with(['success' => 'Data Berhasil Diubah!']);
+        return redirect()->route('layanan.index')->with(['success' => 'Data Berhasil Diubah!']);
     }
 
     /**
@@ -124,15 +128,15 @@ class LogisticController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Logistic $logistic)
+    public function destroy(Layanan $layanan)
     {
         //Hapus file di public path
-        if (File::exists(public_path('image/' . $logistic->gambar))) {
-            File::delete(public_path('image/' . $logistic->gambar));
+        if (File::exists(public_path('image/' . $layanan->gambar))) {
+            File::delete(public_path('image/' . $layanan->gambar));
         }
 
-        $logistic->delete();
+        $layanan->delete();
         //redirect to index
-        return redirect()->route('logistic.index')->with(['success' => 'Data Berhasil Hapus!']);
+        return redirect()->route('layanan.index')->with(['success' => 'Data Berhasil Hapus!']);
     }
 }

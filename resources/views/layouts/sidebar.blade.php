@@ -108,7 +108,7 @@
                     </ul>
                 </li>
                 <li>
-                    <a href="/panel/whitelabel/1/edit" class="waves-effect">
+                    <a href="whitelabel/1/edit" class="waves-effect">
                         <i class="bx bx-cog "></i>
                         <span key="t-invoices">White Label</span>
                     </a>

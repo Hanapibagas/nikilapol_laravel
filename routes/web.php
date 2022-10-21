@@ -2,38 +2,32 @@
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+
+// route backend
 use App\Http\Controllers\Admin\PanelController;
 use App\Http\Controllers\Admin\BlogController;
-use App\Http\Controllers\FaqController;
+use App\Http\Controllers\Admin\FaqController;
+use App\Http\Controllers\Admin\HeaderController;
+use App\Http\Controllers\Admin\AboutController;
+use App\Http\Controllers\Admin\BannerController;
+use App\Http\Controllers\Admin\ServiceController;
+use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Admin\ProfitController;
+use App\Http\Controllers\Admin\LayananController;
+use App\Http\Controllers\Admin\LogisticController;
+use App\Http\Controllers\Admin\MercbannerController;
+use App\Http\Controllers\Admin\MerchantController;
+use App\Http\Controllers\Admin\MerctutorController;
+use App\Http\Controllers\Admin\WhitelabelController;
+
+// route frontend
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\AboutController;
 use App\Http\Controllers\MitraController;
-use App\Http\Controllers\BannerController;
-use App\Http\Controllers\HeaderController;
-use App\Http\Controllers\ProfitController;
-use App\Http\Controllers\LayananController;
 use App\Http\Controllers\PrivacyController;
-use App\Http\Controllers\ServiceController;
-use App\Http\Controllers\CategoryController;
-use App\Http\Controllers\LogisticController;
-use App\Http\Controllers\MerchantController;
-use App\Http\Controllers\MercbannerController;
-use App\Http\Controllers\MerctutorController;
-use App\Http\Controllers\WhitelabelController;
 use App\Http\Controllers\DetailblogController;
 use App\Models\Detailblog;
 use App\Models\Merctutor;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
 
 Auth::routes();
 
@@ -52,14 +46,42 @@ Route::prefix('admin')->group(function () {
     // Rombakan route backend
     Route::get('/', [PanelController::class, 'index'])->name('dashboard');
 
-
     //Konfigurasi Blog
-    Route::resource('panel/blog', BlogController::class);
+    Route::resource('blog', BlogController::class);
     Route::post('blog/upload', [BlogController::class, 'upload'])->name('blog.upload');
+
+    Route::resource('faq', FaqController::class);
+    Route::post('faq/upload', [FaqController::class, 'upload'])->name('faq.upload');
+
+    //Konfigurasi Header
+    Route::resource('header', HeaderController::class);
+
+    //Konfigurasi About us
+    Route::resource('about', AboutController::class);
+
+    //Konfigurasi Fasilitas
+    Route::resource('banner', BannerController::class);
+
+    //Konfigurasi Service
+    Route::resource('service', ServiceController::class);
+
+    //Konfigurasi Layanan
+    Route::resource('category', CategoryController::class);
+
+    //Konfigurasi About 2
+    Route::resource('profit', ProfitController::class);
+
+    //Konfigurasi Layanan
+    Route::resource('layanan', LayananController::class);
+    Route::resource('logistic', LogisticController::class);
+
+    //Konfigurasi Mercbanner
+    Route::resource('mercbanner', MercbannerController::class);
+    Route::resource('merchant', MerchantController::class);
+    Route::resource('merctutor', MerctutorController::class);
+
+    Route::resource('whitelabel', WhitelabelController::class);
 });
-
-
-
 
 Route::resource('blog-detail', DetailblogController::class);
 
@@ -67,54 +89,10 @@ Route::resource('blog-detail', DetailblogController::class);
 Route::post('/update-profile/{id}', [App\Http\Controllers\PanelController::class, 'updateProfile'])->name('updateProfile');
 Route::post('/update-password/{id}', [App\Http\Controllers\PanelController::class, 'updatePassword'])->name('updatePassword');
 
-// Route::get('{any}', [App\Http\Controllers\HomeController::class, 'index'])->name('index');
-
-//Index
-// Route::get('/id', [App\Http\Controllers\IndexController::class, 'index'])->name('index');
-
 //Language Translation
 Route::get('index/{locale}', [App\Http\Controllers\HomeController::class, 'lang']);
 
-//Konfigurasi Header
-Route::resource('panel/header', HeaderController::class);
-
-//Konfigurasi About us
-Route::resource('panel/about', AboutController::class);
-
-//Konfigurasi Fasilitas
-Route::resource('panel/banner', BannerController::class);
-
-//Konfigurasi About 2
-Route::resource('panel/profit', ProfitController::class);
-
-//Konfigurasi Merchant
-Route::resource('panel/merchant', MerchantController::class);
-
-Route::resource('panel/mercbanner', MercbannerController::class);
-
-Route::resource('panel/merctutor', MerctutorController::class);
-
 Route::put('panel/{$id}', [MerctutorController::class, 'update']);
-
-//Konfigurasi Service
-Route::resource('panel/service', ServiceController::class);
-
-//Konfigurasi Layanan
-Route::resource('panel/category', CategoryController::class);
 
 //Konfigurasi Layanan
 Route::resource('panel/mitra', MitraController::class);
-
-//Konfigurasi Layanan
-Route::resource('panel/mercbanner', MercbannerController::class);
-
-
-//Konfigurasi Blog
-Route::resource('panel/faq', FaqController::class);
-Route::post('faq/upload', [\App\Http\Controllers\FaqController::class, 'upload'])->name('faq.upload');
-
-Route::resource('panel/layanan/logistic', LogisticController::class);
-
-//Konfigurasi Layanan
-Route::resource('panel/layanan', LayananController::class);
-Route::resource('panel/whitelabel', WhitelabelController::class);

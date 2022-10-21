@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
+use App\Http\Controllers\Controller;
 use App\Models\Banner;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
@@ -37,7 +38,6 @@ class BannerController extends Controller
             $gambarName = Str::random(3) . "-" . date('Ymd') . "." . $gambar->getClientOriginalExtension();
             $gambar->move($destinationPath, $gambarName);
             $input['gambar'] = $gambarName;
-
         } else {
             unset($input['gambar']);
         }
@@ -75,7 +75,6 @@ class BannerController extends Controller
             $gambarName = Str::random(3) . "-" . date('Ymd') . "." . $gambar->getClientOriginalExtension();
             $gambar->move($destinationPath, $gambarName);
             $input['gambar'] = $gambarName;
-
         } else {
             unset($input['gambar']);
         }
@@ -89,9 +88,8 @@ class BannerController extends Controller
     public function destroy(Banner $banner)
     {
         //Hapus file di public path
-        if (File::exists(public_path('image/'.$banner->gambar))) {
-            File::delete(public_path('image/'.$banner->gambar));
-
+        if (File::exists(public_path('image/' . $banner->gambar))) {
+            File::delete(public_path('image/' . $banner->gambar));
         }
 
         $banner->delete();

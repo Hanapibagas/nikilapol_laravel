@@ -1,13 +1,14 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
-use App\Models\Header;
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use App\Models\Header;
 
 class HeaderController extends Controller
-{    
+{
     /**
      * index
      *
@@ -21,7 +22,7 @@ class HeaderController extends Controller
         //render view with posts
         return view('panel.header.index', compact('header'));
     }
-    
+
     /**
      * create
      *
@@ -48,11 +49,11 @@ class HeaderController extends Controller
             'cover'     => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
         ]);
 
-         //upload image
-         $cover = request()->file('cover');
-         $coverName = time() . '.' . $cover->getClientOriginalExtension();
-         $coverPath = public_path('/images/');
-         $cover->move($coverPath, $coverName);
+        //upload image
+        $cover = request()->file('cover');
+        $coverName = time() . '.' . $cover->getClientOriginalExtension();
+        $coverPath = public_path('/images/');
+        $cover->move($coverPath, $coverName);
 
 
         //create post
@@ -66,7 +67,7 @@ class HeaderController extends Controller
         //redirect to index
         return redirect()->route('panel.header.index')->with(['success' => 'Data Berhasil Disimpan!']);
     }
-    
+
     /**
      * edit
      *
@@ -77,7 +78,7 @@ class HeaderController extends Controller
     {
         return view('panel.header.edit', compact('header'));
     }
-    
+
     /**
      * update
      *
@@ -103,14 +104,12 @@ class HeaderController extends Controller
             $coverName = date('Ymd') . "." . $cover->getClientOriginalExtension();
             $cover->move($destinationPath, $coverName);
             $input['cover'] = $coverName;
-
         }
         if ($aplikasi = $request->file('aplikasi')) {
             $destinationPath = 'image/';
             $aplikasiName = date('Ymd') . "." . $aplikasi->getClientOriginalExtension();
             $aplikasi->move($destinationPath, $aplikasiName);
             $input['aplikasi'] = $aplikasiName;
-
         } else {
             unset($input['aplikasi']);
         }

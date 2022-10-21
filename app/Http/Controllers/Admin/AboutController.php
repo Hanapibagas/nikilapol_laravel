@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
+use App\Http\Controllers\Controller;
 use App\Models\About;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
@@ -86,7 +87,6 @@ class AboutController extends Controller
             $gambarName = Str::random(3) . "-" . date('Ymd') . "." . $gambar->getClientOriginalExtension();
             $gambar->move($destinationPath, $gambarName);
             $input['gambar'] = $gambarName;
-
         } else {
             unset($input['aplikasi']);
         }

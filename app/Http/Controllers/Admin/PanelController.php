@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Blog;
@@ -18,13 +19,13 @@ class PanelController extends Controller
     {
         $this->middleware('auth');
     }
-    
+
     public function index()
     {
         $blog = Blog::orderBy('id', 'desc')->get();
         $banner = Banner::count();
         $faq = Faq::count();
-        return view('panel.index', compact('blog','banner','faq'));
+        return view('panel.index', compact('blog', 'banner', 'faq'));
     }
 
     public function updateProfile(Request $request, $id)

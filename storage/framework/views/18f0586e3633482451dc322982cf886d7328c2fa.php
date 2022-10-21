@@ -3,7 +3,7 @@
         <div class="d-flex">
             <!-- LOGO -->
             <div class="navbar-brand-box">
-                <a href="<?php echo e(route('panel.index')); ?>/" class="logo logo-dark">
+                <a href="<?php echo e(route('dashboard')); ?>/" class="logo logo-dark">
                     <span class="logo-sm">
                         <img src="<?php echo e(URL::asset('/assets/images/logo-m.png')); ?>" alt="" height="22">
                     </span>
@@ -12,7 +12,7 @@
                     </span>
                 </a>
 
-                <a href="<?php echo e(route('panel.index')); ?>/" class="logo logo-light">
+                <a href="<?php echo e(route('dashboard')); ?>/" class="logo logo-light">
                     <span class="logo-sm">
                         <img src="<?php echo e(URL::asset('/assets/images/nikila-white.png')); ?>" alt="" height="22">
                     </span>

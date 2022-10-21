@@ -10,7 +10,7 @@
                 <li class="menu-title" key="t-menu"><?php echo app('translator')->get('translation.Menu'); ?></li>
 
                 <li>
-                    <a href="<?php echo e(route('panel.index')); ?>/" class="waves-effect">
+                    <a href="<?php echo e(route('dashboard')); ?>/" class="waves-effect">
                         <i class="bx bx-home-circle"></i>
                         <span key="t-dashboards"><?php echo app('translator')->get('translation.Dashboards'); ?></span>
                     </a>
@@ -136,4 +136,5 @@
         <!-- Sidebar -->
     </div>
 </div>
-<!-- Left Sidebar End --><?php /**PATH D:\Project-web\Laravel\nikilapol_laravel\resources\views/layouts/sidebar.blade.php ENDPATH**/ ?>
+<!-- Left Sidebar End -->
+<?php /**PATH D:\Project-web\Laravel\nikilapol_laravel\resources\views/layouts/sidebar.blade.php ENDPATH**/ ?>

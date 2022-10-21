@@ -2,12 +2,12 @@
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Admin\PanelController;
+use App\Http\Controllers\Admin\BlogController;
 use App\Http\Controllers\FaqController;
-use App\Http\Controllers\BlogController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\MitraController;
-use App\Http\Controllers\PanelController;
 use App\Http\Controllers\BannerController;
 use App\Http\Controllers\HeaderController;
 use App\Http\Controllers\ProfitController;
@@ -45,6 +45,21 @@ Route::get('layanan', [HomeController::class, 'layanan'])->name('layanan');
 Route::get('kontak', [HomeController::class, 'kontak'])->name('kontak');
 Route::get('faq', [HomeController::class, 'faq'])->name('faq');
 Route::get('blog', [HomeController::class, 'blog'])->name('blog');
+// Route::get('blog/{slug}', [HomeController::class, 'blog'])->name('blog');
+
+
+Route::prefix('admin')->group(function () {
+    // Rombakan route backend
+    Route::get('/', [PanelController::class, 'index'])->name('dashboard');
+
+
+    //Konfigurasi Blog
+    Route::resource('panel/blog', BlogController::class);
+    Route::post('blog/upload', [BlogController::class, 'upload'])->name('blog.upload');
+});
+
+
+
 
 Route::resource('blog-detail', DetailblogController::class);
 
@@ -93,10 +108,6 @@ Route::resource('/panel/mitra', MitraController::class);
 //Konfigurasi Layanan
 Route::resource('/panel/mercbanner', MercbannerController::class);
 
-//Konfigurasi Blog
-Route::resource('/panel/blog', BlogController::class);
-
-Route::post('blog/upload', [\App\Http\Controllers\BlogController::class, 'upload'])->name('blog.upload');
 
 //Konfigurasi Blog
 Route::resource('/panel/faq', FaqController::class);
@@ -107,6 +118,3 @@ Route::resource('/panel/layanan/logistic', LogisticController::class);
 //Konfigurasi Layanan
 Route::resource('/panel/layanan', LayananController::class);
 Route::resource('/panel/whitelabel', WhitelabelController::class);
-
-//Konfigurasi Blog
-Route::resource('/panel', PanelController::class);

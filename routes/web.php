@@ -76,45 +76,45 @@ Route::post('/update-password/{id}', [App\Http\Controllers\PanelController::clas
 Route::get('index/{locale}', [App\Http\Controllers\HomeController::class, 'lang']);
 
 //Konfigurasi Header
-Route::resource('/panel/header', HeaderController::class);
+Route::resource('panel/header', HeaderController::class);
 
 //Konfigurasi About us
-Route::resource('/panel/about', AboutController::class);
+Route::resource('panel/about', AboutController::class);
 
 //Konfigurasi Fasilitas
-Route::resource('/panel/banner', BannerController::class);
+Route::resource('panel/banner', BannerController::class);
 
 //Konfigurasi About 2
-Route::resource('/panel/profit', ProfitController::class);
+Route::resource('panel/profit', ProfitController::class);
 
 //Konfigurasi Merchant
-Route::resource('/panel/merchant', MerchantController::class);
+Route::resource('panel/merchant', MerchantController::class);
 
-Route::resource('/panel/mercbanner', MercbannerController::class);
+Route::resource('panel/mercbanner', MercbannerController::class);
 
-Route::resource('/panel/merctutor', MerctutorController::class);
+Route::resource('panel/merctutor', MerctutorController::class);
 
-Route::put('/panel/{$id}', [MerctutorController::class, 'update']);
+Route::put('panel/{$id}', [MerctutorController::class, 'update']);
 
 //Konfigurasi Service
-Route::resource('/panel/service', ServiceController::class);
+Route::resource('panel/service', ServiceController::class);
 
 //Konfigurasi Layanan
-Route::resource('/panel/category', CategoryController::class);
+Route::resource('panel/category', CategoryController::class);
 
 //Konfigurasi Layanan
-Route::resource('/panel/mitra', MitraController::class);
+Route::resource('panel/mitra', MitraController::class);
 
 //Konfigurasi Layanan
-Route::resource('/panel/mercbanner', MercbannerController::class);
+Route::resource('panel/mercbanner', MercbannerController::class);
 
 
 //Konfigurasi Blog
-Route::resource('/panel/faq', FaqController::class);
+Route::resource('panel/faq', FaqController::class);
 Route::post('faq/upload', [\App\Http\Controllers\FaqController::class, 'upload'])->name('faq.upload');
 
-Route::resource('/panel/layanan/logistic', LogisticController::class);
+Route::resource('panel/layanan/logistic', LogisticController::class);
 
 //Konfigurasi Layanan
-Route::resource('/panel/layanan', LayananController::class);
-Route::resource('/panel/whitelabel', WhitelabelController::class);
+Route::resource('panel/layanan', LayananController::class);
+Route::resource('panel/whitelabel', WhitelabelController::class);

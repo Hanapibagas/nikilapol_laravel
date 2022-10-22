@@ -27,6 +27,15 @@
     <div class="row">
         <div class="col-lg-12">
             <div class="card">
+                @if ( $errors->any() )
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach ( $errors->all() as $error )
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
                 <div class="card-body">
                     <h4 class="card-title mb-4">Tambah banner</h4>
                     <form action="{{ route('blog.store') }}" method="POST" enctype="multipart/form-data">
@@ -35,19 +44,6 @@
                             <label for="title" class="col-form-label col-lg-2">Title</label>
                             <div class="col-lg-10">
                                 <input id="title" name="title" type="text" class="form-control" placeholder="Nama judul..." >
-                                @error('title')
-                                <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
-                                @enderror
-                            </div>
-                        </div>
-                        <div class="row mb-4">
-                            <label for="slug" class="col-form-label col-lg-2">Slug</label>
-                            <div class="col-lg-10">
-                                <input id="slug" name="slug" type="text" class="form-control"
-                                    placeholder="isikan slug..." >
-                                    @error('slug')
-                                    <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
-                                     @enderror
                             </div>
                         </div>
                         <div class="row mb-4">
@@ -55,9 +51,6 @@
                             <div class="col-lg-10">
                                 <input id="category" name="category" type="text" class="form-control"
                                     placeholder="isikan category..." >
-                                    @error('category')
-                                    <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
-                                     @enderror
                             </div>
                         </div>
                         <div class="row mb-4">
@@ -65,9 +58,6 @@
                             <div class="col-lg-10">
                                 <input id="author" name="author" type="text" class="form-control"
                                     placeholder="isikan author..." >
-                                    @error('author')
-                                    <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
-                                     @enderror
                             </div>
                         </div>
                         <div class="row mb-4">
@@ -81,9 +71,6 @@
                             <div class="col-lg-5">
                                 <label for="gambar" class="form-label">Upload gambar baru</label>
                                 <input class="form-control" type="file" name="gambar" id="gambar">
-                                @error('gambar')
-                                <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
-                                @enderror
                             </div>
                             <div class="col-md-5 text-center">
                             <img class="rounded me-2" id="gambar-view" alt="200x200" src="/assets/images/preview.png" data-holder-rendered="true" width="200">
@@ -144,16 +131,16 @@
 </script>
 <script type="text/javascript">
     $('#gambar').change(function(){
-           
+
     let reader = new FileReader();
 
-    reader.onload = (e) => { 
+    reader.onload = (e) => {
 
-      $('#gambar-view').attr('src', e.target.result); 
+      $('#gambar-view').attr('src', e.target.result);
     }
 
-    reader.readAsDataURL(this.files[0]); 
-  
+    reader.readAsDataURL(this.files[0]);
+
    });
   </script>
 

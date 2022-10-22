@@ -51,6 +51,7 @@ class BlogController extends Controller
         ]);
 
         $input = $request->all();
+        $input['slug'] = Str::slug($request->title);
 
         //cek jika ada gambar yang di upload
         if ($gambar = $request->file('gambar')) {
@@ -99,15 +100,6 @@ class BlogController extends Controller
      */
     public function update(Request $request, Blog $blog)
     {
-        //Validasi input data
-        $this->validate($request, [
-            'title'     => 'required|min:5',
-            'slug'      => 'required|min:5',
-            'category'  => 'required|min:5',
-            // 'author'  => 'required|min:5',
-            'description' => 'required|min:5',
-            // 'gambar'    => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
-        ]);
         $input = $request->all();
 
         //cek jika ada gambar yang di upload

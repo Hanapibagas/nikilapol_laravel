@@ -42,16 +42,6 @@
                             </div>
                         </div>
                         <div class="row mb-4">
-                            <label for="slug" class="col-form-label col-lg-2">Slug</label>
-                            <div class="col-lg-10">
-                                <input id="slug" name="slug" type="text" class="form-control"
-                                    placeholder="isikan slug..." value="{{ $blog->slug }}" >
-                                    @error('slug')
-                                    <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
-                                     @enderror
-                            </div>
-                        </div>
-                        <div class="row mb-4">
                             <label for="category" class="col-form-label col-lg-2">Category</label>
                             <div class="col-lg-10">
                                 <input id="category" name="category" type="text" class="form-control"

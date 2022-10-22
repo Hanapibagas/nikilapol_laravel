@@ -49,7 +49,6 @@ Route::prefix('admin')->group(function () {
     //Konfigurasi Blog
     Route::resource('blog', BlogController::class);
     Route::post('blog/upload', [BlogController::class, 'upload'])->name('blog.upload');
-
     Route::resource('faq', FaqController::class);
     Route::post('faq/upload', [FaqController::class, 'upload'])->name('faq.upload');
 

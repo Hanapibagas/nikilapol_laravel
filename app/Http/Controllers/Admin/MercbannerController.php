@@ -71,12 +71,12 @@ class MercbannerController extends Controller
      */
     public function update(Request $request, Mercbanner $mercbanner)
     {
-        dd($request->all());
-        $this->validate($request, [
-            'title' => 'required|min:1',
-            'description' => 'required|min:5',
-            'gambar' => 'required'
-        ]);
+        // dd($request->all());
+        // $this->validate($request, [
+        //     'title' => 'required|min:1',
+        //     'description' => 'required|min:5',
+        //     'gambar' => 'required'
+        // ]);
 
         $input = $request->all();
 

@@ -20,7 +20,8 @@ return new class extends Migration
             $table->string('category');
             $table->text('description');
             $table->text('author');
-            $table->date('date');
+            $table->longText('file')->nullable();
+            $table->string('gambar');
             $table->timestamps();
         });
     }

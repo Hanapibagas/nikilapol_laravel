@@ -128,7 +128,7 @@
           @foreach ($blog as $blog)
             <!-- Card 1 -->
             <div class="o-row--slider__col-3 c-list-grid-item">
-              <a href="{{ route('blog-detail.index', $blog->id)}}">
+              <a href="{{ route('detail', $blog->slug) }}">
                 <div class="col-12">
                   <div class="c-blog-hl-wrapper--one lazy">
                     <picture class="lazy loaded">
@@ -154,7 +154,7 @@
   <!-- Banner CTA -->
   @include('master.cta')
   <!-- End Banner CTA -->
-  
+
     <!-- Akhir Content -->
 
     <!-- Footer -->

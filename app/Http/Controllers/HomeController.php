@@ -86,13 +86,6 @@ class HomeController extends Controller
         return view('privacy', compact('whitelabel', 'header'));
     }
 
-    public function blog()
-    {
-        $whitelabel = Whitelabel::all();
-        $blog = Blog::all();
-        return view('blog', compact('whitelabel', 'blog'));
-    }
-
     public function detailblog()
     {
         $whitelabel = Whitelabel::all();

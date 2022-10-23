@@ -19,13 +19,12 @@ use App\Http\Controllers\Admin\MercbannerController;
 use App\Http\Controllers\Admin\MerchantController;
 use App\Http\Controllers\Admin\MerctutorController;
 use App\Http\Controllers\Admin\WhitelabelController;
-
+use App\Http\Controllers\BlogController as ControllersBlogController;
+use App\Http\Controllers\BlogDetailsController;
 // route frontend
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\MitraController;
 use App\Http\Controllers\PrivacyController;
-use App\Http\Controllers\DetailblogController;
-use App\Models\Detailblog;
 use App\Models\Merctutor;
 
 
@@ -38,8 +37,8 @@ Route::get('driver', [HomeController::class, 'driver'])->name('driver');
 Route::get('layanan', [HomeController::class, 'layanan'])->name('layanan');
 Route::get('kontak', [HomeController::class, 'kontak'])->name('kontak');
 Route::get('faq', [HomeController::class, 'faq'])->name('faq');
-Route::get('blog', [HomeController::class, 'blog'])->name('blog');
-// Route::get('blog/{slug}', [HomeController::class, 'blog'])->name('blog');
+Route::get('blog', [ControllersBlogController::class, 'blog'])->name('blog');
+Route::get('blog/{slug}', [BlogDetailsController::class, 'details'])->name('detail');
 
 
 Route::prefix('admin')->group(function () {
@@ -66,6 +65,7 @@ Route::prefix('admin')->group(function () {
 
     //Konfigurasi Layanan
     Route::resource('category', CategoryController::class);
+    Route::resource('category-page', CategoryController::class);
 
     //Konfigurasi About 2
     Route::resource('profit', ProfitController::class);
@@ -81,8 +81,6 @@ Route::prefix('admin')->group(function () {
 
     Route::resource('whitelabel', WhitelabelController::class);
 });
-
-Route::resource('blog-detail', DetailblogController::class);
 
 //Update User Details
 Route::post('/update-profile/{id}', [App\Http\Controllers\PanelController::class, 'updateProfile'])->name('updateProfile');

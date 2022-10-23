@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('link');
             $table->string('cover');
             $table->string('aplikasi');
+            $table->string('status')->nullable();
             $table->timestamps();
         });
     }

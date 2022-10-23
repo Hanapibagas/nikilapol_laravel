@@ -128,7 +128,7 @@
           <?php $__currentLoopData = $blog; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $blog): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
             <!-- Card 1 -->
             <div class="o-row--slider__col-3 c-list-grid-item">
-              <a href="<?php echo e(route('blog-detail.index', $blog->id)); ?>">
+              <a href="<?php echo e(route('detail', $blog->slug)); ?>">
                 <div class="col-12">
                   <div class="c-blog-hl-wrapper--one lazy">
                     <picture class="lazy loaded">
@@ -154,7 +154,7 @@
   <!-- Banner CTA -->
   <?php echo $__env->make('master.cta', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
   <!-- End Banner CTA -->
-  
+
     <!-- Akhir Content -->
 
     <!-- Footer -->
@@ -167,4 +167,5 @@
 
 </body>
 
-</html><?php /**PATH D:\Project-web\Laravel\nikilapol_laravel\resources\views/blog.blade.php ENDPATH**/ ?>
+</html>
+<?php /**PATH D:\Project-web\Laravel\nikilapol_laravel\resources\views/blog.blade.php ENDPATH**/ ?>

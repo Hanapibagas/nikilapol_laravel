@@ -19,7 +19,6 @@ return new class extends Migration
             $table->string('slug');
             $table->string('category');
             $table->text('description');
-            $table->string('gambar');
             $table->timestamps();
         });
     }

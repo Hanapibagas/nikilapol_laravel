@@ -56,7 +56,7 @@
                         <li><a href="{{ route('about.index') }}" key="t-products">Setting About Us</a></li>
                         <li><a href="{{ route('banner.index') }}" key="t-products">Setting Banner</a></li>
                         <li><a href="{{ route('service.index') }}" key="t-products">Setting Services</a></li>
-                        <li><a href="{{ route('category.index') }}" key="t-products">Setting Kategori</a></li>
+                        <li><a href="{{ route('category-page.index') }}" key="t-products">Setting Kategori</a></li>
                         <li><a href="{{ route('profit.index') }}" key="t-products">Setting Keuntungan</a></li>
                     </ul>
                 </li>

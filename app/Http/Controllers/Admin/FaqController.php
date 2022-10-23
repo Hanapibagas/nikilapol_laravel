@@ -38,32 +38,15 @@ class FaqController extends Controller
      */
     public function store(Request $request, Faq $faq)
     {
-        //Validasi input data
         $this->validate($request, [
             'title'     => 'required|min:5',
-            'slug'      => 'required|min:5',
             'category'  => 'required|min:5',
             'description' => 'required|min:5',
         ]);
 
-        // $description = $request->description;
-        // $dom = new \DomDocument();
-        // $dom->loadHtml($description, LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD);
-        // $imageFile = $dom->getElementsByTagName('img');
-
-        // foreach($imageFile as $item => $image){
-        //     $data = $image->getAttribute('src');
-        //     list($type, $data) = explode(';', $data);
-        //     list(, $data)      = explode(',', $data);
-        //     $imgeData = base64_decode($data);
-        //     $image_name= "/upload/" . Str::random(3) . "-" . date('Ymd').$item.'.png';
-        //     $path = public_path() . $image_name;
-        //     file_put_contents($path, $imgeData);
-        //     $image->removeAttribute('src');
-        //     $image->setAttribute('src', $image_name);
-        //  }
-        // $description = $dom->saveHTML();
         $input = $request->all();
+        $input['slug'] = Str::slug($request->title);
+
         $faq->create($input);
 
         //redirect to index
@@ -107,6 +90,8 @@ class FaqController extends Controller
             'description' => 'required|min:5',
         ]);
         $input = $request->all();
+        $input['slug'] = Str::slug($request->title);
+
         $faq->update($input);
 
         //redirect to index

@@ -18,10 +18,12 @@ use App\Http\Controllers\Admin\LogisticController;
 use App\Http\Controllers\Admin\MercbannerController;
 use App\Http\Controllers\Admin\MerchantController;
 use App\Http\Controllers\Admin\MerctutorController;
+
+// route frontend
 use App\Http\Controllers\Admin\WhitelabelController;
 use App\Http\Controllers\BlogController as ControllersBlogController;
 use App\Http\Controllers\BlogDetailsController;
-// route frontend
+use App\Http\Controllers\FaqController as ControllersFaqController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\MitraController;
 use App\Http\Controllers\PrivacyController;
@@ -36,7 +38,7 @@ Route::get('merchant', [HomeController::class, 'merchant'])->name('merchant');
 Route::get('driver', [HomeController::class, 'driver'])->name('driver');
 Route::get('layanan', [HomeController::class, 'layanan'])->name('layanan');
 Route::get('kontak', [HomeController::class, 'kontak'])->name('kontak');
-Route::get('faq', [HomeController::class, 'faq'])->name('faq');
+Route::get('faq', [ControllersFaqController::class, 'faq'])->name('faq');
 Route::get('blog', [ControllersBlogController::class, 'blog'])->name('blog');
 Route::get('blog/{slug}', [BlogDetailsController::class, 'details'])->name('detail');
 

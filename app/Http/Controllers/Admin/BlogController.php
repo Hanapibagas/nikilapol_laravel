@@ -100,6 +100,7 @@ class BlogController extends Controller
     public function update(Request $request, Blog $blog)
     {
         $input = $request->all();
+        $input['slug'] = Str::slug($request->title);
 
         //cek jika ada gambar yang di upload
         if ($gambar = $request->file('gambar')) {

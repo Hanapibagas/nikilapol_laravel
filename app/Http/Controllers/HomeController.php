@@ -93,13 +93,6 @@ class HomeController extends Controller
         return view('detail', compact('whitelabel', 'blog'));
     }
 
-    public function faq()
-    {
-        $whitelabel = Whitelabel::all();
-        $logistic = Logistic::all();
-        return view('faq', compact('whitelabel', 'logistic'));
-    }
-
     public function merchant()
     {
         $whitelabel = Whitelabel::all();

@@ -12,13 +12,14 @@ use App\Http\Controllers\Admin\AboutController;
 use App\Http\Controllers\Admin\BannerController;
 use App\Http\Controllers\Admin\ServiceController;
 use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Admin\DriveController;
 use App\Http\Controllers\Admin\ProfitController;
 use App\Http\Controllers\Admin\LayananController;
 use App\Http\Controllers\Admin\LogisticController;
 use App\Http\Controllers\Admin\MercbannerController;
 use App\Http\Controllers\Admin\MerchantController;
 use App\Http\Controllers\Admin\MerctutorController;
-
+use App\Http\Controllers\Admin\ShowcaseController;
 // route frontend
 use App\Http\Controllers\Admin\WhitelabelController;
 use App\Http\Controllers\BlogController as ControllersBlogController;
@@ -56,34 +57,25 @@ Route::prefix('admin')->group(function () {
     //Konfigurasi Header
     Route::resource('header', HeaderController::class);
 
-    //Konfigurasi About us
+    //Route Home Page
     Route::resource('about', AboutController::class);
-
-    //Konfigurasi Fasilitas
     Route::resource('banner', BannerController::class);
-
-    //Konfigurasi Service
     Route::resource('service', ServiceController::class);
-
-    //Konfigurasi Layanan
     Route::resource('category', CategoryController::class);
     Route::resource('category-page', CategoryController::class);
-
-    //Konfigurasi About 2
     Route::resource('profit', ProfitController::class);
-
-    //Konfigurasi Layanan
     Route::resource('layanan', LayananController::class);
     Route::resource('logistic', LogisticController::class);
+    Route::resource('mitra-drive', DriveController::class);
+    Route::resource('show-case', ShowcaseController::class);
 
     //Konfigurasi Mercbanner
     Route::resource('mercbanner', MercbannerController::class);
     Route::resource('merchant', MerchantController::class);
     Route::resource('merctutor', MerctutorController::class);
-
-    Route::resource('whitelabel', WhitelabelController::class);
 });
 
+Route::resource('whitelabel', WhitelabelController::class);
 //Update User Details
 Route::post('/update-profile/{id}', [App\Http\Controllers\PanelController::class, 'updateProfile'])->name('updateProfile');
 Route::post('/update-password/{id}', [App\Http\Controllers\PanelController::class, 'updatePassword'])->name('updatePassword');

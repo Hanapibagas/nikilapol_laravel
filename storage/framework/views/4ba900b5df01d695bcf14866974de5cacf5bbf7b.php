@@ -16,7 +16,7 @@
       background-size: 40%;
       position: relative;
     }
-
+/*
 
     .hero-bg {
       background-image: url(/image/<?php echo e($hero->gambar); ?>);
@@ -26,7 +26,7 @@
       height: 100vh;
       position: relative;
       z-index: 1;
-    }
+    } */
 
     /* End Banner CTA */
   </style>
@@ -50,7 +50,13 @@
     <!-- Content -->
     <!-- Hero -->
     <?php $__currentLoopData = $mercbanner; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $mercbanner): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-    <section class="hero-bg">
+    <section class="hero-bg" style=" background-image: url(/image/<?php echo e($hero->gambar); ?>);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 100vh;
+        position: relative;
+        z-index: 1;">
       <div class="container">
         <div class="hero row ">
           <div class="text-hero">

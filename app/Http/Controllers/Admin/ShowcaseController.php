@@ -4,9 +4,8 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\Mercbanner;
 
-class MercbannerController extends Controller
+class ShowcaseController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +14,7 @@ class MercbannerController extends Controller
      */
     public function index()
     {
-        $mercbanner = Mercbanner::all();
-        return view('panel.mercbanner.index', compact('mercbanner'));
+        //
     }
 
     /**
@@ -26,6 +24,7 @@ class MercbannerController extends Controller
      */
     public function create()
     {
+        //
     }
 
     /**
@@ -36,9 +35,8 @@ class MercbannerController extends Controller
      */
     public function store(Request $request)
     {
+        //
     }
-
-
 
     /**
      * Display the specified resource.
@@ -57,9 +55,9 @@ class MercbannerController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Mercbanner $mercbanner)
+    public function edit($id)
     {
-        return view('panel.mercbanner.edit', compact('mercbanner'));
+        //
     }
 
     /**
@@ -69,22 +67,9 @@ class MercbannerController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Mercbanner $mercbanner)
+    public function update(Request $request, $id)
     {
-        $input = $request->all();
-
-        if ($gambar = $request->file('gambar')) {
-            $destinationPath = 'image/';
-            $gambarName = $gambar->getClientOriginalName();
-            $gambar->move($destinationPath, $gambarName);
-            $input['gambar'] = $gambarName;
-        } else {
-            unset($input['gambar']);
-        }
-        $mercbanner->update($input);
-
-        //redirect to index
-        return redirect()->route('mercbanner.index')->with(['success' => 'Data Berhasil Disimpan!']);
+        //
     }
 
     /**

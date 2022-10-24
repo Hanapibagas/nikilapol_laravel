@@ -23,7 +23,7 @@
 }
 
 .hero-bg {
-    background-image: url(../../../assets/img/banner/Banner\ Mitra\ Driver.jpg);
+    background-image: url({{}});
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;

@@ -37,6 +37,7 @@ Route::get('driver', [HomeController::class, 'driver'])->name('driver');
 Route::get('layanan', [HomeController::class, 'layanan'])->name('layanan');
 Route::get('kontak', [HomeController::class, 'kontak'])->name('kontak');
 Route::get('faq', [HomeController::class, 'faq'])->name('faq');
+Route::get('detailfaq', [HomeController::class, 'detailfaq'])->name('detailfaq');
 Route::get('blog', [ControllersBlogController::class, 'blog'])->name('blog');
 Route::get('blog/{slug}', [BlogDetailsController::class, 'details'])->name('detail');
 
@@ -79,8 +80,10 @@ Route::prefix('admin')->group(function () {
     Route::resource('merchant', MerchantController::class);
     Route::resource('merctutor', MerctutorController::class);
 
-    Route::resource('whitelabel', WhitelabelController::class);
 });
+
+
+    Route::resource('whitelabel', WhitelabelController::class);
 
 //Update User Details
 Route::post('/update-profile/{id}', [App\Http\Controllers\PanelController::class, 'updateProfile'])->name('updateProfile');

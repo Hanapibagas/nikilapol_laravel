@@ -73,7 +73,7 @@
 }
 
 .atf-hero-area .atf-single-details h2 {
-    color: #31404a;
+    color: var(--warna-putih1);
     text-transform: capitalize;
     font-weight: 700;
     font-family: var(--font-dasar);
@@ -107,7 +107,7 @@
     font-size: 16px;
     line-height: 36px;
     font-weight: 400;
-    color: #31404a;
+    color: var(--warna-putih1);
     margin: 25px 0 40px;
     z-index: -1;
 }

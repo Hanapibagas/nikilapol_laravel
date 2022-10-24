@@ -2,10 +2,10 @@
 <html class="wide wow-animation" lang="en">
 
 <head>
-  @include('master.meta')
-  @include('master.head-css')
+  <?php echo $__env->make('master.meta', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+  <?php echo $__env->make('master.head-css', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
   <link rel="stylesheet" href="/home/css/konten_blog.css">
-  @include('master.root')
+  <?php echo $__env->make('master.root', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 
 <body>
   <div class="preloader">
@@ -18,7 +18,7 @@
   <div class="page">
 
     <!-- Header -->
-    @include('master.navbar')
+    <?php echo $__env->make('master.navbar', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
     <!-- End Header -->
 
     <!-- Content -->
@@ -31,17 +31,17 @@
     <header class="main-post-wrapper">
 
       <div class="slides">
-        @foreach ($blog as $artikel)
+        <?php $__currentLoopData = $blog; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $artikel): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
         <article class="main-post main-post--active">
           <div class="main-post__image">
-            <img src="/image/{{$artikel->gambar}}" alt="Nikila" />
+            <img src="/image/<?php echo e($artikel->gambar); ?>" alt="Nikila" />
           </div>
           <div class="main-post__content">
             <div class="main-post__tag-wrapper">
               <span class="main-post__tag">Berita Artikel</span>
             </div>
-            <h1 class="main-post__title">{{ $artikel->title }}</h1>
-            <p>{!! $artikel->description !!}</p>
+            <h1 class="main-post__title"><?php echo e($artikel->title); ?></h1>
+            <p><?php echo $artikel->description; ?></p>
             <a class="main-post__link" href="">
               <span class="main-post__link-text mt-2">Selengkapnya</span>
               <svg class="main-post__link-icon main-post__link-icon--arrow mt-2" width="37" height="12" viewBox="0 0 37 12" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -50,22 +50,22 @@
             </a>
           </div>
         </article>
-        @endforeach
+        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
       </div>
     </header>
     <div class="posts-wrapper hide-on-mobile">
-    @foreach ($blog->take(3) as $sub)
+    <?php $__currentLoopData = $blog->take(3); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $sub): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
       <article onclick="location.href='#'" style="cursor: pointer;" class="post post--active">
         <div class="progress-bar">
           <div class="progress-bar__fill"></div>
         </div>
         <header class="post__header">
           <span class="post__tag">Berita Artikel</span>
-          <p class="post__published">{{ $sub->created_at->format('d F Y') }}</p>
+          <p class="post__published"><?php echo e($sub->created_at->format('d F Y')); ?></p>
         </header>
-        <h2 class="post__title">{{ $sub->title }}</h2>
+        <h2 class="post__title"><?php echo e($sub->title); ?></h2>
       </article>
-    @endforeach
+    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
     </div>
   </div>
   <!-- End Blog -->
@@ -125,46 +125,47 @@
       <section class="c-section container-fluid pb-1 pb-md-2">
         <div class="container-konten-blog">
           <div class="o-row o-row--slider">
-          @foreach ($blog as $blog)
+          <?php $__currentLoopData = $blog; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $blog): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
             <!-- Card 1 -->
             <div class="o-row--slider__col-3 c-list-grid-item">
-              <a href="{{ route('detail', $blog->slug) }}">
+              <a href="<?php echo e(route('detail', $blog->slug)); ?>">
                 <div class="col-12">
                   <div class="c-blog-hl-wrapper--one lazy">
                     <picture class="lazy loaded">
-                      <img src="/image/{{ $blog->gambar }}" srcset="/image/{{ $blog->gambar }}" data-srcset="/image/{{ $blog->gambar }}" class="c-blog-hl-image-helper lazy loaded" alt="#" type="image/jpeg" data-was-processed="true">
+                      <img src="/image/<?php echo e($blog->gambar); ?>" srcset="/image/<?php echo e($blog->gambar); ?>" data-srcset="/image/<?php echo e($blog->gambar); ?>" class="c-blog-hl-image-helper lazy loaded" alt="#" type="image/jpeg" data-was-processed="true">
                     </picture>
                     <picture class="lazy loaded">
-                      <img src="/image/{{ $blog->gambar }}" data-src="/image/{{ $blog->gambar }}" srcset="/image/{{ $blog->gambar }}" data-srcset="/image/{{ $blog->gambar }}" class="c-blog-hl-image lazy loaded" alt="#" type="image/jpeg" data-was-processed="true">
+                      <img src="/image/<?php echo e($blog->gambar); ?>" data-src="/image/<?php echo e($blog->gambar); ?>" srcset="/image/<?php echo e($blog->gambar); ?>" data-srcset="/image/<?php echo e($blog->gambar); ?>" class="c-blog-hl-image lazy loaded" alt="#" type="image/jpeg" data-was-processed="true">
                     </picture>
                   </div>
                 </div>
-                <h3 class="col-12 c-blog-highlight__title-4">{{ $blog->title }}</h3>
+                <h3 class="col-12 c-blog-highlight__title-4"><?php echo e($blog->title); ?></h3>
                 <div class="mt-auto col-12 row justify-content-between">
-                  <span class="c-blog-highlight__date-large"> {{ $blog->category }} / {{ $blog->created_at }}</span>
+                  <span class="c-blog-highlight__date-large"> <?php echo e($blog->category); ?> / <?php echo e($blog->created_at); ?></span>
                 </div>
               </a>
             </div>
-            @endforeach
+            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
           </div>
         </div>
       </section>
     </main>
 
   <!-- Banner CTA -->
-  @include('master.cta')
+  <?php echo $__env->make('master.cta', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
   <!-- End Banner CTA -->
 
     <!-- Akhir Content -->
 
     <!-- Footer -->
-    @include('master.footer')
+    <?php echo $__env->make('master.footer', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
     <!-- Akhir Footer -->
     <div class="snackbars" id="form-output-global"></div>
-    @include('master.scripts')
+    <?php echo $__env->make('master.scripts', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
     <script src="/home/js/script.js"></script>
     <script src="/home/js/konten_blog.js"></script>
 
 </body>
 
 </html>
+<?php /**PATH C:\Users\saefu\OneDrive\Desktop\nikilapol_laravel\resources\views/blog.blade.php ENDPATH**/ ?>

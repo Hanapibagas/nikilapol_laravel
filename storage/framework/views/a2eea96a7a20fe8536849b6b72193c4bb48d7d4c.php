@@ -7,12 +7,12 @@
         <div id="sidebar-menu">
             <!-- Left Menu Start -->
             <ul class="metismenu list-unstyled" id="side-menu">
-                <li class="menu-title" key="t-menu">@lang('translation.Menu')</li>
+                <li class="menu-title" key="t-menu"><?php echo app('translator')->get('translation.Menu'); ?></li>
 
                 <li>
-                    <a href="{{ route('dashboard') }}/" class="waves-effect">
+                    <a href="<?php echo e(route('dashboard')); ?>/" class="waves-effect">
                         <i class="bx bx-home-circle"></i>
-                        <span key="t-dashboards">@lang('translation.Dashboards')</span>
+                        <span key="t-dashboards"><?php echo app('translator')->get('translation.Dashboards'); ?></span>
                     </a>
                 </li>
                 <li>
@@ -21,8 +21,8 @@
                         <span key="t-crypto">Artikel</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
-                        <li><a href="{{ route('blog.index') }}" key="t-wallet">Lihat Artiel</a></li>
-                        <li><a href="{{ route('blog.create') }}" key="t-buy">Tambah Artikel</a></li>
+                        <li><a href="<?php echo e(route('blog.index')); ?>" key="t-wallet">Lihat Artiel</a></li>
+                        <li><a href="<?php echo e(route('blog.create')); ?>" key="t-buy">Tambah Artikel</a></li>
                     </ul>
                 </li>
                 <li>
@@ -31,8 +31,8 @@
                         <span key="t-crypto">FAQ</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
-                        <li><a href="{{ route('faq.index') }}" key="t-wallet">Lihat FAQ</a></li>
-                        <li><a href="{{ route('faq.create') }}" key="t-buy">Tambah FAQ</a></li>
+                        <li><a href="<?php echo e(route('faq.index')); ?>" key="t-wallet">Lihat FAQ</a></li>
+                        <li><a href="<?php echo e(route('faq.create')); ?>" key="t-buy">Tambah FAQ</a></li>
                     </ul>
                 </li>
                 <li>
@@ -52,14 +52,12 @@
                         <span key="t-ecommerce">Homepage</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
-                        <li><a href="{{ route('header.index') }}" key="t-products">Setting Header</a></li>
-                        <li><a href="{{ route('about.index') }}" key="t-products">Setting About Us</a></li>
-                        <li><a href="{{ route('banner.index') }}" key="t-products">Setting Banner</a></li>
-                        <li><a href="{{ route('service.index') }}" key="t-products">Setting Services</a></li>
-                        <li><a href="{{ route('category-page.index') }}" key="t-products">Setting Kategori</a></li>
-                        <li><a href="{{ route('profit.index') }}" key="t-products">Setting Keuntungan</a></li>
-                        <li><a href="{{ route('mitra-drive.index') }}" key="t-products">Setting Mitra Drive</a></li>
-                        <li><a href="{{ route('show-case.index') }}" key="t-products">Setting Show Case</a></li>
+                        <li><a href="<?php echo e(route('header.index')); ?>" key="t-products">Setting Header</a></li>
+                        <li><a href="<?php echo e(route('about.index')); ?>" key="t-products">Setting About Us</a></li>
+                        <li><a href="<?php echo e(route('banner.index')); ?>" key="t-products">Setting Banner</a></li>
+                        <li><a href="<?php echo e(route('service.index')); ?>" key="t-products">Setting Services</a></li>
+                        <li><a href="<?php echo e(route('category-page.index')); ?>" key="t-products">Setting Kategori</a></li>
+                        <li><a href="<?php echo e(route('profit.index')); ?>" key="t-products">Setting Keuntungan</a></li>
                     </ul>
                 </li>
                 <li>
@@ -68,8 +66,8 @@
                         <span key="t-ecommerce">Layanan</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
-                        <li><a href="{{ route('layanan.index') }}" key="t-products">Setting Header</a></li>
-                        <li><a href="{{ route('category.index') }}" key="t-products">Setting Kategori</a></li>
+                        <li><a href="<?php echo e(route('layanan.index')); ?>" key="t-products">Setting Header</a></li>
+                        <li><a href="<?php echo e(route('category.index')); ?>" key="t-products">Setting Kategori</a></li>
                     </ul>
                 </li>
                 <li>
@@ -81,9 +79,9 @@
                         <li>
                             <a href="javascript: void(0);" class="has-arrow" key="t-level-1-2">Merchant</a>
                             <ul class="sub-menu" aria-expanded="true">
-                                <li><a href="{{ route('mercbanner.index') }}" key="t-level-2-2">Setting Banner</a></li>
-                                <li><a href="{{ route('merchant.index') }}" key="t-level-2-1">Setting Benefit</a></li>
-                                <li><a href="{{ route('merctutor.index') }}" key="t-level-2-2">Setting Tutorial</a></li>
+                                <li><a href="<?php echo e(route('mercbanner.index')); ?>" key="t-level-2-2">Setting Banner</a></li>
+                                <li><a href="<?php echo e(route('merchant.index')); ?>" key="t-level-2-1">Setting Benefit</a></li>
+                                <li><a href="<?php echo e(route('merctutor.index')); ?>" key="t-level-2-2">Setting Tutorial</a></li>
                             </ul>
                         </li>
                         <li>
@@ -102,7 +100,7 @@
                         <span key="t-ecommerce">FAQ Pages</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
-                        <li><a href="{{ route('logistic.index') }}" key="t-products">Setting Berdasarkan Layanan</a></li>
+                        <li><a href="<?php echo e(route('logistic.index')); ?>" key="t-products">Setting Berdasarkan Layanan</a></li>
                     </ul>
                 </li>
                 <li>
@@ -147,3 +145,4 @@
     </div>
 </div>
 <!-- Left Sidebar End -->
+<?php /**PATH C:\Users\saefu\OneDrive\Desktop\nikilapol_laravel\resources\views/layouts/sidebar.blade.php ENDPATH**/ ?>

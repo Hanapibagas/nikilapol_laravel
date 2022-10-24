@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Showcase;
 use Illuminate\Http\Request;
 
 class ShowcaseController extends Controller
@@ -14,7 +15,9 @@ class ShowcaseController extends Controller
      */
     public function index()
     {
-        //
+        $showcase = Showcase::all();
+
+        return view('panel.showcase.index', compact('showcase'));
     }
 
     /**
@@ -57,7 +60,8 @@ class ShowcaseController extends Controller
      */
     public function edit($id)
     {
-        //
+        $showcase = Showcase::findOrFail($id);
+        return view('panel.showcase.edit', compact('showcase'));
     }
 
     /**

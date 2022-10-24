@@ -13,11 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('showcases', function (Blueprint $table) {
+        Schema::create('showcase_galleris', function (Blueprint $table) {
             $table->id();
-            $table->string('brand');
-            $table->string('title');
-            $table->text('description');
+            $table->bigInteger('showcase_id');
+            $table->string('gambar');
             $table->timestamps();
         });
     }
@@ -29,6 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('showcases');
+        Schema::dropIfExists('showcase_galleris');
     }
 };

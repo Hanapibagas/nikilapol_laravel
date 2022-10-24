@@ -4,7 +4,7 @@
 
 <?php $__env->startComponent('components.breadcrumb'); ?>
 <?php $__env->slot('li_1'); ?> Konfigurasi <?php $__env->endSlot(); ?>
-<?php $__env->slot('title'); ?> Header <?php $__env->endSlot(); ?>
+<?php $__env->slot('title'); ?> Showcase <?php $__env->endSlot(); ?>
 <?php echo $__env->renderComponent(); ?>
 
 <div class="row">
@@ -19,29 +19,26 @@
                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                 </div>
                 <?php endif; ?>
-                <h4 class="card-title mb-4">List Header</h4>
+                <h4 class="card-title mb-4">List Showcase</h4>
                 <div class="table-responsive">
                     <table class="table align-middle table-nowrap mb-0">
                         <thead class="table-light">
                             <tr>
                                 <th class="align-middle">No</th>
-                                <th class="align-middle">Brand</th>
                                 <th class="align-middle">Title</th>
-                                <th class="align-middle">Deskripsi</th>
-                                <th class="align-middle">View Details</th>
+                                <th class="align-middle">Gambar</th>
+                                <th class="align-middle">Action</th>
                             </tr>
                         </thead>
                         <tbody>
                             <?php $__currentLoopData = $showcase; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $showcase): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                             <tr>
-                                <td><a href="javascript: void(0);" class="text-body fw-bold">1</a> </td>
-                                <td><?php echo e($showcase->brand); ?></td>
+                                <td><a href="javascript: void(0);" class="text-body fw-bold">1</a></td>
+                                <td><?php echo e($showcase->showcase_id->brand); ?></td>
                                 <td><?php echo e($showcase->title); ?></td>
                                 <td><?php echo e($showcase->description); ?></td>
                                 <td>
-                                    <!-- Button trigger modal -->
-                                    <a href="<?php echo e(route('show-case.galery.create', $showcase->id)); ?>" class="btn btn-primary waves-effect btn-label waves-light btn-sm"><i class="bx bx-edit label-icon"></i> Edit Header</a>
-                                    <a href="<?php echo e(route('show-case.edit', $showcase->id)); ?>" class="btn btn-primary waves-effect btn-label waves-light btn-sm"><i class="bx bx-edit label-icon"></i> Edit Header</a>
+                                    <a href="<?php echo e(route('show-case.edit', $showcase->id)); ?>" class="btn btn-primary waves-effect btn-label waves-light btn-sm"><i class="bx bx-edit label-icon"></i> Tambah Gambar</a>
                                 </td>
                             </tr>
                             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
@@ -60,4 +57,4 @@
 
 <?php $__env->stopSection(); ?>
 
-<?php echo $__env->make('layouts.master', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH D:\Project-web\Laravel\nikilapol_laravel\resources\views/panel/showcase/index.blade.php ENDPATH**/ ?>
+<?php echo $__env->make('layouts.master', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH D:\Project-web\Laravel\nikilapol_laravel\resources\views/panel/showcase/galleri.blade.php ENDPATH**/ ?>

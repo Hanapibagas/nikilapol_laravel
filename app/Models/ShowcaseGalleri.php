@@ -5,18 +5,17 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Showcase extends Model
+class ShowcaseGalleri extends Model
 {
     use HasFactory;
 
     protected $fillable = [
-        'brand',
-        'title',
-        'description'
+        'showcase_id',
+        'gambar'
     ];
 
-    public function galleri()
+    public function showcase_id()
     {
-        return $this->hasMany(ShowcaseGalleri::class, 'showcase_id', 'id');
+        return $this->belongsTo(Showcase::class, 'showcase_id', 'id');
     }
 }

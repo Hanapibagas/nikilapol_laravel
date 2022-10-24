@@ -4,9 +4,10 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Showcase;
+use App\Models\ShowcaseGalleri;
 use Illuminate\Http\Request;
 
-class ShowcaseController extends Controller
+class GalleriShowcase extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,10 +16,9 @@ class ShowcaseController extends Controller
      */
     public function index()
     {
-        $showcase = Showcase::all();
+        $items = ShowcaseGalleri::with(['showcase_id'])->get();
 
-        //render view with posts
-        return view('panel.showcase.index', compact('showcase'));
+        return view('panel.showcase.galeri.index', compact('items'));
     }
 
     /**
@@ -26,9 +26,9 @@ class ShowcaseController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Showcase $showcase)
     {
-        //
+        return view('panel.showcase.galeri.create', compact('showcase'));
     }
 
     /**
@@ -39,7 +39,12 @@ class ShowcaseController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $files = $request->all();
+
+        $data['gambar'] = $request->file('gambar')->store('assets/gallery', 'public');
+
+        ShowcaseGalleri::create($files);
+        return redirect()->route('show-case.galery.index');
     }
 
     /**
@@ -50,7 +55,9 @@ class ShowcaseController extends Controller
      */
     public function show($id)
     {
-        //
+        $galleri = ShowcaseGalleri::findOrFail($id);
+
+        return view('panel.showcase.galeri.create', compact('galleri'));
     }
 
     /**
@@ -61,8 +68,7 @@ class ShowcaseController extends Controller
      */
     public function edit($id)
     {
-        $showcase = Showcase::findOrFail($id);
-        return view('panel.showcase.edit', compact('showcase'));
+        //
     }
 
     /**
@@ -74,12 +80,7 @@ class ShowcaseController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $data = $request->all();
-
-        $item = Showcase::findOrFail($id);
-        $item->update($data);
-
-        return redirect()->route('show-case.index');
+        //
     }
 
     /**

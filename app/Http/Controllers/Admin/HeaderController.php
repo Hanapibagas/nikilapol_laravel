@@ -46,15 +46,25 @@ class HeaderController extends Controller
             'title'     => 'required|min:5',
             'description'     => 'required|min:5',
             'link'     => 'required|min:5',
-            'cover'     => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
+            // 'cover'     => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
         ]);
 
-        //upload image
-        $cover = request()->file('cover');
-        $coverName = time() . '.' . $cover->getClientOriginalExtension();
-        $coverPath = public_path('/images/');
-        $cover->move($coverPath, $coverName);
-
+        if ($cover = $request->file('cover')) {
+            $destinationPath = 'image/';
+            $coverName = date('Ymd') . "." . $cover->getClientOriginalExtension();
+            $cover->move($destinationPath, $coverName);
+            $input['cover'] = $coverName;
+        } else {
+            unset($input['cover']);
+        }
+        if ($aplikasi = $request->file('aplikasi')) {
+            $destinationPath = 'image/';
+            $aplikasiName = date('Ymd') . "." . $aplikasi->getClientOriginalExtension();
+            $aplikasi->move($destinationPath, $aplikasiName);
+            $input['aplikasi'] = $aplikasiName;
+        } else {
+            unset($input['aplikasi']);
+        }
 
         //create post
         Header::create([
@@ -62,10 +72,10 @@ class HeaderController extends Controller
             'description'     => $request->description,
             'link'     => $request->title,
             'cover' => "/images/" . $coverName,
+            'aplikasi' => "/images/" . $coverName,
         ]);
-
         //redirect to index
-        return redirect()->route('panel.header.index')->with(['success' => 'Data Berhasil Disimpan!']);
+        return redirect()->route('header.index')->with(['success' => 'Data Berhasil Disimpan!']);
     }
 
     /**

@@ -1,5 +1,3 @@
-
-
 <?php $__env->startSection('title'); ?> <?php echo app('translator')->get('translation.Dashboards'); ?> <?php $__env->stopSection(); ?>
 
 <?php $__env->startSection('content'); ?>
@@ -22,6 +20,9 @@
                 </div>
                 <?php endif; ?>
                 <h4 class="card-title mb-4">List Header</h4>
+                <div class="d-flex flex-wrap mb-2">
+                    <a href="<?php echo e(route('header.create')); ?>" type="button" class="btn btn-success waves-effect btn-label waves-light mb-2"><i class="bx bx-add-to-queue label-icon"></i>Tambah Data</a>
+                </div>
                 <div class="table-responsive">
                     <table class="table align-middle table-nowrap mb-0">
                         <thead class="table-light">
@@ -67,4 +68,5 @@
 <?php $__env->startSection('script'); ?>
 
 <?php $__env->stopSection(); ?>
+
 <?php echo $__env->make('layouts.master', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH D:\Project-web\Laravel\nikilapol_laravel\resources\views/panel/header/index.blade.php ENDPATH**/ ?>

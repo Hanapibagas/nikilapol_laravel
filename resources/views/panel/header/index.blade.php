@@ -21,6 +21,9 @@
                 </div>
                 @endif
                 <h4 class="card-title mb-4">List Header</h4>
+                <div class="d-flex flex-wrap mb-2">
+                    <a href="{{ route('header.create') }}" type="button" class="btn btn-success waves-effect btn-label waves-light mb-2"><i class="bx bx-add-to-queue label-icon"></i>Tambah Data</a>
+                </div>
                 <div class="table-responsive">
                     <table class="table align-middle table-nowrap mb-0">
                         <thead class="table-light">

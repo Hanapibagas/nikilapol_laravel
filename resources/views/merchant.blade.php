@@ -8,7 +8,7 @@
   @include('master.root')
   @foreach ($mercbanner as $hero)
   <style>
-    
+
     /* Banner CTA */
     #cta {
       padding: 50px 0;
@@ -16,8 +16,8 @@
       background-size: 40%;
       position: relative;
     }
+/*
 
-    
     .hero-bg {
       background-image: url(/image/{{$hero->gambar}});
       background-position: center;
@@ -26,8 +26,8 @@
       height: 100vh;
       position: relative;
       z-index: 1;
-    }
-    
+    } */
+
     /* End Banner CTA */
   </style>
   @endforeach
@@ -50,7 +50,13 @@
     <!-- Content -->
     <!-- Hero -->
     @foreach( $mercbanner as $mercbanner)
-    <section class="hero-bg">
+    <section class="hero-bg" style=" background-image: url(/image/{{$hero->gambar}});
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 100vh;
+        position: relative;
+        z-index: 1;">
       <div class="container">
         <div class="hero row ">
           <div class="text-hero">
@@ -89,8 +95,8 @@
 
     <!-- Tutor Pesen -->
     @foreach ( $merctutor as $merctutor )
-      
-    
+
+
     <div class="container">
       <h1 class="row text-center" style="font-family: 'Poppins'; font-size: 50px;">Cara pesan Delivery</h1>
       <div class="row">

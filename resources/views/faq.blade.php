@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html class="wide wow-animation" lang="en">
   <head>
-@include('master.meta')  
+@include('master.meta')
 @include('master.head-css')
 <link rel="stylesheet" href="/home/css/bantuan.css">
-@include('master.root')  
+@include('master.root')
 </head>
   <body>
     <div class="preloader">
@@ -22,20 +22,20 @@
 
 <!-- Content -->
 <main class="component-wrapper" style="background-color: var(--warna-dasar);" >
-    
+
     <section class="c-section container-fluid pt-4">
         <div class="container">
             <div class="col-12 mb-4 c-main-search__wrapper">
-                
-                
-    
+
+
+
         <picture>
             @foreach ($whitelabel as $bantuan)
             <img src="/image/{{ $bantuan->bantuan }}" class="lazy col-md-4 col-8 c-main-search__img mx-auto" alt="NikiLa" type="image/jpeg">
             @endforeach
         </picture>
-    
-    
+
+
             </div>
             <h1 class="c-heading__h1 u-text-align__center mb-1 mb-md-4 px-3 px-md-0 col-12" style="color: #fff;">Ada yang bisa kami bantu?</h1>
             <form class="col-12" method="GET" >
@@ -53,7 +53,7 @@
             </div>
         </div>
     </section>
-    
+
     <section class="c-section container-fluid c-top-faq">
         <div class="container">
             <h2 class="col-12 c-heading__h2 mb-3 mb-md-4 mb-lg-5">Masalah yang sering dialami</h2>
@@ -86,16 +86,17 @@
                 <a href="{{ route('detailfaq') }}" class="col-md-6 col-12 pr-md-2 mb-12px mb-md-3">
                     <div class="row col-12 c-top-faq__item--variant-2">
                         <div class="c-top-faq__question text-center">Bagaimana Cara Mendaftar Akun driver?</div>
+                @foreach ( $faqs as $faq )
+                <a href="./akun/blog/blog_akun.html" class="col-md-6 col-12 pr-md-2 mb-12px mb-md-3">
+                    <div class="row col-12 c-top-faq__item--variant-2">
+                        <div class="c-top-faq__question text-center">{{ $faq->title }}</div>
                     </div>
                 </a>
+                @endforeach
             </div>
         </div>
     </section>
-    
-    
-    
-    
-    
+
     <section class="container-fluid pb-2 pb-md-3">
         <div class="container">
             <div class="row mb-1 mb-md-2">
@@ -108,8 +109,6 @@
         </div>
         <div class="container u-container-float--right u-position--relative mx-auto mb-2 mb-md-3">
             <div class="row js-slider-both slider-no-gutter slider-list--hub u-full-width-mb" id="slider-category" data-slider-desktop="true,false,1,false,false,false,1" data-slider-mobile="true,false,1,false,false,false,1">
-            
-                
                 <div class="col-12"><div class="row">
                 @foreach ( $logistic as $logistic)
                     <div class="col-6 col-md-3 col-lg-2">
@@ -152,7 +151,7 @@
                                 </a>
                             </div>
                         </div>
-    
+
                          <div class="col-6 col-md-3 col-lg-2">
                             <div class="c-category__wrapper pr-3 pr-md-4">
                                 <a href="./akun/akun.html">
@@ -171,7 +170,7 @@
         </div>
     </section>
         </main>
-    
+
         <h5 class="c-heading__h1 u-text-align__center mb-1 mb-md-4 px-3 px-md-0 col-12" style="color: #212121; font-size: 20px;">Masih Bingung ? Cek kontak dibawah ini</h5>
        <div class="flex-container">
         <div class="flex-items">
@@ -189,8 +188,8 @@
             </a>
         </div>
     </div>
-        
-    
+
+
   <!-- Banner CTA -->
   @include('master.cta')
   <!-- End Banner CTA -->

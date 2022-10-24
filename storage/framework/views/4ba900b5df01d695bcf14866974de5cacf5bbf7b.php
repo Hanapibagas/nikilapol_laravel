@@ -8,7 +8,7 @@
   <?php echo $__env->make('master.root', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
   <?php $__currentLoopData = $mercbanner; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $hero): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
   <style>
-    
+
     /* Banner CTA */
     #cta {
       padding: 50px 0;
@@ -16,8 +16,8 @@
       background-size: 40%;
       position: relative;
     }
+/*
 
-    
     .hero-bg {
       background-image: url(/image/<?php echo e($hero->gambar); ?>);
       background-position: center;
@@ -26,8 +26,8 @@
       height: 100vh;
       position: relative;
       z-index: 1;
-    }
-    
+    } */
+
     /* End Banner CTA */
   </style>
   <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
@@ -50,7 +50,13 @@
     <!-- Content -->
     <!-- Hero -->
     <?php $__currentLoopData = $mercbanner; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $mercbanner): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-    <section class="hero-bg">
+    <section class="hero-bg" style=" background-image: url(/image/<?php echo e($hero->gambar); ?>);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 100vh;
+        position: relative;
+        z-index: 1;">
       <div class="container">
         <div class="hero row ">
           <div class="text-hero">
@@ -89,8 +95,8 @@
 
     <!-- Tutor Pesen -->
     <?php $__currentLoopData = $merctutor; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $merctutor): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-      
-    
+
+
     <div class="container">
       <h1 class="row text-center" style="font-family: 'Poppins'; font-size: 50px;">Cara pesan Delivery</h1>
       <div class="row">
@@ -181,4 +187,5 @@
     <script src="/home/js/script-merchant.js"></script>
 </body>
 
-</html><?php /**PATH D:\Project-web\Laravel\nikilapol_laravel\resources\views/merchant.blade.php ENDPATH**/ ?>
+</html>
+<?php /**PATH D:\Project-web\Laravel\nikilapol_laravel\resources\views/merchant.blade.php ENDPATH**/ ?>

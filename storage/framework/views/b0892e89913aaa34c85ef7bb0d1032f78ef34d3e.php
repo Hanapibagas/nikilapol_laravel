@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html class="wide wow-animation" lang="en">
   <head>
-<?php echo $__env->make('master.meta', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>  
+<?php echo $__env->make('master.meta', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 <?php echo $__env->make('master.head-css', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 <link rel="stylesheet" href="/home/css/bantuan.css">
-<?php echo $__env->make('master.root', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>  
+<?php echo $__env->make('master.root', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 </head>
   <body>
     <div class="preloader">
@@ -22,20 +22,20 @@
 
 <!-- Content -->
 <main class="component-wrapper" style="background-color: var(--warna-dasar);" >
-    
+
     <section class="c-section container-fluid pt-4">
         <div class="container">
             <div class="col-12 mb-4 c-main-search__wrapper">
-                
-                
-    
+
+
+
         <picture>
             <?php $__currentLoopData = $whitelabel; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $bantuan): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
             <img src="/image/<?php echo e($bantuan->bantuan); ?>" class="lazy col-md-4 col-8 c-main-search__img mx-auto" alt="NikiLa" type="image/jpeg">
             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
         </picture>
-    
-    
+
+
             </div>
             <h1 class="c-heading__h1 u-text-align__center mb-1 mb-md-4 px-3 px-md-0 col-12" style="color: #fff;">Ada yang bisa kami bantu?</h1>
             <form class="col-12" method="GET" >
@@ -53,55 +53,22 @@
             </div>
         </div>
     </section>
-    
+
     <section class="c-section container-fluid c-top-faq">
         <div class="container">
             <h2 class="col-12 c-heading__h2 mb-3 mb-md-4 mb-lg-5">Masalah yang sering dialami</h2>
             <div class="row">
+                <?php $__currentLoopData = $faqs; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $faq): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                 <a href="./akun/blog/blog_akun.html" class="col-md-6 col-12 pr-md-2 mb-12px mb-md-3">
                     <div class="row col-12 c-top-faq__item--variant-2">
-                        <img class="c-top-faq__service col-auto lazy" alt="niki anterin" src="/image/logo.png"/>
-                        <div class="c-top-faq__question text-center">Bagaimana Cara Mendaftar Akun User?</div>
+                        <div class="c-top-faq__question text-center"><?php echo e($faq->title); ?></div>
                     </div>
                 </a>
-                <a href="./akun/blog/blog_akun.html" class="col-md-6 col-12 pr-md-2 mb-12px mb-md-3">
-                    <div class="row col-12 c-top-faq__item--variant-2">
-                        <img class="c-top-faq__service col-auto lazy" alt="niki anterin" src="/image/logo.png"/>
-                        <div class="c-top-faq__question text-center">Mengapa saya tidak bisa mendaftar?</div>
-                    </div>
-                </a>
-                <a href="./akun/blog/blog_akun.html" class="col-md-6 col-12 pr-md-2 mb-12px mb-md-3">
-                    <div class="row col-12 c-top-faq__item--variant-2">
-                        <img class="c-top-faq__service col-auto lazy" alt="niki anterin" src="/image/logo.png"/>
-                        <div class="c-top-faq__question text-center">Apa syarat menjadi mitra driver?</div>
-                    </div>
-                </a>
-                <a href="./akun/blog/blog_akun.html" class="col-md-6 col-12 pr-md-2 mb-12px mb-md-3">
-                    <div class="row col-12 c-top-faq__item--variant-2">
-                        <img class="c-top-faq__service col-auto lazy" alt="niki anterin" src="/image/logo.png"/>
-                        <div class="c-top-faq__question text-center">Bagaimana saya menerima pengembalian dana?</div>
-                    </div>
-                </a>
-                <a href="./akun/blog/blog_akun.html" class="col-md-6 col-12 pr-md-2 mb-12px mb-md-3">
-                    <div class="row col-12 c-top-faq__item--variant-2">
-                        <img class="c-top-faq__service col-auto lazy" alt="niki anterin" src="/image/logo.png"/>
-                        <div class="c-top-faq__question text-center">Bagaimana cara menjadi mitra merchant?</div>
-                    </div>
-                </a>
-                <a href="./akun/blog/blog_akun.html" class="col-md-6 col-12 pr-md-2 mb-12px mb-md-3">
-                    <div class="row col-12 c-top-faq__item--variant-2">
-                        <img class="c-top-faq__service col-auto lazy" alt="niki anterin" src="/image/logo.png"/>
-                        <div class="c-top-faq__question text-center">Bagaimana Cara Mendaftar Akun driver?</div>
-                    </div>
-                </a>
+                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
             </div>
         </div>
     </section>
-    
-    
-    
-    
-    
+
     <section class="container-fluid pb-2 pb-md-3">
         <div class="container">
             <div class="row mb-1 mb-md-2">
@@ -114,8 +81,6 @@
         </div>
         <div class="container u-container-float--right u-position--relative mx-auto mb-2 mb-md-3">
             <div class="row js-slider-both slider-no-gutter slider-list--hub u-full-width-mb" id="slider-category" data-slider-desktop="true,false,1,false,false,false,1" data-slider-mobile="true,false,1,false,false,false,1">
-            
-                
                 <div class="col-12"><div class="row">
                 <?php $__currentLoopData = $logistic; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $logistic): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                     <div class="col-6 col-md-3 col-lg-2">
@@ -158,7 +123,7 @@
                                 </a>
                             </div>
                         </div>
-    
+
                          <div class="col-6 col-md-3 col-lg-2">
                             <div class="c-category__wrapper pr-3 pr-md-4">
                                 <a href="./akun/akun.html">
@@ -177,7 +142,7 @@
         </div>
     </section>
         </main>
-    
+
         <h5 class="c-heading__h1 u-text-align__center mb-1 mb-md-4 px-3 px-md-0 col-12" style="color: #212121; font-size: 20px;">Masih Bingung ? Cek kontak dibawah ini</h5>
        <div class="flex-container">
         <div class="flex-items">
@@ -195,8 +160,8 @@
             </a>
         </div>
     </div>
-        
-    
+
+
   <!-- Banner CTA -->
   <?php echo $__env->make('master.cta', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
   <!-- End Banner CTA -->
@@ -210,4 +175,5 @@
     <script src="/home/js/bantuan.js"></script>
     <script src="/home/js/script-bantuan.js"></script>
   </body>
-</html><?php /**PATH D:\Project-web\Laravel\nikilapol_laravel\resources\views/faq.blade.php ENDPATH**/ ?>
+</html>
+<?php /**PATH D:\Project-web\Laravel\nikilapol_laravel\resources\views/faq.blade.php ENDPATH**/ ?>

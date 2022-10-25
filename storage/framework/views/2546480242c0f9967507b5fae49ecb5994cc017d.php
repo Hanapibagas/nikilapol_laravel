@@ -55,9 +55,9 @@
                         <li><a href="<?php echo e(route('header.index')); ?>" key="t-products">Setting Header</a></li>
                         <li><a href="<?php echo e(route('about.index')); ?>" key="t-products">Setting About Us</a></li>
                         <li><a href="<?php echo e(route('banner.index')); ?>" key="t-products">Setting Banner</a></li>
+                        <li><a href="<?php echo e(route('profit.index')); ?>" key="t-products">Setting Keuntungan</a></li>
                         <li><a href="<?php echo e(route('service.index')); ?>" key="t-products">Setting Services</a></li>
                         <li><a href="<?php echo e(route('category-page.index')); ?>" key="t-products">Setting Kategori</a></li>
-                        <li><a href="<?php echo e(route('profit.index')); ?>" key="t-products">Setting Keuntungan</a></li>
                         <li><a href="<?php echo e(route('mitra-drive.index')); ?>" key="t-products">Setting Mitra Drive</a></li>
                         <li><a href="<?php echo e(route('show-case.index')); ?>" key="t-products">Setting Show Case</a></li>
                     </ul>
@@ -70,7 +70,6 @@
                     <ul class="sub-menu" aria-expanded="false">
                         <li><a href="<?php echo e(route('layanan.index')); ?>" key="t-products">Setting Header</a></li>
                         <li><a href="<?php echo e(route('category.index')); ?>" key="t-products">Setting Kategori</a></li>
-                        <li><a href="<?php echo e(route('logistic.index')); ?>" key="t-products">Setting Layanan</a></li>
                     </ul>
                 </li>
                 <li>
@@ -95,6 +94,15 @@
                                 <li><a href="javascript: void(0);" key="t-level-2-2">Setting Tutorial</a></li>
                             </ul>
                         </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="javascript: void(0);" class="has-arrow waves-effect">
+                        <i class="bx bx-copy-alt "></i>
+                        <span key="t-ecommerce">FAQ Pages</span>
+                    </a>
+                    <ul class="sub-menu" aria-expanded="false">
+                        <li><a href="<?php echo e(route('logistic.index')); ?>" key="t-products">Setting Berdasarkan Layanan</a></li>
                     </ul>
                 </li>
                 <li>

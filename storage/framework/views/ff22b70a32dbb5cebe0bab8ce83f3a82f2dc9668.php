@@ -213,6 +213,19 @@
   </section>
   <!-- End Showcae -->
 
+<section class="section section-md bg-default">
+      <div class="text-center wow fadeInUp pb-5">
+        <h6>Mitra</h6>
+        <h2 class="poppins">Gabung Bersama Kami</h2>
+      </div>
+      <div class="row col">
+      <iframe width="440 " height="350 " src="https://www.youtube.com/embed/TMeHs-lwdvM " title="YouTube video player " frameborder="0 " allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture " allowfullscreen></iframe>
+
+      </div>
+  </div>
+  </div>
+  </section>
+
   <section class="section section-md bg-default">
     <div class="text-center wow fadeInUp">
       <h6>Nikila Blog</h6>

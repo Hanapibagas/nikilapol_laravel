@@ -6,7 +6,7 @@
 
 <?php $__env->startComponent('components.breadcrumb'); ?>
 <?php $__env->slot('li_1'); ?> Konfigurasi <?php $__env->endSlot(); ?>
-<?php $__env->slot('title'); ?> Header <?php $__env->endSlot(); ?>
+<?php $__env->slot('title'); ?> Showcase <?php $__env->endSlot(); ?>
 <?php echo $__env->renderComponent(); ?>
 
 <div class="row">
@@ -21,38 +21,32 @@
                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                 </div>
                 <?php endif; ?>
-                <h4 class="card-title mb-4">List Header</h4>
-                <div class="d-flex flex-wrap mb-2">
-                    <a href="<?php echo e(route('header.create')); ?>" type="button" class="btn btn-success waves-effect btn-label waves-light mb-2"><i class="bx bx-add-to-queue label-icon"></i>Tambah Data</a>
-                </div>
+                <h4 class="card-title mb-4">List Showcase</h4>
                 <div class="table-responsive">
                     <table class="table align-middle table-nowrap mb-0">
                         <thead class="table-light">
                             <tr>
                                 <th class="align-middle">No</th>
-                                <th class="align-middle">Gambar</th>
-                                <th class="align-middle">Title Header</th>
+                                <th class="align-middle">Title</th>
                                 <th class="align-middle">Deskripsi</th>
-                                <th class="align-middle">Link</th>
+                                <th class="align-middle">Gambar</th>
                                 <th class="align-middle">View Details</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <?php $__currentLoopData = $header; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $header): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                            <?php $__currentLoopData = $showcase; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $showcase): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                             <tr>
                                 <td><a href="javascript: void(0);" class="text-body fw-bold">1</a> </td>
-                                <td style="width: 100px;"><img src="/image/<?php echo e($header->cover); ?>" alt="" class="avatar-md h-auto d-block rounded"></td>
-                                <td><?php echo e($header->title); ?></td>
+                                <td><?php echo e($showcase->title); ?></td>
                                 <td>
-                                <?php echo e($header->description); ?>
+                                    <?php echo e($showcase->description); ?>
 
                                 </td>
+                                <td style="width: 100px;"><img src="/image/<?php echo e($showcase->gambar); ?>" alt="" class="avatar-md h-auto d-block rounded"></td>
                                 <td>
-                                <a href="/public/image/<?php echo e($header->cover); ?>" target="_blank"><?php echo e($header->link); ?></a>
-                                </td>
                                 <td>
                                     <!-- Button trigger modal -->
-                                    <a href="<?php echo e(route('header.edit', $header->id)); ?>" class="btn btn-primary waves-effect btn-label waves-light btn-sm"><i class="bx bx-edit label-icon"></i> Edit Header</a>
+                                    <a href="<?php echo e(route('show-case.edit', $showcase->id)); ?>" class="btn btn-primary waves-effect btn-label waves-light btn-sm"><i class="bx bx-edit label-icon"></i> Edit Header</a>
                                 </td>
                             </tr>
                             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
@@ -71,4 +65,4 @@
 
 <?php $__env->stopSection(); ?>
 
-<?php echo $__env->make('layouts.master', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\Users\saefu\OneDrive\Desktop\nikilapol_laravel\resources\views/panel/header/index.blade.php ENDPATH**/ ?>
+<?php echo $__env->make('layouts.master', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\Users\saefu\OneDrive\Desktop\nikilapol_laravel\resources\views/panel/showcase/index.blade.php ENDPATH**/ ?>

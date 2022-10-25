@@ -167,16 +167,8 @@
       </div>
     </div>
 @endforeach
-    <section id="cta" class="mt-5">
-      <div class="container">
-        <div class="box-cta">
-          <div class="cta-text" data-aos="fade-right">Mau Gabung Jadi<br> Mitra Merchant ?<br> Yuk, Cek<br> Persyaratan Nya</div>
-          <a href="./syarat.html" class="btn btn-cta" title="Download NikiLa" data-aos="fade-down">
-            <i class="fa-solid fa-clipboard"></i> Cek Disini
-          </a>
-        </div>
-      </div>
-    </section><!-- Akhir Content -->
+
+@include('master.cta')
 
     <!-- Footer -->
     @include('master.footer')

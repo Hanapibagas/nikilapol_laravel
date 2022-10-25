@@ -140,6 +140,7 @@
                   </div>
                 </div>
                 <h3 class="col-12 c-blog-highlight__title-4"><?php echo e($blog->title); ?></h3>
+                <p><?php echo e($artikel->description); ?></p>
                 <div class="mt-auto col-12 row justify-content-between">
                   <span class="c-blog-highlight__date-large"> <?php echo e($blog->category); ?> / <?php echo e($blog->created_at); ?></span>
                 </div>

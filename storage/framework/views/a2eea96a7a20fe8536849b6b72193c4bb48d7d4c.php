@@ -55,11 +55,19 @@
                         <li><a href="<?php echo e(route('header.index')); ?>" key="t-products">Setting Header</a></li>
                         <li><a href="<?php echo e(route('about.index')); ?>" key="t-products">Setting About Us</a></li>
                         <li><a href="<?php echo e(route('banner.index')); ?>" key="t-products">Setting Banner</a></li>
+                        <li><a href="<?php echo e(route('profit.index')); ?>" key="t-products">Setting Keuntungan</a></li>
                         <li><a href="<?php echo e(route('service.index')); ?>" key="t-products">Setting Services</a></li>
                         <li><a href="<?php echo e(route('category-page.index')); ?>" key="t-products">Setting Kategori</a></li>
-                        <li><a href="<?php echo e(route('profit.index')); ?>" key="t-products">Setting Keuntungan</a></li>
-                        <li><a href="<?php echo e(route('mitra-drive.index')); ?>" key="t-products">Setting Mitra Drive</a></li>
-                        <li><a href="<?php echo e(route('show-case.index')); ?>" key="t-products">Setting Show Case</a></li>
+                        <li><a href="<?php echo e(route('mitra.index')); ?>" key="t-products">Setting Mitra Drive</a></li>
+                        <li>
+                            <li>
+                            <a href="javascript: void(0);" class="has-arrow" key="t-level-1-2">Setting Showcase</a>
+                            <ul class="sub-menu" aria-expanded="true">
+                                <li><a href="<?php echo e(route('mercbanner.index')); ?>" key="t-level-2-2">Index</a></li>
+                                <li><a href="<?php echo e(route('merchant.index')); ?>" key="t-level-2-1">Galery</a></li>
+                            </ul>
+                        </li>
+                        </li>
                     </ul>
                 </li>
                 <li>

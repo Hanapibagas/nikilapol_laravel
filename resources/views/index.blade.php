@@ -225,29 +225,6 @@
   </div>
   </section>
 
-  <section class="section section-md bg-default">
-    <div class="text-center wow fadeInUp">
-      <h6>Nikila Blog</h6>
-      <h2 style="font-family: var(--font-dasar);">Ikuti Blog Kami Dan Dapatkan Informasi Menarik</h2>
-    </div>
-    <div class="band wow fadeInUp">
-      @foreach ($blog as $artikel)
-      
-      <div @if ($loop->first) class="item-1" @endif class="item-2">
-        <a href="/html/bantuan/akun/blog/blog_akun.html" class="card-blog">
-          <!-- <div class="thumb" style="background-image: url(/home/assets/img/banner/bg-home\ Left.jpg);"></div> -->
-          <div class="thumb" style="background-image: url(/image/{{$artikel->gambar}});"></div>
-          <article>
-            <h1>{{ $artikel->title }}</h1>
-            <p>{{ $artikel->description }}</p>
-            <span>Baca Selengkapnya</span>
-          </article>
-        </a>
-      </div>
-      @endforeach
-    </div>
-    
-  </section>
   <!-- End Blog -->
   <!-- Banner CTA -->
   @include('master.cta')

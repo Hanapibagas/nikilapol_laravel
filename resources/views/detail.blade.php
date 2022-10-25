@@ -1,7 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-  @include('master.meta')
+<!-- Required meta tags -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<!-- Primary Meta Tags -->
+
+<meta name="title" content="{{ $items->title }}}">
+<meta name="description" content="{{ $items->description }}">
+<meta name="image" content="{{ $items->gambar }}" />
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://nikilapol.com">
+<meta property="og:title" content="{{ $items->title }}}">
+<meta property="og:description" content="{{ $items->description }}">
+<meta property="og:image" content="{{ $items->gambar }}">
+
+<!-- Twitter -->
+<meta property="twitter:card" content="{{ $items->title }}">
+<meta property="twitter:url" content="https://nikilapol.com">
+<meta property="twitter:title" content="{{ $items->title }}}">
+<meta property="twitter:description" content="{{ $items->description }}">
+<meta property="twitter:image" content="{{ $items->gambar }}">
+
   @include('master.head-css')
   <link rel="stylesheet" href="/home/html/blog/konten.css">
   @include('master.root')
@@ -60,10 +83,8 @@
 	<div class="col-12 col-md-2"></div>
 	<nav class="c-breadcrumbs col-12 col-md-8" aria-label="breadcrumb">
 		<ol class="c-breadcrumbs__ol mt-0">
-			<li class="c-breadcrumbs-item active" itemprop="itemListElement" itemscope
-				<span itemprop="name">Mitra /</span>
-				<span itemprop="name">08 Oktober 2022</span>
-				<meta itemprop="position" content="1" />
+			<li class="c-breadcrumbs-item active" itemprop="itemListElement" itemscope>
+				<span>{{ $items->category }} / {{ $items->created_at }}</span>
 			</li>
 		</ol>
 	</nav>

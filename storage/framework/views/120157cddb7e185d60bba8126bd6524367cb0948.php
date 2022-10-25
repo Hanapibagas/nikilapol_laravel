@@ -226,29 +226,6 @@
   </div>
   </section>
 
-  <section class="section section-md bg-default">
-    <div class="text-center wow fadeInUp">
-      <h6>Nikila Blog</h6>
-      <h2 style="font-family: var(--font-dasar);">Ikuti Blog Kami Dan Dapatkan Informasi Menarik</h2>
-    </div>
-    <div class="band wow fadeInUp">
-      <?php $__currentLoopData = $blog; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $artikel): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-      
-      <div <?php if($loop->first): ?> class="item-1" <?php endif; ?> class="item-2">
-        <a href="/html/bantuan/akun/blog/blog_akun.html" class="card-blog">
-          <!-- <div class="thumb" style="background-image: url(/home/assets/img/banner/bg-home\ Left.jpg);"></div> -->
-          <div class="thumb" style="background-image: url(/image/<?php echo e($artikel->gambar); ?>);"></div>
-          <article>
-            <h1><?php echo e($artikel->title); ?></h1>
-            <p><?php echo e($artikel->description); ?></p>
-            <span>Baca Selengkapnya</span>
-          </article>
-        </a>
-      </div>
-      <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-    </div>
-    
-  </section>
   <!-- End Blog -->
   <!-- Banner CTA -->
   <?php echo $__env->make('master.cta', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>

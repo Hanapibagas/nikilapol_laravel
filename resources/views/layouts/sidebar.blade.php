@@ -59,7 +59,15 @@
                         <li><a href="{{ route('service.index') }}" key="t-products">Setting Services</a></li>
                         <li><a href="{{ route('category-page.index') }}" key="t-products">Setting Kategori</a></li>
                         <li><a href="{{ route('mitra.index') }}" key="t-products">Setting Mitra Drive</a></li>
-                        <li><a href="{{ route('show-case.index') }}" key="t-products">Setting Show Case</a></li>
+                        <li>
+                            <li>
+                            <a href="javascript: void(0);" class="has-arrow" key="t-level-1-2">Setting Showcase</a>
+                            <ul class="sub-menu" aria-expanded="true">
+                                <li><a href="{{ route('mercbanner.index') }}" key="t-level-2-2">Index</a></li>
+                                <li><a href="{{ route('merchant.index') }}" key="t-level-2-1">Galery</a></li>
+                            </ul>
+                        </li>
+                        </li>
                     </ul>
                 </li>
                 <li>

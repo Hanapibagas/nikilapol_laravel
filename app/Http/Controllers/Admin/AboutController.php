@@ -27,7 +27,7 @@ class AboutController extends Controller
      */
     public function create()
     {
-        //
+        return view('panel.about.create');
     }
 
     /**
@@ -36,9 +36,29 @@ class AboutController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, About $about)
     {
-        //
+        $this->validate($request, [
+            'title'     => 'required|min:5',
+            'description'     => 'required|min:5',
+            'youtube'     => 'required|min:5',
+            'gambar'     => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
+        ]);
+
+        $data = $request->all();
+
+        if ($gambar = $request->file('gambar')) {
+            $destinationPath = 'image/';
+            $gambarName = date('Ymd') . "." . $gambar->getClientOriginalExtension();
+            $gambar->move($destinationPath, $gambarName);
+            $input['gambar'] = $gambarName;
+        } else {
+            unset($input['aplikasi']);
+        }
+
+        $about::create($data);
+
+        return redirect()->route('about.index');
     }
 
     /**
@@ -72,13 +92,6 @@ class AboutController extends Controller
      */
     public function update(Request $request, About $about)
     {
-        //validate form
-        $this->validate($request, [
-            'title'     => 'required|min:1',
-            'description'     => 'required|min:5',
-            // 'gambar'     => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-        ]);
-
         $input = $request->all();
 
         //check if image is uploaded

@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
+use App\Http\Controllers\Controller;
 use App\Models\Mitra;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
@@ -27,7 +28,7 @@ class MitraController extends Controller
      */
     public function create()
     {
-        //
+        return view('panel.mitra.create');
     }
 
     /**
@@ -36,9 +37,30 @@ class MitraController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, Mitra $mitra)
     {
-        //
+        //validate form
+        $this->validate($request, [
+            'title'     => 'required|min:5',
+            'description'     => 'required|min:5',
+            // 'gambar'     => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        ]);
+
+        $input = $request->all();
+
+        // Cek jika ada gambar yang diupload
+        if ($gambar = $request->file('gambar')) {
+            $destinationPath = 'image/';
+            $gambarName = Str::random(3) . "-" . date('Ymd') . "." . $gambar->getClientOriginalExtension();
+            $gambar->move($destinationPath, $gambarName);
+            $input['gambar'] = $gambarName;
+        } else {
+            unset($input['gambar']);
+        }
+
+        $mitra::create($input);
+
+        return redirect()->route('mitra.index');
     }
 
     /**
@@ -87,7 +109,6 @@ class MitraController extends Controller
             $gambarName = Str::random(3) . "-" . date('Ymd') . "." . $gambar->getClientOriginalExtension();
             $gambar->move($destinationPath, $gambarName);
             $input['gambar'] = $gambarName;
-
         } else {
             unset($input['gambar']);
         }
@@ -107,9 +128,8 @@ class MitraController extends Controller
     public function destroy(Mitra $mitra)
     {
         //Hapus file di public path
-        if (File::exists(public_path('image/'.$mitra->gambar))) {
-            File::delete(public_path('image/'.$mitra->gambar));
-
+        if (File::exists(public_path('image/' . $mitra->gambar))) {
+            File::delete(public_path('image/' . $mitra->gambar));
         }
 
         $mitra->delete();

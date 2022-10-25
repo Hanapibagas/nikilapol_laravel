@@ -28,7 +28,7 @@ class ProfitController extends Controller
      */
     public function create()
     {
-        //
+        return view('panel.profit.create');
     }
 
     /**
@@ -39,7 +39,11 @@ class ProfitController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+
+        Profit::create($data);
+
+        return redirect()->route('profit.index');
     }
 
     /**

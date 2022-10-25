@@ -72,10 +72,10 @@
 <script type="text/javascript">
     $('#gambar').change(function(){
     let reader = new FileReader();
-    reader.onload = (e) => { 
-      $('#gambar-view').attr('src', e.target.result); 
+    reader.onload = (e) => {
+      $('#gambar-view').attr('src', e.target.result);
     }
-    reader.readAsDataURL(this.files[0]); 
+    reader.readAsDataURL(this.files[0]);
    });
   </script>
     <!-- bootstrap datepicker -->

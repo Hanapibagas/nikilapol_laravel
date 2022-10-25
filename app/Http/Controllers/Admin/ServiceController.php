@@ -27,7 +27,7 @@ class ServiceController extends Controller
      */
     public function create()
     {
-        //
+        return view('panel.service.create');
     }
 
     /**
@@ -36,9 +36,28 @@ class ServiceController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, Service $service)
     {
-        //
+        $this->validate($request, [
+            'title'     => 'required|min:5',
+            'description' => 'required|min:5',
+            'gambar'     => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
+        ]);
+
+        $data = $request->all();
+
+        if ($gambar = $request->file('gambar')) {
+            $destinationPath = 'image/';
+            $gambarName = Str::random(3) . "-" . date('Ymd') . "." . $gambar->getClientOriginalExtension();
+            $gambar->move($destinationPath, $gambarName);
+            $input['gambar'] = $gambarName;
+        } else {
+            unset($input['gambar']);
+        }
+
+        $service::create($data);
+
+        return redirect()->route('service.index');
     }
 
     /**

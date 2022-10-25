@@ -1,124 +1,68 @@
 @extends('layouts.master')
 
-@section('title') @lang('translation.Add_Product') @endsection
+@section('title') @lang('translation.Create_New') @endsection
 
 @section('css')
-<!-- select2 css -->
-<link href="{{ URL::asset('/assets/libs/select2/select2.min.css') }}" rel="stylesheet" type="text/css" />
+    <!-- bootstrap datepicker -->
+    <link href="{{ URL::asset('/assets/libs/bootstrap-datepicker/bootstrap-datepicker.min.css') }}" rel="stylesheet">
 
-<!-- dropzone css -->
-<link href="{{ URL::asset('/assets/libs/dropzone/dropzone.min.css') }}" rel="stylesheet" type="text/css" />
+    <!-- dropzone css -->
+    <link href="{{ URL::asset('/assets/libs/dropzone/dropzone.min.css') }}" rel="stylesheet" type="text/css" />
 @endsection
 
 @section('content')
 
-@component('components.breadcrumb')
-@slot('li_1') Konfigurasi @endslot
-@slot('title') Konfigurasi Header @endslot
-@endcomponent
-
-<div class="row">
-    <div class="col-12">
-        <div class="card">
-            <div class="card-body">
-
-                <h4 class="card-title">Edit Informasi Header</h4>
-                <p class="card-title-desc">Silahkan edit informasi dibawah</p>
-
-                <form>
-                    <div class="row">
-                        <div class="col-sm-6">
-                            <div class="mb-3">
-                                <label for="title_header">Judul</label>
-                                <input id="title_header" name="title_header" type="text" class="form-control" placeholder="Judul Header">
-                            </div>
-                            <div class="mb-3">
-                                <label for="desc_header">Link Download</label>
-                                <input id="desc_header" name="desc_header" type="text" class="form-control" placeholder="Deskripsi Header">
-                            </div>
-                            <div class="mb-3">
-                                <label for="metadescription">Description</label>
-                                <textarea class="form-control" id="metadescription" rows="5" placeholder="Meta Description"></textarea>
+    @component('components.breadcrumb')
+        @slot('li_1') Konfigurasi @endslot
+        @slot('title') Konfigurasi service @endslot
+    @endcomponent
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title mb-4">Konfigurasi service</h4>
+                    <form action="{{ route('service.store') }}" method="POST" enctype="multipart/form-data">
+                        @csrf
+                        <div class="row mb-4">
+                            <label for="title" class="col-form-label col-lg-2">Title</label>
+                            <div class="col-lg-10">
+                                <input id="title" name="title" type="text" class="form-control"
+                                    placeholder="Enter Project Name...">
                             </div>
                         </div>
-                        <div class="col-sm-6">
-                            <div class="mb-3">
-                                <label for="metatitle">Meta title</label>
-                                <input id="metatitle" name="title_header" type="text" class="form-control" placeholder="Metatitle">
+                        <div class="row mb-4">
+                            <label for="description" class="col-form-label col-lg-2">Deskripsi</label>
+                            <div class="col-lg-10">
+                                <textarea id="description" name="description" type="text" class="form-control" style="height:100px;"
+                                    placeholder="Enter Project Name..."></textarea>
                             </div>
-                            <div class="mb-3">
-                                <label for="metakeywords">Meta Keywords</label>
-                                <input id="metakeywords" name="desc_header" type="text" class="form-control" placeholder="Meta Keywords">
+                        </div>
+                        <div class="row mb-4">
+                            <label for="gambar" class="col-form-label col-lg-2">Gambar</label>
+                            <div class="col-lg-5">
+                                <label for="gambar" class="form-label">Upload gambar baru</label>
+                                <input class="form-control" type="file" name="gambar" id="gambar">
                             </div>
-                            <div class="mb-3">
-                                <label for="metadescription">Meta Description</label>
-                                <textarea class="form-control" id="metadescription" rows="5" placeholder="Meta Description"></textarea>
+                            <div class="col-md-5 text-center">
+                            <img class="rounded me-2" alt="200x200" data-holder-rendered="true" width="200">
                             </div>
+                        </div>
+                        <div class="row justify-content-end">
+                        <div class="col-lg-10">
+                            <button type="submit" class="btn btn-primary">Update data</button>
                         </div>
                     </div>
-
-                    <div class="d-flex flex-wrap gap-2">
-                        <button type="submit" class="btn btn-primary waves-effect waves-light">Save Changes</button>
-                        <button type="button" class="btn btn-secondary waves-effect waves-light">Cancel</button>
-                    </div>
-                </form>
-
-            </div>
-        </div>
-
-        <div class="card">
-            <div class="card-body">
-                <h4 class="card-title mb-3">Gambar Header</h4>
-                <div class="row">
-                    <div class="col-6">
-                        <label for="metatitle">Ganti Cover</label>
-                        <form action="/" method="post" class="dropzone">
-                            <div class="fallback">
-                            <input name="file" type="file" multiple />
-                            </div>
-
-                        <div class="dz-message needsclick">
-                        <div class="mb-3">
-                            <i class="display-4 text-muted bx bxs-cloud-upload"></i>
-                        </div>
-
-                        <h4>Drop files here or click to upload.</h4>
-                        </div>
-                        </form>
-                    </div>
-                    <div class="col-6">
-                        <label for="metatitle">Ganti Aplikasi</label>
-                        <form action="/" method="post" class="dropzone">
-                            <div class="fallback">
-                            <input name="file" type="file" multiple />
-                            </div>
-
-                        <div class="dz-message needsclick">
-                        <div class="mb-3">
-                            <i class="display-4 text-muted bx bxs-cloud-upload"></i>
-                        </div>
-
-                        <h4>Drop files here or click to upload.</h4>
-                        </div>
-                        </form>
-                    </div>
+                    </form>
                 </div>
             </div>
-
-        </div> 
-        <!-- end card-->
+        </div>
     </div>
-</div>
-<!-- end row -->
+    <!-- end row -->
 
 @endsection
 @section('script')
-<!-- select 2 plugin -->
-<script src="{{ URL::asset('/assets/libs/select2/select2.min.js') }}"></script>
-
-<!-- dropzone plugin -->
-<script src="{{ URL::asset('/assets/libs/dropzone/dropzone.min.js') }}"></script>
-
-<!-- init js -->
-<script src="{{ URL::asset('/assets/js/pages/ecommerce-select2.init.js') }}"></script>
+    <!-- bootstrap datepicker -->
+    <script src="{{ URL::asset('/assets/libs/bootstrap-datepicker/bootstrap-datepicker.min.js') }}"></script>
+    <!-- dropzone plugin -->
+    <script src="{{ URL::asset('/assets/libs/dropzone/dropzone.min.js') }}"></script>
 @endsection

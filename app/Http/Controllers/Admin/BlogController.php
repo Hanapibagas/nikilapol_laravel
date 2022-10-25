@@ -65,7 +65,7 @@ class BlogController extends Controller
         $blog->create($input);
 
         //redirect to index
-        return redirect()->route('blog.index')->with(['success' => 'Data Berhasil Ditambah!']);
+        return redirect()->route('blog.index');
     }
     /**
      * Display the specified resource.

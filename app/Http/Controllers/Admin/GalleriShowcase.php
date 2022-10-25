@@ -16,9 +16,7 @@ class GalleriShowcase extends Controller
      */
     public function index()
     {
-        $items = ShowcaseGalleri::with(['showcase_id'])->get();
-
-        return view('panel.showcase.galeri.index', compact('items'));
+        //
     }
 
     /**
@@ -26,9 +24,9 @@ class GalleriShowcase extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create(Showcase $showcase)
+    public function create()
     {
-        return view('panel.showcase.galeri.create', compact('showcase'));
+        //
     }
 
     /**
@@ -39,12 +37,7 @@ class GalleriShowcase extends Controller
      */
     public function store(Request $request)
     {
-        $files = $request->all();
-
-        $data['gambar'] = $request->file('gambar')->store('assets/gallery', 'public');
-
-        ShowcaseGalleri::create($files);
-        return redirect()->route('show-case.galery.index');
+        //
     }
 
     /**
@@ -55,9 +48,7 @@ class GalleriShowcase extends Controller
      */
     public function show($id)
     {
-        $galleri = ShowcaseGalleri::findOrFail($id);
-
-        return view('panel.showcase.galeri.create', compact('galleri'));
+        //
     }
 
     /**

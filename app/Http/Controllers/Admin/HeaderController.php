@@ -39,7 +39,7 @@ class HeaderController extends Controller
      * @param Request $request
      * @return void
      */
-    public function store(Request $request)
+    public function store(Request $request, Header $header)
     {
         //validate form
         $this->validate($request, [
@@ -49,13 +49,13 @@ class HeaderController extends Controller
             // 'cover'     => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
         ]);
 
+        $input = $request->all();
+
         if ($cover = $request->file('cover')) {
             $destinationPath = 'image/';
             $coverName = date('Ymd') . "." . $cover->getClientOriginalExtension();
             $cover->move($destinationPath, $coverName);
             $input['cover'] = $coverName;
-        } else {
-            unset($input['cover']);
         }
         if ($aplikasi = $request->file('aplikasi')) {
             $destinationPath = 'image/';
@@ -67,15 +67,10 @@ class HeaderController extends Controller
         }
 
         //create post
-        Header::create([
-            'title'     => $request->title,
-            'description'     => $request->description,
-            'link'     => $request->title,
-            'cover' => "/images/" . $coverName,
-            'aplikasi' => "/images/" . $coverName,
-        ]);
+        $header::create($input);
+
         //redirect to index
-        return redirect()->route('header.index')->with(['success' => 'Data Berhasil Disimpan!']);
+        return redirect()->route('header.index');
     }
 
     /**

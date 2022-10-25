@@ -21,13 +21,14 @@ use App\Http\Controllers\Admin\MercbannerController;
 use App\Http\Controllers\Admin\MerchantController;
 use App\Http\Controllers\Admin\MerctutorController;
 use App\Http\Controllers\Admin\ShowcaseController;
+use App\Http\Controllers\Admin\MitraController;
+
 // route frontend
 use App\Http\Controllers\Admin\WhitelabelController;
 use App\Http\Controllers\BlogController as ControllersBlogController;
 use App\Http\Controllers\BlogDetailsController;
 use App\Http\Controllers\FaqController as ControllersFaqController;
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\MitraController;
 use App\Http\Controllers\PrivacyController;
 use App\Models\Merctutor;
 
@@ -69,7 +70,7 @@ Route::prefix('admin')->group(function () {
     Route::resource('profit', ProfitController::class);
     Route::resource('layanan', LayananController::class);
     Route::resource('logistic', LogisticController::class);
-    Route::resource('mitra-drive', DriveController::class);
+    Route::resource('mitra', MitraController::class);
     Route::resource('show-case', ShowcaseController::class);
     Route::resource('show-case.galery', GalleriShowcase::class);
 
@@ -77,11 +78,10 @@ Route::prefix('admin')->group(function () {
     Route::resource('mercbanner', MercbannerController::class);
     Route::resource('merchant', MerchantController::class);
     Route::resource('merctutor', MerctutorController::class);
-
 });
 
 
-    Route::resource('whitelabel', WhitelabelController::class);
+Route::resource('whitelabel', WhitelabelController::class);
 
 
 Route::resource('whitelabel', WhitelabelController::class);
@@ -95,4 +95,3 @@ Route::get('index/{locale}', [App\Http\Controllers\HomeController::class, 'lang'
 Route::put('panel/{$id}', [MerctutorController::class, 'update']);
 
 //Konfigurasi Layanan
-Route::resource('panel/mitra', MitraController::class);

@@ -1,5 +1,3 @@
-
-
 <?php $__env->startSection('title'); ?> <?php echo app('translator')->get('translation.Dashboards'); ?> <?php $__env->stopSection(); ?>
 
 <?php $__env->startSection('content'); ?>
@@ -14,6 +12,9 @@
         <div class="card">
             <div class="card-body">
                 <h4 class="card-title mb-4">List About Us</h4>
+                <div class="d-flex flex-wrap mb-2">
+                    <a href="<?php echo e(route('about.create')); ?>" type="button" class="btn btn-success waves-effect btn-label waves-light mb-2"><i class="bx bx-add-to-queue label-icon"></i>Tambah Data</a>
+                </div>
                 <div class="table-responsive">
                     <table class="table align-middle table-nowrap mb-0">
                         <thead class="table-light">
@@ -55,4 +56,5 @@
 <!-- dashboard init -->
 <script src="<?php echo e(URL::asset('/assets/js/pages/dashboard.init.js')); ?>"></script>
 <?php $__env->stopSection(); ?>
+
 <?php echo $__env->make('layouts.master', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH D:\Project-web\Laravel\nikilapol_laravel\resources\views/panel/about/index.blade.php ENDPATH**/ ?>

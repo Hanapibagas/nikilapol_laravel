@@ -14,7 +14,7 @@ class ShowcaseGalleri extends Model
         'gambar'
     ];
 
-    public function showcase_id()
+    public function showcase()
     {
         return $this->belongsTo(Showcase::class, 'showcase_id', 'id');
     }

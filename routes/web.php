@@ -13,7 +13,7 @@ use App\Http\Controllers\Admin\BannerController;
 use App\Http\Controllers\Admin\ServiceController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\DriveController;
-use App\Http\Controllers\Admin\GalleriShowcase;
+use App\Http\Controllers\Admin\GalleriShowcaseController;
 use App\Http\Controllers\Admin\ProfitController;
 use App\Http\Controllers\Admin\LayananController;
 use App\Http\Controllers\Admin\LogisticController;
@@ -73,7 +73,7 @@ Route::prefix('admin')->group(function () {
     Route::resource('logistic', LogisticController::class);
     Route::resource('mitra', MitraController::class);
     Route::resource('show-case', ShowcaseController::class);
-    Route::resource('galery', GalleriShowcase::class);
+    Route::resource('galery', GalleriShowcaseController::class);
 
     //Konfigurasi Mercbanner
     Route::resource('mercbanner', MercbannerController::class);

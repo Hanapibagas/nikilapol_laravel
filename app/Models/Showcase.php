@@ -15,7 +15,7 @@ class Showcase extends Model
         'description'
     ];
 
-    public function galleri()
+    public function galleries()
     {
         return $this->hasMany(ShowcaseGalleri::class, 'showcase_id', 'id');
     }

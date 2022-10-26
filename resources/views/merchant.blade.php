@@ -78,58 +78,28 @@
       <h1 class="row text-center" style="font-family: 'Poppins'; font-size: 50px;">Cara pesan Delivery</h1>
       <div class="row">
         <div class="col-md-6 text-tutor">
+            @php
+                $angka = 1
+            @endphp
+          @foreach ( $merctutor as $merctutor  )
           <div>
-            <button id="btn-1" class="btn btn-success aktif" type="button">
-              <div class="box-tutor">1. Buka Aplikasi Nikila.</div>
-              <div class="box-tutor">Lalu Pilih Salah Satu Kategori</div>
+            <button id="btn-{{ $angka++ }}" class="btn btn-success aktif" type="button">
+              <div class="box-tutor"> {{ $merctutor->title }}</div>
             </button>
           </div>
-          <div>
-            <button id="btn-2" class="btn btn-success" type="button">
-              <div>2. Tentukan Produk Yang</div>
-              <div>Ingin Dibeli</div>
-            </button>
-          </div>
-            <button id="btn-3" class="btn btn-success" type="button">
-              <div>3. Kalau Sudah, klik BELI.</div>
-            </button>
-             <div>
-            <button id="btn-4" class="btn btn-success" type="button">
-              <div class="box-tutor">4. Isi semua kolom yang</div>
-              <div class="box-tutor">Yang Sudah Tertera.</div>
-            </button>
-          </div>
-           <div>
-            <button id="btn-5" class="btn btn-success" type="button">
-              <div class="box-tutor">5. Pilih Alamat </div>
-              <div class="box-tutor">Tujuan Pengiriman Kamu</div>
-            </button>
-          </div>
-           <div>
-            <button id="btn-6" class="btn btn-success" type="button">
-              <div class="box-tutor">6. Pilih Jasa Pengiriman. </div>
-            </button>
-          </div>
-           <div>
-            <button id="btn-7" class="btn btn-success" type="button">
-              <div class="box-tutor">7. Pilih Metode Pembayaran</div>
-            </button>
-          </div>
-           <div>
-            <button id="btn-8" class="btn btn-success" type="button">
-              <div class="box-tutor">8. Pastikan Semua Data </div>
-              <div class="box-tutor">Yang Kamu Isi Sudah Benar</div>
-            </button>
-          </div>
-           <div>
-            <button id="btn-9" class="btn btn-success" type="button">
-              <div class="box-tutor">9. Tunggu Hingga Pesanan</div>
-              <div class="box-tutor">Kamu Sampai Ke Tujuan.</div>
-            </button>
-          </div>
+          @endforeach
+
           </div>
         <div class="col-md-6">
           <div id="carousel">
+            {{-- @php
+                $nilai = 1
+            @endphp
+            <div>
+                <img id="img-{{ $nilai++ }}" class="image-app" src="/image/{{$merctutor->gambar}}">
+                <p id="mobile" class="text-center text-1">1. Buka Aplikasi Nikila, Lalu Pilih Salah Satu Kategori</p>
+            </div> --}}
+
             <div>
               <img id="img-1" class="image-app" src="/home/assets/img/Order Delivery/1. Buka Aplikasi NikiLaPOL, lalu pilih salah satu kategori.png">
             <p id="mobile" class="text-center text-1">1. Buka Aplikasi Nikila, Lalu Pilih Salah Satu Kategori</p>
@@ -147,42 +117,56 @@
 
             <div>
               <img id="img-4" class="image-app" src="/home/assets/img/Order Delivery/4. Sekarang kamu hanya perlu isi semua data dengan benar.png">
-              <p id="mobile" class="text-center text-1">4. Isi Semua Kolom Yang Sudah Tersedia</p>  
+              <p id="mobile" class="text-center text-1">4. Isi Semua Kolom Yang Sudah Tersedia</p>
             </div>
 
            <div>
               <img id="img-5" class="image-app" src="/home/assets/img/Order Delivery/5. Pilih Alamat tempat kamu berada.png">
-              <p id="mobile" class="text-center text-1">5. Pilih Alamat Tujuan Pengiriman Kamu</p>  
+              <p id="mobile" class="text-center text-1">5. Pilih Alamat Tujuan Pengiriman Kamu</p>
             </div>
 
             <div>
               <img id="img-6" class="image-app" src="/home/assets/img/Order Delivery/6. Lalu pilih mau pake jasa pengiriman apa.png">
-              <p id="mobile" class="text-center text-1">6. Pilih Jasa Pengiriman</p>  
+              <p id="mobile" class="text-center text-1">6. Pilih Jasa Pengiriman</p>
             </div>
 
             <div>
               <img id="img-7" class="image-app" src="/home/assets/img/Order Delivery/7. Dan pilih metode pembayaran mau pake apa.png">
-              <p id="mobile" class="text-center text-1">7. Pilih Metode Pembayaran</p>  
+              <p id="mobile" class="text-center text-1">7. Pilih Metode Pembayaran</p>
             </div>
 
             <div>
               <img id="img-8" class="image-app" src="/home/assets/img/Order Delivery/8. Cek kembali apakah semuanya sudah benar, kalau sudah kamu tinggal klik CHECKOUT.png">
-              <p id="mobile" class="text-center text-1">8. Pastikan Semua Data Yang Kamu Isi Sudah Benar</p>  
+              <p id="mobile" class="text-center text-1">8. Pastikan Semua Data Yang Kamu Isi Sudah Benar</p>
             </div>
 
             <div>
               <img id="img-9" class="image-app" src="/home/assets/img/Order Delivery/9. Kamu tinggal tungguin barangnya sampai ke tempatmu.png">
-              <p id="mobile" class="text-center text-1">9. Tunggu Hingga Pesanan Kamu Sampai Ke Tujuan</p>  
+              <p id="mobile" class="text-center text-1">9. Tunggu Hingga Pesanan Kamu Sampai Ke Tujuan</p>
             </div>
           </div>
       </div>
     </div>
-      </div>  
+      </div>
 
 
+<<<<<<< HEAD
   <!-- Banner CTA -->
   @include('master.cta')
   <!-- End Banner CTA -->
+=======
+      <section id="cta">
+        <div class="container">
+            <div class="box-cta">
+                <div class="cta-text" data-aos="fade-right">Cintai Produk Lamongan.<br> Cintai Produk Daerah.<br> Yuk, download<br> sekarang juga</div>
+                <a href="" title="Download NikiLa" target="_blank" data-aos="fade-down">
+                <img src="/home/assets/img/googleplay.png" width="150px" alt="">
+                </a>
+            </div>
+        </div>
+    </section>
+{{-- @include('master.cta') --}}
+>>>>>>> 3e14d2de8d353b98008aeed92af42dfaaa97bbc0
 
     <!-- Footer -->
     @include('master.footer')

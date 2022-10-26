@@ -1,5 +1,3 @@
-
-
 <?php $__env->startSection('title'); ?> <?php echo app('translator')->get('translation.Create_New'); ?> <?php $__env->stopSection(); ?>
 
 <?php $__env->startSection('css'); ?>
@@ -57,10 +55,10 @@ unset($__errorArgs, $__bag); ?>
                             </div>
                         </div>
                         <div class="row mb-4">
-                            <label for="gambar1" class="col-form-label col-lg-2">Gambar</label>
+                            <label for="gambar" class="col-form-label col-lg-2">Gambar</label>
                             <div class="col-lg-5">
-                                <label for="gambar1" class="form-label">Upload gambar baru</label>
-                                <input class="form-control" type="file" name="gambar1" id="gambar">
+                                <label for="gambar" class="form-label">Upload gambar baru</label>
+                                <input class="form-control" type="file" name="gambar" id="gambar">
                                 <?php $__errorArgs = ['gambar'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
@@ -93,10 +91,10 @@ unset($__errorArgs, $__bag); ?>
 <script type="text/javascript">
     $('#gambar').change(function(){
     let reader = new FileReader();
-    reader.onload = (e) => { 
-      $('#gambar-view').attr('src', e.target.result); 
+    reader.onload = (e) => {
+      $('#gambar-view').attr('src', e.target.result);
     }
-    reader.readAsDataURL(this.files[0]); 
+    reader.readAsDataURL(this.files[0]);
    });
   </script>
     <!-- bootstrap datepicker -->

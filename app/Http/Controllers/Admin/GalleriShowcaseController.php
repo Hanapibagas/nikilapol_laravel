@@ -4,9 +4,10 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Showcase;
+use App\Models\ShowcaseGalleri;
 use Illuminate\Http\Request;
 
-class ShowcaseController extends Controller
+class GalleriShowcaseController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,10 +16,9 @@ class ShowcaseController extends Controller
      */
     public function index()
     {
-        $showcase = Showcase::all();
+        $galeri = ShowcaseGalleri::with(['showcase'])->get();
 
-        //render view with posts
-        return view('panel.showcase.index', compact('showcase'));
+        return view('panel.showcase.galeri.index', compact('galeri'));
     }
 
     /**
@@ -28,7 +28,9 @@ class ShowcaseController extends Controller
      */
     public function create()
     {
-        return view('panel.showcase.create');
+        $showcase = Showcase::all();
+
+        return view('panel.showcase.galeri.create', compact('showcase'));
     }
 
     /**
@@ -41,9 +43,11 @@ class ShowcaseController extends Controller
     {
         $data = $request->all();
 
-        Showcase::create($data);
+        $data['gambar'] = $request->file('gambar')->store('assets/gallery', 'public');
 
-        return redirect()->route('show-case.index');
+        ShowcaseGalleri::create($data);
+
+        return redirect()->route('galery.index');
     }
 
     /**
@@ -65,8 +69,9 @@ class ShowcaseController extends Controller
      */
     public function edit($id)
     {
-        $showcase = Showcase::findOrFail($id);
-        return view('panel.showcase.edit', compact('showcase'));
+        $items = ShowcaseGalleri::findOrFail($id);
+
+        return view('panel.showcase.galeri.edit', compact('items'));
     }
 
     /**
@@ -78,12 +83,19 @@ class ShowcaseController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $data = $request->all();
+        // $input = $request->all();
+        // if ($gambar = $request->file('gambar')) {
+        //     $destinationPath = 'image/';
+        //     $gambarName = Str::random(3) . "-" . date('Ymd') . "." . $gambar->getClientOriginalExtension();
+        //     $gambar->move($destinationPath, $gambarName);
+        //     $input['gambar'] = $gambarName;
+        // } else {
+        //     unset($input['aplikasi']);
+        // }
 
-        $item = Showcase::findOrFail($id);
-        $item->update($data);
+        // $show->update($input);
 
-        return redirect()->route('show-case.index');
+        // return redirect()->route('galery.index');
     }
 
     /**

@@ -1,5 +1,4 @@
     <!-- Banner CTA -->
-    @foreach ( $whitelabel as $cta)
     <section id="cta">
             <div class="container">
                 <div class="box-cta">
@@ -9,7 +8,5 @@
                     </a>
                 </div>
                 </div>
-            </div>
-        </section>
-        @endforeach
+    </section>
     <!-- End Banner CTA -->

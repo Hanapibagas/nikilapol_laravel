@@ -39,25 +39,21 @@ class MerctutorController extends Controller
      */
     public function store(Request $request, Merctutor $merctutor)
     {
-
-        // dd($request->except('_token'));
-        // Merctutor::create($request->except('_token'));
         $this->validate($request, [
             'title' => 'required',
             'description' => 'required',
-            'gambar1' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
+            'gambar' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
         ]);
 
         $input = $request->all();
 
-
-        if ($gambar1 = $request->file('gambar')) {
+        if ($gambar = $request->file('gambar')) {
             $destinationPath = 'image/';
-            $gambarName = Str::random(3) . "-" . date('Ymd') . "." . $gambar1->getClientOriginalExtension();
-            $gambar1->move($destinationPath, $gambarName);
-            $input['gambar1'] = $gambarName;
+            $gambarName = Str::random(3) . "-" . date('Ymd') . "." . $gambar->getClientOriginalExtension();
+            $gambar->move($destinationPath, $gambarName);
+            $input['gambar'] = $gambarName;
         } else {
-            unset($input['gambar1']);
+            unset($input['gambar']);
         }
         $merctutor->create($input);
 
@@ -98,21 +94,16 @@ class MerctutorController extends Controller
      */
     public function update(Request $request, Merctutor $merctutor)
     {
-        $this->validate($request, [
-            'title' => 'required|min:1',
-            'description' => 'required|min:5',
-            'gambar1' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
-        ]);
 
         $input = $request->all();
 
-        if ($gambar1 = $request->file('gambar')) {
+        if ($gambar = $request->file('gambar')) {
             $destinationPath = 'image/';
-            $gambarName = Str::random(3) . "-" . date('Ymd') . "." . $gambar1->getClientOriginalExtension();
-            $gambar1->move($destinationPath, $gambarName);
-            $input['gambar1'] = $gambarName;
+            $gambarName = Str::random(3) . "-" . date('Ymd') . "." . $gambar->getClientOriginalExtension();
+            $gambar->move($destinationPath, $gambarName);
+            $input['gambar'] = $gambarName;
         } else {
-            unset($input['gambar1']);
+            unset($input['gambar']);
         }
 
         $merctutor->update($input);

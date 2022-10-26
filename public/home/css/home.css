@@ -854,29 +854,6 @@ p {
     font-weight: 600;
     padding: 8px 20px;
     }
-    #cta::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 100px;
-    height: 200px;
-    background: url(../assets/img/Smatphone/smartphone2.png) 40px -230px no-repeat;
-    background-size: 400px;
-    }
-
-
-#cta::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    width: 200px;
-    height: 200px;
-    background: url(../assets/img/Smatphone/smartphone1.png) 0px 54px no-repeat;
-    background-size: 400px;
-    }
-
 }
 
 

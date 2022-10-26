@@ -294,12 +294,7 @@
     transition: transform 0.3s ease-out;
 }
 
-#cta {
-    padding: 50px 0;
-    background: var(--warna-kedua) url(../../../assets/img/Ilustrasi/Daftar.png)  no-repeat;
-    background-size: 40%;
-    position: relative;
-}
+
 
 
 #cta .box-cta {
@@ -329,12 +324,6 @@
 }
 
 @media screen and (max-width: 576px) {
-    #cta {
-    padding: 50px 0;
-    background: var(--warna-kedua) url(../../../assets/img/home-img.png) -110% no-repeat;
-    background-size: 20%;
-    position: relative;
-    }
 
     #cta .box-cta {
         width: auto;

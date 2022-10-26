@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html class="wide wow-animation" lang="en">
   <head>
-@include('master.meta')  
-@include('master.head-css')
+<?php echo $__env->make('master.meta', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>  
+<?php echo $__env->make('master.head-css', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 <link rel="stylesheet" href="/home/css/kontak.css">
-@include('master.root')
+<?php echo $__env->make('master.root', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
  
 </head>
   <body>
@@ -18,7 +18,7 @@
     <div class="page">
 
       <!-- Header -->
-      @include('master.navbar')
+      <?php echo $__env->make('master.navbar', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
       <!-- End Header -->
 
 <!-- Content -->
@@ -70,19 +70,19 @@
               </div>
             </form>
           </div>
-          @foreach ($whitelabel as $media)
+          <?php $__currentLoopData = $whitelabel; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $media): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
           <!-- Info -->
           <div class="contact info">
             <h3 style="font-family: var(--font-dasar);">  Selengkapnya Hubungi</h3>
             <div class="infoBox">
               <div class="">
                 <span><i class="fa-solid fa-location-dot"></i></span>
-                <p>{{ $media->alamat }}</p>
+                <p><?php echo e($media->alamat); ?></p>
               </div>
 
               <div class="">
                 <span><i class="fa-solid fa-envelope"></i></span>
-                <a href="mailto:{{ $media->email }}">{{ $media->email }}</a>
+                <a href="mailto:<?php echo e($media->email); ?>"><?php echo e($media->email); ?></a>
               </div>
 
               <div class="">
@@ -92,11 +92,11 @@
             
               <!-- sosmed -->
               <ul class="sosmed-kontak">
-                <li><a href="{{ $media->facebook }}"><i class="fa-brands fa-facebook"></i></a></li>
-                <li><a href="{{ $media->instagram }}"><i class="fa-brands fa-instagram"></i></a></li>
-                <li><a href="{{ $media->twitter }}"><i class="fa-brands fa-twitter"></i></a></li>
-                <li><a href="{{ $media->tiktok }}"><i class="fa-brands fa-tiktok"></i></a></li>
-                <li><a href="{{ $media->youtube }}"><i class="fa-brands fa-youtube"></i></a></li>
+                <li><a href="<?php echo e($media->facebook); ?>"><i class="fa-brands fa-facebook"></i></a></li>
+                <li><a href="<?php echo e($media->instagram); ?>"><i class="fa-brands fa-instagram"></i></a></li>
+                <li><a href="<?php echo e($media->twitter); ?>"><i class="fa-brands fa-twitter"></i></a></li>
+                <li><a href="<?php echo e($media->tiktok); ?>"><i class="fa-brands fa-tiktok"></i></a></li>
+                <li><a href="<?php echo e($media->youtube); ?>"><i class="fa-brands fa-youtube"></i></a></li>
               </ul>
 
             </div>
@@ -104,25 +104,25 @@
 
           <!-- Map -->
           <div class="contact map">
-            <iframe src="{{ $media->maps }}" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <iframe src="<?php echo e($media->maps); ?>" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
           </div>
 
         </div>
       </div>
-      @endforeach
+      <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
   
 
   <!-- Banner CTA -->
-  @include('master.cta')
+  <?php echo $__env->make('master.cta', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
   <!-- End Banner CTA -->
 <!-- Akhir Content -->
 
         <!-- Footer -->
-        @include('master.footer')
+        <?php echo $__env->make('master.footer', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
         <!-- Akhir Footer -->
     <div class="snackbars" id="form-output-global"></div>
-    @include('master.scripts')
+    <?php echo $__env->make('master.scripts', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
     <script src="/home/js/kontak.js"></script>
     <script src="/home/js/script-kontak.js"></script>
   </body>
-</html>
+</html><?php /**PATH C:\Users\saefu\OneDrive\Desktop\nikilapol_laravel\resources\views/kontak.blade.php ENDPATH**/ ?>

@@ -2,35 +2,12 @@
 <html class="wide wow-animation" lang="en">
 
 <head>
+  <title>Merchant</title>
   @include('master.meta')
   @include('master.head-css')
   <link rel="stylesheet" href="/home/css/merchant.css">
   @include('master.root')
-  @foreach ($mercbanner as $hero)
-  <style>
 
-    /* Banner CTA */
-    #cta {
-      padding: 50px 0;
-      background: var(--warna-dasar) url(/home/assets/img/Ilustrasi/Daftar.png) no-repeat;
-      background-size: 40%;
-      position: relative;
-    }
-
-    /*
-    .hero-bg {
-      background-image: url(/image/{{$hero->gambar}});
-      background-position: center;
-      background-repeat: no-repeat;
-      background-size: cover;
-      height: 100vh;
-      position: relative;
-      z-index: 1;
-    } */
-
-    /* End Banner CTA */
-  </style>
-  @endforeach
 </head>
 
 <body>
@@ -50,7 +27,7 @@
     <!-- Content -->
     <!-- Hero -->
     @foreach( $mercbanner as $mercbanner)
-    <section class="hero-bg" style=" background-image: url(/image/{{$hero->gambar}});
+    <section class="hero-bg" style=" background-image: url(/image/{{$mercbanner->gambar}});
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
@@ -203,7 +180,9 @@
       </div>  
 
 
-@include('master.cta')
+  <!-- Banner CTA -->
+  @include('master.cta')
+  <!-- End Banner CTA -->
 
     <!-- Footer -->
     @include('master.footer')

@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-  @include('master.meta')
-  @include('master.head-css')
+  <?php echo $__env->make('master.meta', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+  <?php echo $__env->make('master.head-css', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
   <style>
   </style>
 </head>
@@ -18,7 +18,7 @@
   <div class="page">
 
   <!-- Navbar -->
-  @include('master.navbar')
+  <?php echo $__env->make('master.navbar', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 
 
    <section class="contact-section">
@@ -97,11 +97,11 @@
 </section>
 
 
-@include('master.footer')
+<?php echo $__env->make('master.footer', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 
   <div class="snackbars" id="form-output-global"></div>
 
-  @include('master.scripts')
+  <?php echo $__env->make('master.scripts', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
   <script src="/home/js/script.js"></script>
 </body>
-</html>
+</html><?php /**PATH C:\Users\saefu\OneDrive\Desktop\nikilapol_laravel\resources\views//privacy.blade.php ENDPATH**/ ?>

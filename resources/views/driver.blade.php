@@ -1,30 +1,11 @@
 <!DOCTYPE html>
 <html class="wide wow-animation" lang="en">
   <head>
+    <title>Driver</title>
 @include('master.meta')  
 @include('master.head-css')
 <link rel="stylesheet" href="/home/css/driver.css">
 @include('master.root')
-<style>
-/* Banner CTA */
-#cta {
-    padding: 50px 0;
-    background: var(--warna-kedua) url(/home/assets/img/Ilustrasi/Daftar.png)  no-repeat;
-    background-size: 40%;
-    position: relative;
-}
-.hero-bg {
-    background-image: url(/home/assets/img/banner/Banner_Driver.jpg);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 100vh;
-    position: relative;
-    z-index: 1;
-}
-/* End Banner CTA */
-</style>   
-</head>
   <body>
     <div class="preloader">
       <div class="preloader-body">
@@ -147,10 +128,11 @@
 </section>
 
 <!-- Tutor Pesen -->
+<!-- Tutor Pesen -->
 <div class="container">
       <h1 class="row text-center" style="font-family: var(--font-dasar); font-size: 50px;">Cara pesan Niki Anterin</h1>
       <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-6 text-tutor">
           <div>
             <button id="btn-1" class="btn btn-success aktif" type="button">
               <div class="box-tutor">1. Buka Aplikasi Nikila.</div>
@@ -184,29 +166,41 @@
           </div>
           </div>
         <div class="col-md-6">
-          <div>
-            <img id="img-1" class="image-app" src="/home/assets/img/Order Anterin/1. Buka Aplikasi NikiLaPOL, lalu pilih NikiAnterin.png">
-            <img id="img-2" class="image-app" src="/home/assets/img/Order Anterin/2. Tentukan Lokasi Jemput.png">
-            <img id="img-3" class="image-app" src="/home/assets/img/Order Anterin/3. Lalu pilih lokasi tujuan kamu mau di anterin.png">
-            <img id="img-4" class="image-app" src="/home/assets/img/Order Anterin/4. Cek ulang pesanan, pilih metode pembayaran, lalu klik PESAN.png">
-            <img id="img-5" class="image-app" src="/home/assets/img/Order Anterin/5. Driver menuju titik jemput kamu.png">
-            <img id="img-6" class="image-app" src="/home/assets/img/Order Anterin/6. Sampainya driver, kamu akan di anterin ke lokasi tujuan yang sudah di pilih.png">
-          </div>
+          <div id="carousel">
+        <div>
+          <img id="img-1" class="image-app" src="/home/assets/img/Order Anterin/1. Buka Aplikasi NikiLaPOL, lalu pilih NikiAnterin.png">
+          
+          <p id="mobile" class="text-center text-1">1. Buka Aplikasi Nikila Lalu Pilih Niki Anterin</p>
+        </div>
+        <div>
+          <img id="img-2" class="image-app" src="/home/assets/img/Order Anterin/2. Tentukan Lokasi Jemput.png">
+           <p id="mobile" class="text-center text-1">2. Tentukan Lokasi Jemput</p>
+        </div>
+        <div> 
+          <img id="img-3" class="image-app" src="/home/assets/img/Order Anterin/3. Lalu pilih lokasi tujuan kamu mau di anterin.png">
+          <p id="mobile" class="text-center text-1">3. Pilih Lokasi yang kamu mau</p>
+        </div>
+        <div> 
+          <img id="img-4" class="image-app" src="/home/assets/img/Order Anterin/4. Cek ulang pesanan, pilih metode pembayaran, lalu klik PESAN.png">
+        <p id="mobile" class="text-center text-1">4. Cek Ulang Pemesanan Lalu Pilih Metode Pembayaran</p>
+        </div>
+        <div>
+          <img id="img-5" class="image-app" src="/home/assets/img/Order Anterin/5. Driver menuju titik jemput kamu.png">
+        
+          <p id="mobile" class="text-center text-1">5. Driver Menuju Tikik Jemput</p>
+        </div>
+        <div>
+          <img id="img-6" class="image-app" src="/home/assets/img/Order Anterin/6. Sampainya driver, kamu akan di anterin ke lokasi tujuan yang sudah di pilih.png">
+        <p id="mobile" class="text-center text-1">6. Sesampainya Driver, Kamu Diantar Sampai Tujuan</p>
+        </div>
+      </div>
       </div>
     </div>
       </div>  
-  
 
-      <section id="cta">
-            <div class="container">
-                <div class="box-cta">
-                    <div class="cta-text" data-aos="fade-right">Mau Gabung Jadi<br> Mitra Driver ?<br> Yuk, Cek<br> Persyaratan Nya</div>
-                    <a href="./syarat.html" class="btn btn-cta" title="Download NikiLa" target="_blank" data-aos="fade-down">
-                       <i class="fa-solid fa-clipboard"></i> Cek Disini
-                    </a>
-                </div>
-            </div>
-        </section><!-- Akhir Content -->
+      <!-- CTA -->
+      @include('master.cta')
+      <!-- END CTA -->
 
         <!-- Footer -->
         @include('master.footer')

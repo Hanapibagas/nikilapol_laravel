@@ -13,11 +13,11 @@
 
                                 </div>
                                 <div class="box-sosmed">
-                                    <a href="#" title="Facebook NikiLa" target="_blank"><i class="fab fa-facebook"></i></a>
-                                    <a href="https://www.instagram.com/nuku.id_of/" title="Instagram NikiLa" target="_blank"><i class="fab fa-instagram"></i></a>
-                                    <a href="https://twitter.com/NuKu_id" title="Twitter NikiLa" target="_blank"><i class="fab fa-twitter"></i></a>
-                                    <a href="#" title="Youtube NikiLa" target="_blank"><i class="fa-brands fa-youtube"></i></a>
-                                    <a href="https://www.tiktok.com/@nuku_id" title="TikTok NikiLa" target="_blank"><i class="fa-brands fa-tiktok"></i></a>
+                                    <a href="<?php echo e($footer->facebook); ?>" title="Facebook NikiLa" target="_blank"><i class="fab fa-facebook"></i></a>
+                                    <a href="<?php echo e($footer->instagram); ?>" title="Instagram NikiLa" target="_blank"><i class="fab fa-instagram"></i></a>
+                                    <a href="<?php echo e($footer->twitter); ?>" title="Twitter NikiLa" target="_blank"><i class="fab fa-twitter"></i></a>
+                                    <a href="<?php echo e($footer->youtube); ?>" title="Youtube NikiLa" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+                                    <a href="<?php echo e($footer->tiktok); ?>" title="TikTok NikiLa" target="_blank"><i class="fa-brands fa-tiktok"></i></a>
                                 </div>
                             </div>
                         </div>

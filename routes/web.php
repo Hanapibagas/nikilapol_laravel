@@ -46,6 +46,7 @@ Route::get('detailfaq', [HomeController::class, 'detailfaq'])->name('detailfaq')
 Route::get('faq', [ControllersFaqController::class, 'faq'])->name('faq');
 Route::get('blog', [ControllersBlogController::class, 'blog'])->name('blog');
 Route::get('blog/{slug}', [BlogDetailsController::class, 'details'])->name('detail');
+Route::get('privacy', [PrivacyController::class, 'index'])->name('privacies');
 
 
 Route::prefix('admin')->group(function () {
@@ -72,7 +73,7 @@ Route::prefix('admin')->group(function () {
     Route::resource('logistic', LogisticController::class);
     Route::resource('mitra', MitraController::class);
     Route::resource('show-case', ShowcaseController::class);
-    Route::resource('show-case.galery', GalleriShowcase::class);
+    Route::resource('galery', GalleriShowcase::class);
 
     //Konfigurasi Mercbanner
     Route::resource('mercbanner', MercbannerController::class);

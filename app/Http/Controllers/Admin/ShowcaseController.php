@@ -28,7 +28,7 @@ class ShowcaseController extends Controller
      */
     public function create()
     {
-        //
+        return view('panel.showcase.create');
     }
 
     /**
@@ -39,7 +39,11 @@ class ShowcaseController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+
+        Showcase::create($data);
+
+        return redirect()->route('show-case.index');
     }
 
     /**

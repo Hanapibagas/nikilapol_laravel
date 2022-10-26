@@ -22,13 +22,29 @@
                 <div class="card-body">
                     <h4 class="card-title mb-4">Konfigurasi Header</h4>
 
-                    <form action="" method="POST" enctype="multipart/form-data">
+                    <form action="{{ route('galery.store') }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         <div class="row mb-4">
-                            <label for="brand" class="col-form-label col-lg-2">Brand</label>
+                            <label for="showcase_id" class="col-form-label col-lg-2">Brand</label>
                             <div class="col-lg-10">
-                                <input id="brand" name="brand" type="text" class="form-control"
-                                    placeholder="Enter Project Name..." value="{{ $showcase->brand }}" >
+                                <select name="showcase_id" type="text" class="form-control">
+                                    <option value="">Pilih Show Case</option>
+                                    @foreach ( $showcase as $showcase )
+                                        <option value="{{ $showcase->id }}">
+                                            {{ $showcase->title }}
+                                        </option>
+                                    @endforeach
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row mb-4">
+                            <label for="gambar" class="col-form-label col-lg-2">Gambar</label>
+                            <div class="col-lg-5">
+                                <label for="gambar" class="form-label">Upload gambar baru</label>
+                                <input class="form-control" type="file" name="gambar" id="gambar">
+                            </div>
+                            <div class="col-md-5 text-center">
+                            <img class="rounded me-2" id="gambar-view" alt="200x200" src="/assets/images/preview.png" data-holder-rendered="true" width="200">
                             </div>
                         </div>
                         <div class="row justify-content-end">

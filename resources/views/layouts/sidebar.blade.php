@@ -63,8 +63,8 @@
                             <li>
                             <a href="javascript: void(0);" class="has-arrow" key="t-level-1-2">Setting Showcase</a>
                             <ul class="sub-menu" aria-expanded="true">
-                                <li><a href="{{ route('mercbanner.index') }}" key="t-level-2-2">Index</a></li>
-                                <li><a href="{{ route('merchant.index') }}" key="t-level-2-1">Galery</a></li>
+                                <li><a href="{{ route('show-case.index') }}" key="t-level-2-2">Index</a></li>
+                                <li><a href="{{ route('galery.index') }}" key="t-level-2-1">Galery</a></li>
                             </ul>
                         </li>
                         </li>

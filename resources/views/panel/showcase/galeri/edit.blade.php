@@ -14,30 +14,17 @@
 
     @component('components.breadcrumb')
         @slot('li_1') Konfigurasi @endslot
-        @slot('title') Konfigurasi mercbanner @endslot
+        @slot('title') Konfigurasi Header @endslot
     @endcomponent
     <div class="row">
         <div class="col-lg-12">
             <div class="card">
                 <div class="card-body">
-                    <h4 class="card-title mb-4">Konfigurasi mercbanner</h4>
-                    <form action="{{ route('merctutor.update', $merctutor->id) }}" method="POST" enctype="multipart/form-data">
+                    <h4 class="card-title mb-4">Konfigurasi Header</h4>
+
+                    <form action="{{ route('galery.update', $items->id) }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         @method('PUT')
-                        <div class="row mb-4">
-                            <label for="title" class="col-form-label col-lg-2">Title</label>
-                            <div class="col-lg-10">
-                                <input id="title" name="title" type="text" class="form-control"
-                                    placeholder="Enter Title..." value="{{ $merctutor->title }}" >
-                            </div>
-                        </div>
-                        <div class="row mb-4">
-                            <label for="description" class="col-form-label col-lg-2">Description</label>
-                            <div class="col-lg-10">
-                                <input id="description" name="description" type="text" class="form-control"
-                                    placeholder="Enter description..." value="{{ $merctutor->description }}" >
-                            </div>
-                        </div>
                         <div class="row mb-4">
                             <label for="gambar" class="col-form-label col-lg-2">Gambar</label>
                             <div class="col-lg-5">
@@ -45,7 +32,7 @@
                                 <input class="form-control" type="file" name="gambar" id="gambar">
                             </div>
                             <div class="col-md-5 text-center">
-                            <img class="rounded me-2" alt="200x200" src="/image/{{$merctutor->gambar1}}" data-holder-rendered="true" width="200">
+                            <img class="rounded me-2" id="gambar-view" alt="200x200" src="/image/{{$items->gambar}}" data-holder-rendered="true" width="200">
                             </div>
                         </div>
                         <div class="row justify-content-end">

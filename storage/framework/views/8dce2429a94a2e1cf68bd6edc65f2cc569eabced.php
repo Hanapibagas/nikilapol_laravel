@@ -30,44 +30,15 @@
 
     <header class="main-post-wrapper">
 
-      <div class="slides">
-        <?php $__currentLoopData = $blog; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $artikel): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-        <article class="main-post main-post--active">
-          <div class="main-post__image">
-            <img src="/image/<?php echo e($artikel->gambar); ?>" alt="Nikila" />
-          </div>
-          <div class="main-post__content">
-            <div class="main-post__tag-wrapper">
-              <span class="main-post__tag">Berita Artikel</span>
-            </div>
-            <h1 class="main-post__title"><?php echo e($artikel->title); ?></h1>
-            <p><?php echo $artikel->description; ?></p>
-            <a class="main-post__link" href="#">
-              <span class="main-post__link-text mt-2">Selengkapnya</span>
-              <svg class="main-post__link-icon main-post__link-icon--arrow mt-2" width="37" height="12" viewBox="0 0 37 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M0 6H36.0001M36.0001 6L31.0001 1M36.0001 6L31.0001 11" stroke="white" />
-              </svg>
-            </a>
-          </div>
-        </article>
-        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-      </div>
-    </header>
-    <div class="posts-wrapper hide-on-mobile">
-    <?php $__currentLoopData = $blog->take(3); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $sub): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-      <article onclick="location.href='#' " style="cursor: pointer;" class="post post--active">
-        <div class="progress-bar">
-          <div class="progress-bar__fill"></div>
-        </div>
-        <header class="post__header">
-          <span class="post__tag">Berita Artikel</span>
-          <p class="post__published"><?php echo e($sub->created_at->format('d F Y')); ?></p>
-        </header>
-        <h2 class="post__title"><?php echo e($sub->title); ?></h2>
-      </article>
-    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+      <section class="c-section container-fluid mb-0">
+    <div class="container">
+        <h1 class="c-heading__h1 pt-md-4 pt-3 mb-1">
+            Apa yang terbaru ?</h1>
+        <p class="c-heading__p pb-md-4 pb-3">
+            Berita Baru Dan Seru Untuk Dibaca
+        </p>
     </div>
-  </div>
+</section>
   <!-- End Blog -->
 
 
@@ -79,7 +50,7 @@
           <div class="container">
             <form action="/blog/search/" method="GET">
               <div class="row c-filter-box p-0">
-                <div class="col-12 col-md-3 mb-1 mb-md-0 pr-0 pr-md-2">
+                <!-- <div class="col-12 col-md-3 mb-1 mb-md-0 pr-0 pr-md-2">
                   <label class="c-filter-box__label mb-2 u-hide--mobile">Kategori</label>
                   <div class="c-select">
                     <input type="hidden" value="#" name="service" id="val-service" />
@@ -105,7 +76,7 @@
                       </ul>
                     </div>
                   </div>
-                </div>
+                </div> -->
                 <div class="col-12 col-lg-6 align-self-end">
                   <div class="c-search">
                     <input type="text" placeholder="Cari Blog...." class="c-search__field" name="q" autocomplete="off" value="" maxlength="100" />
@@ -132,10 +103,10 @@
                 <div class="col-12">
                   <div class="c-blog-hl-wrapper--one lazy">
                     <picture class="lazy loaded">
-                      <img src="/image/<?php echo e($blog->gambar); ?>" srcset="/image/<?php echo e($blog->gambar); ?>" data-srcset="/image/<?php echo e($blog->gambar); ?>" class="c-blog-hl-image-helper lazy loaded" alt="#" type="image/jpeg" data-was-processed="true">
+                      <img src="/image/<?php echo e($blog->gambar); ?>" srcset="/image/<?php echo e($blog->gambar); ?>" data-srcset="/image/<?php echo e($blog->gambar); ?>" class="c-blog-hl-image-helper lazy loaded" type="image/jpeg" data-was-processed="true" alt="<?php echo e($blog->title); ?>">
                     </picture>
                     <picture class="lazy loaded">
-                      <img src="/image/<?php echo e($blog->gambar); ?>" data-src="/image/<?php echo e($blog->gambar); ?>" srcset="/image/<?php echo e($blog->gambar); ?>" data-srcset="/image/<?php echo e($blog->gambar); ?>" class="c-blog-hl-image lazy loaded" alt="#" type="image/jpeg" data-was-processed="true">
+                      <img src="/image/<?php echo e($blog->gambar); ?>" data-src="/image/<?php echo e($blog->gambar); ?>" srcset="/image/<?php echo e($blog->gambar); ?>" data-srcset="/image/<?php echo e($blog->gambar); ?>" class="c-blog-hl-image lazy loaded" type="image/jpeg" data-was-processed="true" alt="<?php echo e($blog->title); ?>">
                     </picture>
                   </div>
                 </div>

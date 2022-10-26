@@ -7,7 +7,7 @@ use App\Models\Showcase;
 use App\Models\ShowcaseGalleri;
 use Illuminate\Http\Request;
 
-class GalleriShowcase extends Controller
+class GalleriShowcaseController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,7 +16,9 @@ class GalleriShowcase extends Controller
      */
     public function index()
     {
-        //
+        $galeri = ShowcaseGalleri::with(['showcase'])->get();
+
+        return view('panel.showcase.galeri.index', compact('galeri'));
     }
 
     /**
@@ -26,7 +28,9 @@ class GalleriShowcase extends Controller
      */
     public function create()
     {
-        //
+        $showcase = Showcase::all();
+
+        return view('panel.showcase.galeri.create', compact('showcase'));
     }
 
     /**
@@ -37,7 +41,13 @@ class GalleriShowcase extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+
+        $data['gambar'] = $request->file('gambar')->store('assets/gallery', 'public');
+
+        ShowcaseGalleri::create($data);
+
+        return redirect()->route('galery.index');
     }
 
     /**
@@ -59,7 +69,9 @@ class GalleriShowcase extends Controller
      */
     public function edit($id)
     {
-        //
+        $items = ShowcaseGalleri::findOrFail($id);
+
+        return view('panel.showcase.galeri.edit', compact('items'));
     }
 
     /**
@@ -71,7 +83,19 @@ class GalleriShowcase extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        // $input = $request->all();
+        // if ($gambar = $request->file('gambar')) {
+        //     $destinationPath = 'image/';
+        //     $gambarName = Str::random(3) . "-" . date('Ymd') . "." . $gambar->getClientOriginalExtension();
+        //     $gambar->move($destinationPath, $gambarName);
+        //     $input['gambar'] = $gambarName;
+        // } else {
+        //     unset($input['aplikasi']);
+        // }
+
+        // $show->update($input);
+
+        // return redirect()->route('galery.index');
     }
 
     /**

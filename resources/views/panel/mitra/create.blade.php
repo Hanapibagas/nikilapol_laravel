@@ -14,7 +14,7 @@
 
     @component('components.breadcrumb')
         @slot('li_1') Konfigurasi @endslot
-        @slot('title') Tambah mitra @endslot
+        @slot('title') mitra @endslot
     @endcomponent
     <div class="row">
         <div class="col-lg-12">

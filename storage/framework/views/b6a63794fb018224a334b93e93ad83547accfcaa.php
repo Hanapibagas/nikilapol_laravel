@@ -16,4 +16,5 @@
         </div>
     </div>
 </div>
-<!-- end page title --><?php /**PATH D:\Project-web\Laravel\nikilapol_laravel\resources\views/components/breadcrumb.blade.php ENDPATH**/ ?>
+<!-- end page title -->
+<?php /**PATH D:\Project-web\Laravel\nikilapol_laravel\resources\views/components/breadcrumb.blade.php ENDPATH**/ ?>

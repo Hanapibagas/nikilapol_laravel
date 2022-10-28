@@ -14,7 +14,7 @@
 
     @component('components.breadcrumb')
         @slot('li_1') Konfigurasi @endslot
-        @slot('title') Konfigurasi banner @endslot
+        @slot('title') banner @endslot
     @endcomponent
     <div class="row">
         <div class="col-lg-12">

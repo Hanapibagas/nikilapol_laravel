@@ -9,7 +9,7 @@
 
 @component('components.breadcrumb')
 @slot('li_1') Konfigurasi @endslot
-@slot('title') mercbanner @endslot
+@slot('title') merchant @endslot
 @endcomponent
 
 <div class="row">
@@ -23,9 +23,9 @@
                         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                     </div>
                 @endif
-                <h4 class="card-title mb-2">List mercbanner</h4>
+                <h4 class="card-title mb-2">List banner</h4>
                 <div class="d-flex flex-wrap mb-2">
-                    <!-- <a href="{{ route('mercbanner.create') }}" type="button" class="btn btn-success waves-effect btn-label waves-light mb-2"><i class="bx bx-add-to-queue label-icon"></i>Tambah Data</a> -->
+                    <a href="{{ route('mercbanner.create') }}" type="button" class="btn btn-success waves-effect btn-label waves-light mb-2"><i class="bx bx-add-to-queue label-icon"></i>Tambah Data</a>
                 </div>
                 <div class="table-responsive">
                     <table class="table align-middle table-nowrap mb-0">
@@ -33,6 +33,7 @@
                             <tr>
                                 <th class="align-middle">No</th>
                                 <th class="align-middle">Title</th>
+                                <th class="align-middle">Deskripsi</th>
                                 <th class="align-middle">Gambar</th>
                                 <th class="align-middle">Action</th>
                             </tr>
@@ -43,6 +44,7 @@
                             <tr>
                                 <td><a href="javascript: void(0);" class="text-body fw-bold">{{ $no++ }}</a> </td>
                                 <td>{{ $mercbanner->title }}</td>
+                                <td>{{ $mercbanner->description }}</td>
                                 <td><img src="/image/{{$mercbanner->gambar}}" class="rounded me-2" data-holder-rendered="true" width="50"></td>
                                 <td>
                                     <form action="{{ route('mercbanner.destroy',$mercbanner->id) }}" method="POST">

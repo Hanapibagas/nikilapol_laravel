@@ -6,7 +6,7 @@
 
 @component('components.breadcrumb')
 @slot('li_1') Konfigurasi @endslot
-@slot('title') Layanan @endslot
+@slot('title') Artikel @endslot
 @endcomponent
 
 <div class="row">
@@ -38,7 +38,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @php $no=1; @endphp 
+                            @php $no=1; @endphp
                             @foreach($blog as $blog)
                             <tr>
                                 <td><a href="javascript: void(0);" class="text-body fw-bold">{{ $no++ }}</a> </td>

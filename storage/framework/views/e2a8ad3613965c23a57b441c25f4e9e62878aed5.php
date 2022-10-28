@@ -1,5 +1,3 @@
-
-
 <?php $__env->startSection('title'); ?> <?php echo app('translator')->get('translation.Create_New'); ?> <?php $__env->stopSection(); ?>
 
 <?php $__env->startSection('css'); ?>
@@ -14,13 +12,13 @@
 
     <?php $__env->startComponent('components.breadcrumb'); ?>
         <?php $__env->slot('li_1'); ?> Konfigurasi <?php $__env->endSlot(); ?>
-        <?php $__env->slot('title'); ?> Tambah Category <?php $__env->endSlot(); ?>
+        <?php $__env->slot('title'); ?> Layanan <?php $__env->endSlot(); ?>
     <?php echo $__env->renderComponent(); ?>
     <div class="row">
         <div class="col-lg-12">
             <div class="card">
                 <div class="card-body">
-                    <h4 class="card-title mb-4">Tambah Category</h4>
+                    <h4 class="card-title mb-4">Tambah Kategori</h4>
                     <form action="<?php echo e(route('category.store')); ?>" method="POST" enctype="multipart/form-data">
                         <?php echo csrf_field(); ?>
                         <div class="row mb-4">
@@ -70,16 +68,16 @@
 <?php $__env->startSection('script'); ?>
 <script type="text/javascript">
     $('#gambar').change(function(){
-           
+
     let reader = new FileReader();
 
-    reader.onload = (e) => { 
+    reader.onload = (e) => {
 
-      $('#gambar-view').attr('src', e.target.result); 
+      $('#gambar-view').attr('src', e.target.result);
     }
 
-    reader.readAsDataURL(this.files[0]); 
-  
+    reader.readAsDataURL(this.files[0]);
+
    });
   </script>
     <!-- bootstrap datepicker -->

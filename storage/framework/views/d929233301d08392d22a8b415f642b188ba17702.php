@@ -1,5 +1,3 @@
-
-
 <?php $__env->startSection('title'); ?> <?php echo app('translator')->get('translation.Create_New'); ?> <?php $__env->stopSection(); ?>
 
 <?php $__env->startSection('css'); ?>
@@ -14,13 +12,13 @@
 
     <?php $__env->startComponent('components.breadcrumb'); ?>
         <?php $__env->slot('li_1'); ?> Konfigurasi <?php $__env->endSlot(); ?>
-        <?php $__env->slot('title'); ?> Konfigurasi mercbanner <?php $__env->endSlot(); ?>
+        <?php $__env->slot('title'); ?> merchant <?php $__env->endSlot(); ?>
     <?php echo $__env->renderComponent(); ?>
     <div class="row">
         <div class="col-lg-12">
             <div class="card">
                 <div class="card-body">
-                    <h4 class="card-title mb-4">Konfigurasi mercbanner</h4>
+                    <h4 class="card-title mb-4">Konfigurasi banner</h4>
                     <form action="<?php echo e(route('mercbanner.update', $mercbanner->id)); ?>" method="POST" enctype="multipart/form-data">
                         <?php echo csrf_field(); ?>
                         <?php echo method_field('PUT'); ?>

@@ -14,7 +14,7 @@
 
     @component('components.breadcrumb')
         @slot('li_1') Konfigurasi @endslot
-        @slot('title') Tambah banner @endslot
+        @slot('title') banner @endslot
     @endcomponent
     <div class="row">
         <div class="col-lg-12">
@@ -72,10 +72,10 @@
 <script type="text/javascript">
     $('#gambar').change(function(){
     let reader = new FileReader();
-    reader.onload = (e) => { 
-      $('#gambar-view').attr('src', e.target.result); 
+    reader.onload = (e) => {
+      $('#gambar-view').attr('src', e.target.result);
     }
-    reader.readAsDataURL(this.files[0]); 
+    reader.readAsDataURL(this.files[0]);
    });
   </script>
     <!-- bootstrap datepicker -->

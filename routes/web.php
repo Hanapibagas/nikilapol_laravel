@@ -12,7 +12,9 @@ use App\Http\Controllers\Admin\AboutController;
 use App\Http\Controllers\Admin\BannerController;
 use App\Http\Controllers\Admin\ServiceController;
 use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Admin\DriveBannerController;
 use App\Http\Controllers\Admin\DriveController;
+use App\Http\Controllers\Admin\DrivTutorialController;
 use App\Http\Controllers\Admin\GalleriShowcaseController;
 use App\Http\Controllers\Admin\ProfitController;
 use App\Http\Controllers\Admin\LayananController;
@@ -74,10 +76,13 @@ Route::prefix('admin')->group(function () {
     Route::resource('show-case', ShowcaseController::class);
     Route::resource('galery', GalleriShowcaseController::class);
 
-    //Konfigurasi Mercbanner
+    //Konfigurasi mitra
     Route::resource('mercbanner', MercbannerController::class);
     Route::resource('merchant', MerchantController::class);
     Route::resource('merctutor', MerctutorController::class);
+    Route::resource('driver-banner', DriveController::class);
+    Route::resource('driver-benefit', DriveBannerController::class);
+    Route::resource('driver-tutorial', DrivTutorialController::class);
 });
 
 

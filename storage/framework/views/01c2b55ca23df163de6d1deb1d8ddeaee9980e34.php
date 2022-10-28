@@ -1,5 +1,3 @@
-
-
 <?php $__env->startSection('title'); ?> <?php echo app('translator')->get('translation.Create_New'); ?> <?php $__env->stopSection(); ?>
 
 <?php $__env->startSection('css'); ?>
@@ -14,7 +12,7 @@
 
     <?php $__env->startComponent('components.breadcrumb'); ?>
         <?php $__env->slot('li_1'); ?> Konfigurasi <?php $__env->endSlot(); ?>
-        <?php $__env->slot('title'); ?> Konfigurasi merchant <?php $__env->endSlot(); ?>
+        <?php $__env->slot('title'); ?> merchant <?php $__env->endSlot(); ?>
     <?php echo $__env->renderComponent(); ?>
     <div class="row">
         <div class="col-lg-12">

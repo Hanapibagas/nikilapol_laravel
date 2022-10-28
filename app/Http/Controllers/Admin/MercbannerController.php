@@ -26,6 +26,7 @@ class MercbannerController extends Controller
      */
     public function create()
     {
+        return view('panel.mercbanner.create');
     }
 
     /**
@@ -34,8 +35,22 @@ class MercbannerController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, Mercbanner $mercbanner)
     {
+        $input = $request->all();
+
+        if ($gambar = $request->file('gambar')) {
+            $destinationPath = 'image/';
+            $gambarName = $gambar->getClientOriginalName();
+            $gambar->move($destinationPath, $gambarName);
+            $input['gambar'] = $gambarName;
+        } else {
+            unset($input['gambar']);
+        }
+
+        $mercbanner->create($input);
+
+        return redirect()->route('mercbanner.index')->with(['Sukses menambahkan data']);
     }
 
 

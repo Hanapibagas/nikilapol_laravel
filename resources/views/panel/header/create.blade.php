@@ -14,7 +14,7 @@
 
     @component('components.breadcrumb')
         @slot('li_1') Konfigurasi @endslot
-        @slot('title') Konfigurasi Header @endslot
+        @slot('title') Header @endslot
     @endcomponent
     <div class="row">
         <div class="col-lg-12">

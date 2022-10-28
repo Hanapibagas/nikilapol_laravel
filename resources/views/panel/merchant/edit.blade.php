@@ -14,7 +14,7 @@
 
     @component('components.breadcrumb')
         @slot('li_1') Konfigurasi @endslot
-        @slot('title') Konfigurasi merchant @endslot
+        @slot('title') merchant @endslot
     @endcomponent
     <div class="row">
         <div class="col-lg-12">

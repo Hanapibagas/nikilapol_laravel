@@ -5,6 +5,7 @@ $("#img-5").hide();
 $("#img-6").hide();
 $("#btn-1").on("click", function () {
     $("#btn-1").addClass("aktif");
+    $("p").remove();
     $("#btn-2").removeClass("aktif");
     $("#btn-3").removeClass("aktif");
     $("#btn-4").removeClass("aktif");
@@ -92,3 +93,25 @@ $("#btn-6").on("click", function () {
     $("#img-5").hide("slide");
     $("#img-1").hide("slide");
 });
+
+function mediaQuery(x) {
+    if (x.matches) {
+        // If media query matches
+        $("#img-1").show("slide");
+        $("#img-2").show("slide");
+        $("#img-3").show("slide");
+        $("#img-4").show("slide");
+        $("#img-5").show("slide");
+        $("#img-6").show("slide");
+        const ele = document.querySelector("#carousel");
+        ele.classList.add("owl-carousel");
+        ele.classList.add("owl-1");
+    } else {
+    }
+}
+
+var x = window.matchMedia("(max-width: 575.98px)");
+const ininya = document.querySelector("#carousel");
+
+mediaQuery(x); // Call listener function at run time
+x.addListener(mediaQuery); // Attach listener function on state changes

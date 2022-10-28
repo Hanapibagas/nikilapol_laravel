@@ -251,12 +251,6 @@
     margin: 20px 0 0 20px;
 }
 
-#cta {
-    padding: 50px 0;
-    background: var(--warna-kedua) url(../../../assets/img/Ilustrasi/Daftar\ Driver.png) no-repeat;
-    background-size: 40%;
-    position: relative;
-}
 
 
 #cta .box-cta {
@@ -286,12 +280,7 @@
 }
 
 @media screen and (max-width: 576px) {
-    #cta {
-        padding: 50px 0;
-        background: var(--warna-kedua) url(../../../assets/img/home-img.png) -110% no-repeat;
-        background-size: 20%;
-        position: relative;
-    }
+
 
     #cta .box-cta {
         width: auto;
@@ -343,10 +332,7 @@
 #btn-3,
 #btn-4,
 #btn-5,
-#btn-6, 
-#btn-7,
-#btn-8, 
-#btn-9 {
+#btn-6 {
     border-radius: 10px;
     text-align: left;
     width: 300px;
@@ -354,27 +340,27 @@
     margin-bottom: 20px;
 }
 
-.aktif {
+.aktif{
     background: var(--warna-kedua);
     color: #FFF;
 }
 
-#mobile {
+#mobile{
     display: none;
 }
 
-.text-1 {
+.text-1{
     font-family: var(--font-dasar);
     font-size: 18px;
     font-weight: 400;
 }
 
-@media (max-width: 575.98px) {
-    .text-tutor {
+@media (max-width: 575.98px){
+    .text-tutor{
         display: none;
     }
 
-    #mobile {
+    #mobile{
         display: block;
     }
 }

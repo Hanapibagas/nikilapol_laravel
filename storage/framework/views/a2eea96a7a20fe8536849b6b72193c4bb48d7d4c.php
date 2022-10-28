@@ -63,8 +63,8 @@
                             <li>
                             <a href="javascript: void(0);" class="has-arrow" key="t-level-1-2">Setting Showcase</a>
                             <ul class="sub-menu" aria-expanded="true">
-                                <li><a href="<?php echo e(route('mercbanner.index')); ?>" key="t-level-2-2">Index</a></li>
-                                <li><a href="<?php echo e(route('merchant.index')); ?>" key="t-level-2-1">Galery</a></li>
+                                <li><a href="<?php echo e(route('show-case.index')); ?>" key="t-level-2-2">Index</a></li>
+                                <li><a href="<?php echo e(route('galery.index')); ?>" key="t-level-2-1">Galery</a></li>
                             </ul>
                         </li>
                         </li>

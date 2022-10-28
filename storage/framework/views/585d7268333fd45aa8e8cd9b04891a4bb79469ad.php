@@ -2,35 +2,12 @@
 <html class="wide wow-animation" lang="en">
 
 <head>
+  <title>Merchant</title>
   <?php echo $__env->make('master.meta', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
   <?php echo $__env->make('master.head-css', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
   <link rel="stylesheet" href="/home/css/merchant.css">
   <?php echo $__env->make('master.root', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
-  <?php $__currentLoopData = $mercbanner; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $hero): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-  <style>
 
-    /* Banner CTA */
-    #cta {
-      padding: 50px 0;
-      background: var(--warna-dasar) url(/home/assets/img/Ilustrasi/Daftar.png) no-repeat;
-      background-size: 40%;
-      position: relative;
-    }
-/*
-
-    .hero-bg {
-      background-image: url(/image/<?php echo e($hero->gambar); ?>);
-      background-position: center;
-      background-repeat: no-repeat;
-      background-size: cover;
-      height: 100vh;
-      position: relative;
-      z-index: 1;
-    } */
-
-    /* End Banner CTA */
-  </style>
-  <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 </head>
 
 <body>
@@ -50,7 +27,7 @@
     <!-- Content -->
     <!-- Hero -->
     <?php $__currentLoopData = $mercbanner; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $mercbanner): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-    <section class="hero-bg" style=" background-image: url(/image/<?php echo e($hero->gambar); ?>);
+    <section class="hero-bg" style=" background-image: url(/image/<?php echo e($mercbanner->gambar); ?>);
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
@@ -203,7 +180,9 @@
       </div>  
 
 
-<?php echo $__env->make('master.cta', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+  <!-- Banner CTA -->
+  <?php echo $__env->make('master.cta', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+  <!-- End Banner CTA -->
 
     <!-- Footer -->
     <?php echo $__env->make('master.footer', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>

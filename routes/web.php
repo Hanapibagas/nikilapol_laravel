@@ -48,6 +48,7 @@ Route::get('detailfaq', [HomeController::class, 'detailfaq'])->name('detailfaq')
 Route::get('faq', [ControllersFaqController::class, 'faq'])->name('faq');
 Route::get('blog', [ControllersBlogController::class, 'blog'])->name('blog');
 Route::get('blog/{slug}', [BlogDetailsController::class, 'details'])->name('detail');
+Route::get('privacy', [PrivacyController::class, 'index'])->name('privacies');
 
 
 Route::prefix('admin')->group(function () {

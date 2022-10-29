@@ -12,13 +12,13 @@
 
     <?php $__env->startComponent('components.breadcrumb'); ?>
         <?php $__env->slot('li_1'); ?> Konfigurasi <?php $__env->endSlot(); ?>
-        <?php $__env->slot('title'); ?> Konfigurasi mercbanner <?php $__env->endSlot(); ?>
+        <?php $__env->slot('title'); ?> merchant <?php $__env->endSlot(); ?>
     <?php echo $__env->renderComponent(); ?>
     <div class="row">
         <div class="col-lg-12">
             <div class="card">
                 <div class="card-body">
-                    <h4 class="card-title mb-4">Konfigurasi mercbanner</h4>
+                    <h4 class="card-title mb-4">Konfigurasi tutorial</h4>
                     <form action="<?php echo e(route('merctutor.update', $merctutor->id)); ?>" method="POST" enctype="multipart/form-data">
                         <?php echo csrf_field(); ?>
                         <?php echo method_field('PUT'); ?>
@@ -37,10 +37,10 @@
                             </div>
                         </div>
                         <div class="row mb-4">
-                            <label for="gambar1" class="col-form-label col-lg-2">Gambar</label>
+                            <label for="gambar" class="col-form-label col-lg-2">Gambar</label>
                             <div class="col-lg-5">
-                                <label for="gambar1" class="form-label">Upload gambar baru</label>
-                                <input class="form-control" type="file" name="gambar1" id="gambar">
+                                <label for="gambar" class="form-label">Upload gambar baru</label>
+                                <input class="form-control" type="file" name="gambar" id="gambar">
                             </div>
                             <div class="col-md-5 text-center">
                             <img class="rounded me-2" alt="200x200" src="/image/<?php echo e($merctutor->gambar1); ?>" data-holder-rendered="true" width="200">

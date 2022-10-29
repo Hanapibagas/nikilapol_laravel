@@ -12,13 +12,13 @@
 
     <?php $__env->startComponent('components.breadcrumb'); ?>
         <?php $__env->slot('li_1'); ?> Konfigurasi <?php $__env->endSlot(); ?>
-        <?php $__env->slot('title'); ?> Tambah tutor <?php $__env->endSlot(); ?>
+        <?php $__env->slot('title'); ?> merchant <?php $__env->endSlot(); ?>
     <?php echo $__env->renderComponent(); ?>
     <div class="row">
         <div class="col-lg-12">
             <div class="card">
                 <div class="card-body">
-                    <h4 class="card-title mb-4">Tambah tutor</h4>
+                    <h4 class="card-title mb-4">Konfigurasi tutorial</h4>
                     <form action="<?php echo e(route('merctutor.store')); ?>" method="POST" enctype="multipart/form-data">
                         <?php echo csrf_field(); ?>
                         <div class="row mb-4">

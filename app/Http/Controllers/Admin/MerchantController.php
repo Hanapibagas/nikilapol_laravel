@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Merchant;
+use Illuminate\Support\Facades\File;
 
 class MerchantController extends Controller
 {
@@ -90,11 +91,6 @@ class MerchantController extends Controller
      */
     public function update(Request $request, Merchant $merchant)
     {
-        $this->validate($request, [
-            'title' => 'required',
-            'gambar' => 'required'
-        ]);
-
         $input = $request->all();
 
         if ($gambar = $request->file('gambar')) {
@@ -120,6 +116,14 @@ class MerchantController extends Controller
      */
     public function destroy(Merchant $merchant)
     {
-        //
+        if (File::exists(public_path('image/' . $merchant->gambar))) {
+            File::delete(public_path('image/' . $merchant->gambar));
+        }
+        if (File::exists(public_path('media/' . $merchant->upload))) {
+            File::delete(public_path('media/' . $merchant->upload));
+        }
+
+        $merchant->delete();
+        return redirect()->route('merchant.index');
     }
 }

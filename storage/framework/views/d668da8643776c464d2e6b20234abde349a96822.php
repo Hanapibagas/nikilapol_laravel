@@ -1,5 +1,3 @@
-
-
 <?php $__env->startSection('title'); ?> <?php echo app('translator')->get('translation.Create_New'); ?> <?php $__env->stopSection(); ?>
 
 <?php $__env->startSection('css'); ?>
@@ -14,7 +12,7 @@
 
     <?php $__env->startComponent('components.breadcrumb'); ?>
         <?php $__env->slot('li_1'); ?> Konfigurasi <?php $__env->endSlot(); ?>
-        <?php $__env->slot('title'); ?> Tambah banner <?php $__env->endSlot(); ?>
+        <?php $__env->slot('title'); ?> banner <?php $__env->endSlot(); ?>
     <?php echo $__env->renderComponent(); ?>
     <div class="row">
         <div class="col-lg-12">
@@ -93,10 +91,10 @@ unset($__errorArgs, $__bag); ?>
 <script type="text/javascript">
     $('#gambar').change(function(){
     let reader = new FileReader();
-    reader.onload = (e) => { 
-      $('#gambar-view').attr('src', e.target.result); 
+    reader.onload = (e) => {
+      $('#gambar-view').attr('src', e.target.result);
     }
-    reader.readAsDataURL(this.files[0]); 
+    reader.readAsDataURL(this.files[0]);
    });
   </script>
     <!-- bootstrap datepicker -->

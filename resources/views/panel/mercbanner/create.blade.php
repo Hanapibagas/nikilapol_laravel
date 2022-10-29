@@ -14,14 +14,14 @@
 
     @component('components.breadcrumb')
         @slot('li_1') Konfigurasi @endslot
-        @slot('title') Tambah merchant @endslot
+        @slot('title') merchant @endslot
     @endcomponent
     <div class="row">
         <div class="col-lg-12">
             <div class="card">
                 <div class="card-body">
-                    <h4 class="card-title mb-4">Tambah merchant</h4>
-                    <form action="{{ route('merchant.store') }}" method="POST" enctype="multipart/form-data">
+                    <h4 class="card-title mb-4">Konfigurasi banner</h4>
+                    <form action="{{ route('mercbanner.store') }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         <div class="row mb-4">
                             <label for="title" class="col-form-label col-lg-2">Title</label>
@@ -30,6 +30,13 @@
                                 @error('title')
                                 <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
                                 @enderror
+                            </div>
+                        </div>
+                        <div class="row mb-4">
+                            <label for="description" class="col-form-label col-lg-2">Description</label>
+                            <div class="col-lg-10">
+                                <textarea id="description" name="description" type="text" class="form-control" style="height:100px;"
+                                    placeholder="Enter Project Name..."></textarea>
                             </div>
                         </div>
                         <div class="row mb-4">
@@ -62,10 +69,10 @@
 <script type="text/javascript">
     $('#gambar').change(function(){
     let reader = new FileReader();
-    reader.onload = (e) => { 
-      $('#gambar-view').attr('src', e.target.result); 
+    reader.onload = (e) => {
+      $('#gambar-view').attr('src', e.target.result);
     }
-    reader.readAsDataURL(this.files[0]); 
+    reader.readAsDataURL(this.files[0]);
    });
   </script>
     <!-- bootstrap datepicker -->

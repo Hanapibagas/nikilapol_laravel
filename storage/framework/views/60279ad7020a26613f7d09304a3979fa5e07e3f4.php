@@ -1,5 +1,3 @@
-
-
 <?php $__env->startSection('title'); ?> <?php echo app('translator')->get('translation.Dashboards'); ?> <?php $__env->stopSection(); ?>
 <?php $__env->startSection('css'); ?>
 <!-- Sweet Alert-->
@@ -9,7 +7,7 @@
 
 <?php $__env->startComponent('components.breadcrumb'); ?>
 <?php $__env->slot('li_1'); ?> Konfigurasi <?php $__env->endSlot(); ?>
-<?php $__env->slot('title'); ?> mercbanner <?php $__env->endSlot(); ?>
+<?php $__env->slot('title'); ?> merchant <?php $__env->endSlot(); ?>
 <?php echo $__env->renderComponent(); ?>
 
 <div class="row">
@@ -24,9 +22,9 @@
                         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                     </div>
                 <?php endif; ?>
-                <h4 class="card-title mb-2">List mercbanner</h4>
+                <h4 class="card-title mb-2">List banner</h4>
                 <div class="d-flex flex-wrap mb-2">
-                    <!-- <a href="<?php echo e(route('mercbanner.create')); ?>" type="button" class="btn btn-success waves-effect btn-label waves-light mb-2"><i class="bx bx-add-to-queue label-icon"></i>Tambah Data</a> -->
+                    <a href="<?php echo e(route('mercbanner.create')); ?>" type="button" class="btn btn-success waves-effect btn-label waves-light mb-2"><i class="bx bx-add-to-queue label-icon"></i>Tambah Data</a>
                 </div>
                 <div class="table-responsive">
                     <table class="table align-middle table-nowrap mb-0">
@@ -34,6 +32,7 @@
                             <tr>
                                 <th class="align-middle">No</th>
                                 <th class="align-middle">Title</th>
+                                <th class="align-middle">Deskripsi</th>
                                 <th class="align-middle">Gambar</th>
                                 <th class="align-middle">Action</th>
                             </tr>
@@ -44,6 +43,7 @@
                             <tr>
                                 <td><a href="javascript: void(0);" class="text-body fw-bold"><?php echo e($no++); ?></a> </td>
                                 <td><?php echo e($mercbanner->title); ?></td>
+                                <td><?php echo e($mercbanner->description); ?></td>
                                 <td><img src="/image/<?php echo e($mercbanner->gambar); ?>" class="rounded me-2" data-holder-rendered="true" width="50"></td>
                                 <td>
                                     <form action="<?php echo e(route('mercbanner.destroy',$mercbanner->id)); ?>" method="POST">
@@ -97,4 +97,5 @@
 <!-- Sweet alert init js-->
 <script src="<?php echo e(URL::asset('/assets/js/pages/sweet-alerts.init.js')); ?>"></script>
 <?php $__env->stopSection(); ?>
+
 <?php echo $__env->make('layouts.master', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH D:\Project-web\Laravel\nikilapol_laravel\resources\views/panel/mercbanner/index.blade.php ENDPATH**/ ?>

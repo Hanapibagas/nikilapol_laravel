@@ -22,7 +22,7 @@
 
     @component('components.breadcrumb')
         @slot('li_1') Konfigurasi @endslot
-        @slot('title') Edit Artikel @endslot
+        @slot('title')Artikel @endslot
     @endcomponent
     <div class="row">
         <div class="col-lg-12">

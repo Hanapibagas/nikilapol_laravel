@@ -1,12 +1,10 @@
-
-
 <?php $__env->startSection('title'); ?> <?php echo app('translator')->get('translation.Dashboards'); ?> <?php $__env->stopSection(); ?>
 
 <?php $__env->startSection('content'); ?>
 
 <?php $__env->startComponent('components.breadcrumb'); ?>
 <?php $__env->slot('li_1'); ?> Konfigurasi <?php $__env->endSlot(); ?>
-<?php $__env->slot('title'); ?> Layanan <?php $__env->endSlot(); ?>
+<?php $__env->slot('title'); ?> Artikel <?php $__env->endSlot(); ?>
 <?php echo $__env->renderComponent(); ?>
 
 <div class="row">
@@ -39,7 +37,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <?php $no=1; ?> 
+                            <?php $no=1; ?>
                             <?php $__currentLoopData = $blog; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $blog): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                             <tr>
                                 <td><a href="javascript: void(0);" class="text-body fw-bold"><?php echo e($no++); ?></a> </td>
@@ -73,4 +71,5 @@
 <?php $__env->stopSection(); ?>
 <?php $__env->startSection('script'); ?>
 <?php $__env->stopSection(); ?>
+
 <?php echo $__env->make('layouts.master', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH D:\Project-web\Laravel\nikilapol_laravel\resources\views/panel/blog/index.blade.php ENDPATH**/ ?>

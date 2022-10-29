@@ -23,7 +23,7 @@
                         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                     </div>
                 @endif
-                <h4 class="card-title mb-2">List merchant</h4>
+                <h4 class="card-title mb-2">List benefit</h4>
                 <div class="d-flex flex-wrap mb-2">
                     <a href="{{ route('merchant.create') }}" type="button" class="btn btn-success waves-effect btn-label waves-light mb-2"><i class="bx bx-add-to-queue label-icon"></i>Tambah Data</a>
                 </div>

@@ -14,13 +14,13 @@
 
     @component('components.breadcrumb')
         @slot('li_1') Konfigurasi @endslot
-        @slot('title') Konfigurasi mercbanner @endslot
+        @slot('title') merchant @endslot
     @endcomponent
     <div class="row">
         <div class="col-lg-12">
             <div class="card">
                 <div class="card-body">
-                    <h4 class="card-title mb-4">Konfigurasi mercbanner</h4>
+                    <h4 class="card-title mb-4">Konfigurasi tutorial</h4>
                     <form action="{{ route('merctutor.update', $merctutor->id) }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         @method('PUT')

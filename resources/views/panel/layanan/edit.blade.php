@@ -14,13 +14,13 @@
 
     @component('components.breadcrumb')
         @slot('li_1') Konfigurasi @endslot
-        @slot('title') Konfigurasi layanan @endslot
+        @slot('title') layanan @endslot
     @endcomponent
     <div class="row">
         <div class="col-lg-12">
             <div class="card">
                 <div class="card-body">
-                    <h4 class="card-title mb-4">Konfigurasi layanan</h4>
+                    <h4 class="card-title mb-4">Konfigurasi layanan header</h4>
 
                     <form action="{{ route('layanan.update', $layanan->id) }}" method="POST" enctype="multipart/form-data">
                         @csrf

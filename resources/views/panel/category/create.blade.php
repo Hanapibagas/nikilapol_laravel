@@ -14,13 +14,13 @@
 
     @component('components.breadcrumb')
         @slot('li_1') Konfigurasi @endslot
-        @slot('title') Tambah Category @endslot
+        @slot('title') Layanan @endslot
     @endcomponent
     <div class="row">
         <div class="col-lg-12">
             <div class="card">
                 <div class="card-body">
-                    <h4 class="card-title mb-4">Tambah Category</h4>
+                    <h4 class="card-title mb-4">Tambah Kategori</h4>
                     <form action="{{ route('category.store') }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         <div class="row mb-4">
@@ -70,16 +70,16 @@
 @section('script')
 <script type="text/javascript">
     $('#gambar').change(function(){
-           
+
     let reader = new FileReader();
 
-    reader.onload = (e) => { 
+    reader.onload = (e) => {
 
-      $('#gambar-view').attr('src', e.target.result); 
+      $('#gambar-view').attr('src', e.target.result);
     }
 
-    reader.readAsDataURL(this.files[0]); 
-  
+    reader.readAsDataURL(this.files[0]);
+
    });
   </script>
     <!-- bootstrap datepicker -->

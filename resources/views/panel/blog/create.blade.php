@@ -22,7 +22,7 @@
 
     @component('components.breadcrumb')
         @slot('li_1') Konfigurasi @endslot
-        @slot('title') Tambah banner @endslot
+        @slot('title') Artikel @endslot
     @endcomponent
     <div class="row">
         <div class="col-lg-12">
@@ -37,7 +37,7 @@
                     </div>
                 @endif
                 <div class="card-body">
-                    <h4 class="card-title mb-4">Tambah banner</h4>
+                    <h4 class="card-title mb-4">Tambah Artikel</h4>
                     <form action="{{ route('blog.store') }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         <div class="row mb-4">

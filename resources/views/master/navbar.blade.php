@@ -1,3 +1,4 @@
+
       <!-- Header -->
       <header class="section page-header">
         <!--RD Navbar-->
@@ -50,7 +51,9 @@
                     </ul>
                   </div>
                   <div class="rd-navbar-collapse">
-                    <a class="button button-secondary button-nuka" href="https://play.google.com/store/apps/details?id=com.nusantaraku.nusantaraku_app_user_merchant">Belanja Sekarang<span class="button-overlay"></span></a>
+                    @foreach ($header as $header )
+                    <a class="button button-secondary button-nuka" href="{{ $header->link }}">Belanja Sekarang<span class="button-overlay"></span></a>
+                    @endforeach
                   </div>
                   </ul>
                 </div>

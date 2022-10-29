@@ -77,7 +77,7 @@
             <div class="row">
               @foreach ($category as $category)
                 <a class="card2 pb-3" href="#">
-                      <img src="/image/{{$category->gambar}}" width="50px" alt="">
+                      <img alt="{{ $category->title }}" src="/image/{{$category->gambar}}" width="50px" alt="">
                 <h3 style="font-family: var(--font-dasar);">{{ $category->title }}</h3>
                 <p class="small">{{ $category->description }}</p>
                 

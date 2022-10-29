@@ -82,6 +82,17 @@ class WhitelabelController extends Controller
             unset($input['logo']);
         }
 
+        $input = $request->all();
+        // Cek jika ada logo yang diupload
+        if ($footer_logo = $request->file('footer_logo')) {
+            $destinationPath = 'image/';
+            $logoName = $footer_logo->getClientOriginalName();
+            $footer_logo->move($destinationPath, $logoName);
+            $input['footer_logo'] = $logoName;
+        } else {
+            unset($input['logo']);
+        }
+
         if ($bantuan = $request->file('bantuan')) {
             $destinationPath = 'image/';
             $bantuanName = $bantuan->getClientOriginalName();

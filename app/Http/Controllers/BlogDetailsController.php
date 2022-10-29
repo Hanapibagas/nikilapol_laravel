@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Blog;
+use App\Models\Header;
 use App\Models\Whitelabel;
 use Illuminate\Http\Request;
 
@@ -12,7 +13,7 @@ class BlogDetailsController extends Controller
     {
         $items = Blog::where('slug', $slug)->firstOrFail();
         $whitelabel = Whitelabel::all();
-
-        return view('detail', compact('items', 'whitelabel'));
+        $header = Header::all();
+        return view('detail', compact('items', 'whitelabel', 'header'));
     }
 }

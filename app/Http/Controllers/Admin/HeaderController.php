@@ -41,14 +41,6 @@ class HeaderController extends Controller
      */
     public function store(Request $request, Header $header)
     {
-        //validate form
-        $this->validate($request, [
-            'title'     => 'required|min:5',
-            'description'     => 'required|min:5',
-            'link'     => 'required|min:5',
-            // 'cover'     => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
-        ]);
-
         $input = $request->all();
 
         if ($cover = $request->file('cover')) {
@@ -66,8 +58,7 @@ class HeaderController extends Controller
             unset($input['aplikasi']);
         }
 
-        //create post
-        $header::create($input);
+        $header->create($input);
 
         //redirect to index
         return redirect()->route('header.index');
@@ -93,14 +84,6 @@ class HeaderController extends Controller
      */
     public function update(Request $request, Header $header)
     {
-        //validate form
-        $this->validate($request, [
-            'title'     => 'required|min:5',
-            'description'     => 'required|min:5',
-            'link'     => 'required|min:5',
-            // 'cover'     => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-        ]);
-
         $input = $request->all();
 
         //check if image is uploaded

@@ -38,6 +38,22 @@ unset($__errorArgs, $__bag); ?>
                             </div>
                         </div>
                         <div class="row mb-4">
+                            <label for="description" class="col-form-label col-lg-2">Description</label>
+                            <div class="col-lg-10">
+                                <input id="description" name="description" type="text" class="form-control" placeholder="Nama judul..." >
+                                <?php $__errorArgs = ['description'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?>
+                                <div class="alert alert-danger mt-1 mb-1"><?php echo e($message); ?></div>
+                                <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
+                            </div>
+                        </div>
+                        <div class="row mb-4">
                             <label for="gambar" class="col-form-label col-lg-2">Gambar</label>
                             <div class="col-lg-5">
                                 <label for="gambar" class="form-label">Upload gambar baru</label>

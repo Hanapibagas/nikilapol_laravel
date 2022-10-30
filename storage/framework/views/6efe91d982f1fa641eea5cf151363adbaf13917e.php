@@ -18,7 +18,7 @@
         <div class="col-lg-12">
             <div class="card">
                 <div class="card-body">
-                    <h4 class="card-title mb-4">Tambah banner</h4>
+                    <h4 class="card-title mb-4">Konfigurasi banner</h4>
                     <form action="<?php echo e(route('mercbanner.store')); ?>" method="POST" enctype="multipart/form-data">
                         <?php echo csrf_field(); ?>
                         <div class="row mb-4">

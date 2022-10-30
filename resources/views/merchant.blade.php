@@ -71,9 +71,6 @@
 
 
     <!-- Tutor Pesen -->
-
-
-
 <div class="container">
       <h1 class="row text-center" style="font-family: 'Poppins'; font-size: 50px;">Cara pesan Delivery</h1>
       <div class="row">

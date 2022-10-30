@@ -98,9 +98,9 @@
                         <li>
                             <a href="javascript: void(0);" class="has-arrow" key="t-level-1-2">Driver</a>
                             <ul class="sub-menu" aria-expanded="true">
-                                <li><a href="javascript: void(0);" key="t-level-2-2">Setting Banner</a></li>
-                                <li><a href="javascript: void(0);" key="t-level-2-1">Setting Benefit</a></li>
-                                <li><a href="javascript: void(0);" key="t-level-2-2">Setting Tutorial</a></li>
+                                <li><a href="<?php echo e(route('driver-banner.index')); ?>" key="t-level-2-2">Setting Banner</a></li>
+                                <li><a href="<?php echo e(route('driver-benefit.index')); ?>" key="t-level-2-1">Setting Benefit</a></li>
+                                <li><a href="<?php echo e(route('driver-tutorial.index')); ?>" key="t-level-2-2">Setting Tutorial</a></li>
                             </ul>
                         </li>
                     </ul>

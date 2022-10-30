@@ -22,12 +22,19 @@
 
 <!-- Content -->
       <!-- Hero -->
-      <section class="hero-bg">
+      <?php $__currentLoopData = $drivebanner; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $drivebanner): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+      <section class="hero-bg" style=" background-image: url(/image/<?php echo e($drivebanner->gambar); ?>);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 100vh;
+        position: relative;
+        z-index: 1;">
                <div class="container ">
                    <div class="hero row ">
                        <div class="text-hero">
-                           <h1>Kapan Saja, dimana saja kami siap antar</h1>
-                           <p>Manfaatkan waktu luang jadi cuan, tingkatkan pasif income dan jadi pahlawan keluarga</p>
+                           <h1><?php echo e($drivebanner->title); ?></h1>
+                           <p><?php echo e($drivebanner->description); ?></p>
                        </div>
                        <div class="btns row">
                         <a href="./syarat.html" class="button button-secondary button-nuka">Daftar Sekarang</a>
@@ -35,6 +42,7 @@
                    </div>
                </div>
            </section>
+      <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
            <!-- End Hero -->
 
                       <!-- Persyaratan -->

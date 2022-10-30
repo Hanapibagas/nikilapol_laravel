@@ -11,6 +11,8 @@ use App\Models\Profit;
 use App\Models\Layanan;
 use App\Models\Service;
 use App\Models\Category;
+use App\Models\Drivbanner;
+use App\Models\Drivbenefit;
 use App\Models\Logistic;
 use App\Models\Mercbanner;
 use App\Models\Merchant;
@@ -130,9 +132,11 @@ class HomeController extends Controller
 
     public function driver()
     {
-         $header = Header::all();
+        $drivebenefit = Drivbenefit::all();
+        $drivebanner = Drivbanner::all();
+        $header = Header::all();
         $whitelabel = Whitelabel::all();
-        return view('driver', compact('whitelabel', 'header'));
+        return view('driver', compact('whitelabel', 'header', 'drivebanner', 'drivebenefit'));
     }
 
     /*Language Translation*/

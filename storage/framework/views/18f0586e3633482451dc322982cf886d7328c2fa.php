@@ -57,53 +57,6 @@
             </div>
         </div>
 
-        <div class="dropdown d-inline-block">
-            <button type="button" class="btn header-item waves-effect"
-                data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <?php switch(Session::get('lang')):
-                    case ('ru'): ?>
-                        <img src="<?php echo e(URL::asset('/assets/images/flags/russia.jpg')); ?>" alt="Header Language" height="16">
-                    <?php break; ?>
-                    <?php case ('it'): ?>
-                        <img src="<?php echo e(URL::asset('/assets/images/flags/italy.jpg')); ?>" alt="Header Language" height="16">
-                    <?php break; ?>
-                    <?php case ('de'): ?>
-                        <img src="<?php echo e(URL::asset('/assets/images/flags/germany.jpg')); ?>" alt="Header Language" height="16">
-                    <?php break; ?>
-                    <?php case ('es'): ?>
-                        <img src="<?php echo e(URL::asset('/assets/images/flags/spain.jpg')); ?>" alt="Header Language" height="16">
-                    <?php break; ?>
-                    <?php default: ?>
-                        <img src="<?php echo e(URL::asset('/assets/images/flags/us.jpg')); ?>" alt="Header Language" height="16">
-                <?php endswitch; ?>
-            </button>
-            <div class="dropdown-menu dropdown-menu-end">
-
-                <!-- item-->
-                <a href="<?php echo e(url('index/en')); ?>" class="dropdown-item notify-item language" data-lang="eng">
-                    <img src="<?php echo e(URL::asset ('/assets/images/flags/us.jpg')); ?>" alt="user-image" class="me-1" height="12"> <span class="align-middle">English</span>
-                </a>
-                <!-- item-->
-                <a href="<?php echo e(url('index/es')); ?>" class="dropdown-item notify-item language" data-lang="sp">
-                    <img src="<?php echo e(URL::asset ('/assets/images/flags/spain.jpg')); ?>" alt="user-image" class="me-1" height="12"> <span class="align-middle">Spanish</span>
-                </a>
-
-                <!-- item-->
-                <a href="<?php echo e(url('index/de')); ?>" class="dropdown-item notify-item language" data-lang="gr">
-                    <img src="<?php echo e(URL::asset ('/assets/images/flags/germany.jpg')); ?>" alt="user-image" class="me-1" height="12"> <span class="align-middle">German</span>
-                </a>
-
-                <!-- item-->
-                <a href="<?php echo e(url('index/it')); ?>" class="dropdown-item notify-item language" data-lang="it">
-                    <img src="<?php echo e(URL::asset ('/assets/images/flags/italy.jpg')); ?>" alt="user-image" class="me-1" height="12"> <span class="align-middle">Italian</span>
-                </a>
-
-                <!-- item-->
-                <a href="<?php echo e(url('index/ru')); ?>" class="dropdown-item notify-item language" data-lang="ru">
-                    <img src="<?php echo e(URL::asset ('/assets/images/flags/russia.jpg')); ?>" alt="user-image" class="me-1" height="12"> <span class="align-middle">Russian</span>
-                </a>
-            </div>
-        </div>
 
         <div class="dropdown d-none d-lg-inline-block ms-1">
             <button type="button" class="btn header-item noti-icon waves-effect"
@@ -114,9 +67,9 @@
                 <div class="px-lg-2">
                     <div class="row g-0">
                         <div class="col">
-                            <a class="dropdown-icon-item" href="#">
-                                <img src="<?php echo e(URL::asset ('/assets/images/brands/github.png')); ?>" alt="Github">
-                                <span>GitHub</span>
+                            <a class="dropdown-icon-item" href="https://www.youtube.com/channel/UCCvkGdrGgJMlnpER8dof0rQ">
+                                <img src="<?php echo e(asset('assets/images/brands/youtube.png')); ?>" alt="Youtube">
+                                <span>Youtube</span>
                             </a>
                         </div>
                         <div class="col">

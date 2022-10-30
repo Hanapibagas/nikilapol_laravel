@@ -33,6 +33,7 @@
                             <tr>
                                 <th class="align-middle">No</th>
                                 <th class="align-middle">Title</th>
+                                <th class="align-middle">Deskripsi</th>
                                 <th class="align-middle">Gambar</th>
                                 <th class="align-middle">Action</th>
                             </tr>
@@ -43,6 +44,7 @@
                             <tr>
                                 <td><a href="javascript: void(0);" class="text-body fw-bold">{{ $no++ }}</a> </td>
                                 <td>{{ $drivbanefit->title }}</td>
+                                <td>{{ $drivbanefit->description }}</td>
                                 <td><img src="/image/{{$drivbanefit->gambar}}" class="rounded me-2" data-holder-rendered="true" width="50"></td>
                                 <td>
                                     <form action="{{ route('driver-benefit.destroy', $drivbanefit->id) }}" method="POST">

@@ -63,8 +63,6 @@ Route::prefix('admin')->group(function () {
 
     //Konfigurasi Header
     Route::resource('header', HeaderController::class);
-
-    //Route Home Page
     Route::resource('about', AboutController::class);
     Route::resource('banner', BannerController::class);
     Route::resource('service', ServiceController::class);

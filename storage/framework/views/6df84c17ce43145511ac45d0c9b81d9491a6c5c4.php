@@ -32,6 +32,7 @@
                             <tr>
                                 <th class="align-middle">No</th>
                                 <th class="align-middle">Title</th>
+                                <th class="align-middle">Deskripsi</th>
                                 <th class="align-middle">Gambar</th>
                                 <th class="align-middle">Action</th>
                             </tr>
@@ -42,6 +43,7 @@
                             <tr>
                                 <td><a href="javascript: void(0);" class="text-body fw-bold"><?php echo e($no++); ?></a> </td>
                                 <td><?php echo e($drivbanefit->title); ?></td>
+                                <td><?php echo e($drivbanefit->description); ?></td>
                                 <td><img src="/image/<?php echo e($drivbanefit->gambar); ?>" class="rounded me-2" data-holder-rendered="true" width="50"></td>
                                 <td>
                                     <form action="<?php echo e(route('driver-benefit.destroy', $drivbanefit->id)); ?>" method="POST">

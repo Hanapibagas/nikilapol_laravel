@@ -81,7 +81,7 @@ class HomeController extends Controller
 
     public function kontak()
     {
-         $header = Header::all();
+        $header = Header::all();
         $whitelabel = Whitelabel::all();
         return view('kontak', compact('whitelabel', 'header'));
     }
@@ -95,7 +95,7 @@ class HomeController extends Controller
 
     public function detailblog()
     {
-         $header = Header::all();
+        $header = Header::all();
         $whitelabel = Whitelabel::all();
         $blog = Blog::all();
         return view('detail', compact('whitelabel', 'blog', 'header'));
@@ -103,7 +103,7 @@ class HomeController extends Controller
 
     public function faq()
     {
-         $header = Header::all();
+        $header = Header::all();
         $whitelabel = Whitelabel::all();
         $logistic = Logistic::all();
         return view('faq', compact('whitelabel', 'logistic', 'header'));
@@ -111,7 +111,7 @@ class HomeController extends Controller
 
     public function detailfaq()
     {
-         $header = Header::all();
+        $header = Header::all();
         $whitelabel = Whitelabel::all();
         $logistic = Logistic::all();
         return view('detailfaq', compact('whitelabel', 'logistic', 'header'));
@@ -119,7 +119,7 @@ class HomeController extends Controller
 
     public function merchant()
     {
-         $header = Header::all();
+        $header = Header::all();
         $whitelabel = Whitelabel::all();
         $mercbanner = Mercbanner::all();
         $merctutor = Merctutor::all();
@@ -130,7 +130,7 @@ class HomeController extends Controller
 
     public function driver()
     {
-         $header = Header::all();
+        $header = Header::all();
         $whitelabel = Whitelabel::all();
         return view('driver', compact('whitelabel', 'header'));
     }

@@ -43,7 +43,7 @@ class HomeController extends Controller
 
     public function root()
     {
-        $galleri = Showcase::all()->firstOrFail();
+        $galleri = Showcase::all();
         $showcase = Showcase::all();
         $header = Header::all();
         $about = About::all();

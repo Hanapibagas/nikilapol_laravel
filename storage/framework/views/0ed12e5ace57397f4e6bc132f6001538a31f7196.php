@@ -22,12 +22,19 @@
 
 <!-- Content -->
       <!-- Hero -->
-      <section class="hero-bg">
+      <?php $__currentLoopData = $drivebanner; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $drivebanner): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+      <section class="hero-bg" style=" background-image: url(/image/<?php echo e($drivebanner->gambar); ?>);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 100vh;
+        position: relative;
+        z-index: 1;">
                <div class="container ">
                    <div class="hero row ">
                        <div class="text-hero">
-                           <h1>Kapan Saja, dimana saja kami siap antar</h1>
-                           <p>Manfaatkan waktu luang jadi cuan, tingkatkan pasif income dan jadi pahlawan keluarga</p>
+                           <h1><?php echo e($drivebanner->title); ?></h1>
+                           <p><?php echo e($drivebanner->description); ?></p>
                        </div>
                        <div class="btns row">
                         <a href="./syarat.html" class="button button-secondary button-nuka">Daftar Sekarang</a>
@@ -35,6 +42,7 @@
                    </div>
                </div>
            </section>
+      <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
            <!-- End Hero -->
 
                       <!-- Persyaratan -->
@@ -42,40 +50,20 @@
             <div class="container text-center text-lg-left">
               <h2><span class="text-bold text-white wow fadeInUp" style="font-family: 'Poppins';">Gabung Driver Mana nih ?</h2>
               <div class="row mt-5 justify-content-center flex-wrap row-30 number-counter-2   wow fadeInUp">
+                 <?php $__currentLoopData = $drivebenefit; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $drivebenefit): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                 <div class="col-md-4">
                   <div class="box-numbered-left unit">
                     <div class="unit-body">
-
-                      <img src="/home/assets/img/Icon Gabung Driver Mana/Delivery.png" alt="Kita Delivery" width="100px"><h4 style="color: var(--warna-dasar); margin-top: 20px; font-family: var(--font-dasar);">Driver Niki Delivery</h4>
+                      <img src="/home/assets/img/Icon Gabung Driver Mana/Delivery.png" alt="Kita Delivery" width="100px"><h4 style="color: var(--warna-dasar); margin-top: 20px; font-family: var(--font-dasar);"><?php echo e($drivebenefit->title); ?></h4>
                       <div  style="color: #fff;" class="content">Anter pesanan makanan kamu kemanapun dan kapanpun kamu mau</div>
                       <a href="./syarat.html" class="button button-secondary button-nuka">Daftar</a>
                     </div>
                   </div>
                 </div>
-                <div class="col-md-4">
-                  <div class="box-numbered-left unit">
-                    <div class="unit-body">
-                       <img src="/home/assets/img/Icon Gabung Driver Mana/Anterin.png" alt="Kita Anterin" width="100px">
-                       <h4 style="color: var(--warna-dasar); margin-top: 20px; font-family: var(--font-dasar);">Driver Niki Anterin</h4>
-                        <div style="color: #fff;" class="content">Bisa nganter kamu kemanapun kamu mau dengan aman dan nyaman... </div>
-                        <a href="./syarat.html" class="button button-secondary button-nuka">Daftar</a>
-                      </div>
-                  </div>
-                </div>
-                <div class="col-md-4">
-                  <div class="box-numbered-left unit">
-                    <div class="unit-body">
-                        <img src="/home/assets/img/Icon Gabung Driver Mana/Belanjain.png" alt="Kita Belanjain" width="100px">
-                        <h4 style="color: var(--warna-dasar); margin-top: 20px; font-family: var(--font-dasar);">Driver Niki Belanjain</h4>
-                        <div style="color: #fff;" class="content">Bantu kamu buat beliin barang atau makanan yang belum terdaftar di Nikila</div>
-                        <a href="./syarat.html" class="button button-secondary button-nuka">Daftar</a>
-                      </div>
-                  </div>
-                </div>
               </div>
             </div>
-          </section>
-
+          </section>  
+           <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
              
     <!-- Kenapa Kami-->
     <section class="section section-md bg-default">

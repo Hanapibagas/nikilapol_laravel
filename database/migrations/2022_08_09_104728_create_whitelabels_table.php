@@ -17,13 +17,7 @@ return new class extends Migration
         Schema::create('whitelabels', function (Blueprint $table) {
             $table->id();
             $table->string('logo');
-<<<<<<< HEAD
-            $table->string('bantuan');
-            $table->string('favicon');
-            $table->string('cta');
-=======
             $table->string('footer_logo');
->>>>>>> 72c194cc5cd9eb158a9eacbe0c1713d92cc1bae6
             $table->string('title');
             $table->string('font');
             $table->string('color');

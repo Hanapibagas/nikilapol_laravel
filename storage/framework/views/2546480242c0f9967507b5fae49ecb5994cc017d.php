@@ -78,6 +78,7 @@
                     <ul class="sub-menu" aria-expanded="false">
                         <li><a href="<?php echo e(route('layanan.index')); ?>" key="t-products">Setting Header</a></li>
                         <li><a href="<?php echo e(route('category.index')); ?>" key="t-products">Setting Kategori</a></li>
+                        <li><a href="<?php echo e(route('logistic.index')); ?>" key="t-products">Setting Transportasi & Logistik</a></li>
                     </ul>
                 </li>
                 <li>
@@ -104,7 +105,7 @@
                         </li>
                     </ul>
                 </li>
-                <li>
+                <!-- <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">
                         <i class="bx bx-copy-alt "></i>
                         <span key="t-ecommerce">FAQ Pages</span>
@@ -112,7 +113,7 @@
                     <ul class="sub-menu" aria-expanded="false">
                         <li><a href="<?php echo e(route('logistic.index')); ?>" key="t-products">Setting Berdasarkan Layanan</a></li>
                     </ul>
-                </li>
+                </li> -->
                 <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">
                         <i class="bx bx-receipt"></i>
@@ -126,12 +127,12 @@
                     </ul>
                 </li>
                 <li>
-                    <a href="whitelabel/1/edit" class="waves-effect">
+                    <a href="/whitelabel/1/edit" class="waves-effect">
                         <i class="bx bx-cog "></i>
                         <span key="t-invoices">White Label</span>
                     </a>
                 </li>
-                <li class="menu-title" key="t-apps">User Permission</li>
+                <!-- <li class="menu-title" key="t-apps">User Permission</li>
                 <li>
                     <a href="javascript: void(0);" class="waves-effect">
                         <i class="bx bx-user "></i>
@@ -149,7 +150,7 @@
                         <span key="t-invoices">Panduan Penggunaan</span>
                     </a>
                 </li>
-            </ul>
+            </ul> -->
         </div>
         <!-- Sidebar -->
     </div>

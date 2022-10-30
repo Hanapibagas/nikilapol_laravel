@@ -72,7 +72,7 @@ class WhitelabelController extends Controller
     public function update(Request $request, Whitelabel $whitelabel)
     {
         $input = $request->all();
-        // Cek jika ada logo yang diupload
+
         if ($logo = $request->file('logo')) {
             $destinationPath = 'image/';
             $logoName = $logo->getClientOriginalName();
@@ -115,7 +115,6 @@ class WhitelabelController extends Controller
 
         $whitelabel->update($input);
 
-        //redirect to index
         return redirect()->route('whitelabel.edit', $whitelabel->id)->with(['success' => 'Data Berhasil Diubah!']);
     }
 

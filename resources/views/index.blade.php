@@ -35,7 +35,7 @@
 
           <div class="col-lg-5 col-md-5 col-12 atf_home_img  atf_home_img4 text-center">
             <div class="atf-img-inner  wow fadeInRight" data-wow-duration="2s" data-wow-delay="0.4s" data-wow-offset="0">
-              <div class="home-image-box atf-particle-img"><img src="/image/{{$header->aplikasi}}" alt="portfolio" class="card-s"></div>
+              <div class="home-image-box atf-particle-img"><img alt="{{ $header->description }}" src="/image/{{$header->aplikasi}}" alt="portfolio" class="card-s"></div>
             </div>
           </div>
         </div>
@@ -54,7 +54,7 @@
                   <path d="M18.0698 8.92762C19.3101 9.63455 19.3101 11.3655 18.0698 12.0724L2.85678 20.7432C1.59455 21.4626 -6.40869e-08 20.585 0 19.1708L7.85887e-07 1.82916C8.49974e-07 0.414998 1.59455 -0.462644 2.85678 0.256784L18.0698 8.92762Z"></path>
                 </svg>
               </a>
-              <img class="box-shadow" src="/image/{{$about->gambar}}" width="660" height="406" />
+              <img class="box-shadow" src="/image/{{$about->gambar}}" width="660" height="406" alt="{{ $about->description }}" />
             </div>
           </div>
           <div class="col-xl-5 col-lg-6">
@@ -73,7 +73,7 @@
         <h2 class="my-5 text-center" class="poppins"> <span style="color: var(--warna-dasar);">Fasilitas</span> Yang Kami Sajikan</h2>
         <div class="owl-carousel owl-1 text-center">
           @foreach ($banner as $banner)
-          <div><img src="/image/{{$banner->gambar}}" alt="Image" class="img-fluid"></div>
+          <div><img src="/image/{{$banner->gambar}}" alt="{{ $banner->title }}" class="img-fluid"></div>
           @endforeach
         </div>
       </div>
@@ -90,7 +90,7 @@
             <p class="big">{{ $profit->description }}</p>
           </div>
           <div class="col-xl-6 col-lg-6">
-            <div class="text-center text-lg-left"><img src="/image/{{$profit->gambar}}" alt="" width="500" height="406" />
+            <div class="text-center text-lg-left"><img src="/image/{{$profit->gambar}}" alt="{{ $profit->description }}" width="500" height="406" />
             </div>
           </div>
         </div>
@@ -110,7 +110,7 @@
           <div class="column pt-5">
             <div class="card">
               <div class="icon-wrapper">
-                <img src="/image/{{$service->gambar}}" width="60px" alt="">
+                <img alt="{{ $service->gambar }}" src="/image/{{$service->gambar}}" width="60px">
               </div>
               <h3 style="padding-bottom: 10px; font-family: 'Poppins';">{{ $service->title }}</h3>
               <p>
@@ -134,7 +134,7 @@
           <div class="col-xl-7 col-lg-9">
             <ul class="list-brands">
               @foreach ($category as $category)
-              <li class="list-brands-item"><a class="list-brands-link" href="javascript: void(0);"><img class="list-brands-img" src="/image/{{$category->gambar}}" alt="" width="50" height="71" /></a></li>
+              <li class="list-brands-item"><a class="list-brands-link" href="javascript: void(0);"><img class="list-brands-img" src="/image/{{$category->gambar}}" alt="{{ $category->title  }}" width="50" height="71" /></a></li>
               @endforeach
             </ul>
           </div>
@@ -152,7 +152,7 @@
       <div class="row">
         @foreach($mitra as $mitra)
         <a class="card2" href="#">
-          <img src="/image/{{ $mitra->gambar }}" width="80px" alt="">
+          <img alt="{{ $mitra->description }}" src="/image/{{ $mitra->gambar }}" width="80px" alt="">
           <h3 class="poppins">{{ $mitra->title }}</h3>
           <p class="small">{{ $mitra->description }}</p>
 
@@ -168,16 +168,19 @@
   </div>
   </section>
   <!-- Akhir Ajakan Driver -->
+
+
   <!-- Showcase -->
+  @foreach ($showcase as $showcase)
   <section class="section section-md bg-default">
     <div class="container">
       <div class="row">
         <div class="col-md-6 ">
           <div class="col4">
             <div class="content wow fadeInUp">
-              <h6>Nikila</h6>
-              <p class=" h2 mb-4">Lebih Dari Sekedar Marketplace</p>
-              <p class="text-muted mb-4">Nikila merupakan solusi dan layanan untuk memberdayakan jutaan penjual produk kearifan lokal dan konsumen agar dapat berpartisipasi membangun ketahanan ekonomi Kabupaten Lamongan
+              <h6>{{ $showcase->brand }}</h6>
+              <p class=" h2 mb-4">{{ $showcase->title }}</p>
+              <p class="text-muted mb-4">{{ $showcase->description }}
               <p><a href="/layanan" class="button button-secondary button-nuka">Selengkapnya</a></p>
             </div>
           </div>
@@ -185,24 +188,24 @@
         <div class="col-md-6">
           <div class="align-items-center justify-content-center">
             <div id="carousel" class="owl-carousel wow fadeInUp ">
-              <div>
-                <img width="75%" id="img-1" class="image-app" src="/home/assets/img/Showcase Mockup/Homescreen.png">
+            <div>
+                <img alt="{{ $showcase->title }}" width="75%" id="img-1" class="image-app" src="/home/assets/img/Showcase Mockup/Homescreen.png">
               </div>
 
               <div>
-                <img width="75%" id="img-2" class="image-app" src="/home/assets/img/Showcase Mockup/Anterin.png">
+                <img alt="{{ $showcase->title }} width="75%" id="img-2" class="image-app" src="/home/assets/img/Showcase Mockup/Anterin.png">
               </div>
 
               <div>
-                <img width="75%" id="img-3" class="image-app" src="/home/assets/img/Showcase Mockup/All Produk.png">
+                <img alt="{{ $showcase->title }} width="75%" id="img-3" class="image-app" src="/home/assets/img/Showcase Mockup/All Produk.png">
               </div>
 
               <div>
-                <img width="75%" id="img-4" class="image-app" src="/home/assets/img/Showcase Mockup/Produk Screen.png">
+                <img alt="{{ $showcase->title }} width="75%" id="img-4" class="image-app" src="/home/assets/img/Showcase Mockup/Produk Screen.png">
               </div>
 
               <div>
-                <img width="75%" id="img-5" class="image-app" src="/home/assets/img/Showcase Mockup/Reservasi.png">
+                <img alt="{{ $showcase->title }} width="75%" id="img-5" class="image-app" src="/home/assets/img/Showcase Mockup/Reservasi.png">
               </div>
             </div>
           </div>
@@ -210,9 +213,11 @@
       </div>
     </div>
   </section>
+  @endforeach
   <!-- End Showcae -->
 
-<section class="bg-default">
+  <!-- Playlist Youtube -->
+<!-- <section class="bg-default">
       <div class="text-center wow fadeInUp pb-5">
         <h6>Butuh Bantuan?</h6>
         <h2 class="poppins">Cek Playlist Video Dibawah ini ya </h2>
@@ -223,9 +228,10 @@
       </div>
   </div>
   </div>
-  </section>
+  </section> -->
+    <!-- End Playlist Youtube -->
 
-  <!-- End Blog -->
+
   <!-- Banner CTA -->
   @include('master.cta')
   <!-- End Banner CTA -->

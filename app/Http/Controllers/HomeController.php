@@ -17,6 +17,7 @@ use App\Models\Merchant;
 use App\Models\Merctutor;
 use App\Models\Whitelabel;
 use App\Models\Privacy;
+use App\Models\Showcase;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Session;
 
@@ -40,6 +41,8 @@ class HomeController extends Controller
 
     public function root()
     {
+        $galleri = Showcase::all()->firstOrFail();
+        $showcase = Showcase::all();
         $header = Header::all();
         $about = About::all();
         $blog = Blog::orderBy('id', 'desc')->get();
@@ -60,23 +63,27 @@ class HomeController extends Controller
             'service',
             'whitelabel',
             'mitra',
-            'privacy'
+            'privacy',
+            'showcase',
+            'galleri',
         ));
     }
 
     public function layanan()
     {
+        $header = Header::all();
         $whitelabel = Whitelabel::all();
         $layanan = Layanan::all();
         $category = Category::all();
         $logistic = Logistic::all();
-        return view('layanan', compact('whitelabel', 'layanan', 'category', 'logistic'));
+        return view('layanan', compact('whitelabel', 'layanan', 'category', 'logistic', 'header'));
     }
 
     public function kontak()
     {
+         $header = Header::all();
         $whitelabel = Whitelabel::all();
-        return view('kontak', compact('whitelabel'));
+        return view('kontak', compact('whitelabel', 'header'));
     }
 
     public function privacy()
@@ -88,39 +95,44 @@ class HomeController extends Controller
 
     public function detailblog()
     {
+         $header = Header::all();
         $whitelabel = Whitelabel::all();
         $blog = Blog::all();
-        return view('detail', compact('whitelabel', 'blog'));
+        return view('detail', compact('whitelabel', 'blog', 'header'));
     }
 
     public function faq()
     {
+         $header = Header::all();
         $whitelabel = Whitelabel::all();
         $logistic = Logistic::all();
-        return view('faq', compact('whitelabel', 'logistic'));
+        return view('faq', compact('whitelabel', 'logistic', 'header'));
     }
 
     public function detailfaq()
     {
+         $header = Header::all();
         $whitelabel = Whitelabel::all();
         $logistic = Logistic::all();
-        return view('detailfaq', compact('whitelabel', 'logistic'));
+        return view('detailfaq', compact('whitelabel', 'logistic', 'header'));
     }
 
     public function merchant()
     {
+         $header = Header::all();
         $whitelabel = Whitelabel::all();
         $mercbanner = Mercbanner::all();
         $merctutor = Merctutor::all();
         $merchant = Merchant::all();
 
-        return view('merchant', compact('whitelabel', 'merchant', 'mercbanner', 'merctutor'));
+        return view('merchant', compact('whitelabel', 'merchant', 'mercbanner', 'merctutor', 'header'));
     }
 
     public function driver()
     {
+         $header = Header::all();
         $whitelabel = Whitelabel::all();
-        return view('driver', compact('whitelabel'));
+        return view('driver', compact('whitelabel', 'header'));
     }
 
     /*Language Translation*/

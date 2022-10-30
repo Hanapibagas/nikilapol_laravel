@@ -43,8 +43,8 @@ class BlogController extends Controller
         //Validasi input data
         $this->validate($request, [
             'title'     => 'required|min:5',
-            'category'  => 'required|min:5',
-            'author'  => 'required|min:5',
+            'category'  => 'required',
+            'author'  => 'required',
             'description' => 'required|min:5',
             'gambar'    => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
         ]);

@@ -3,7 +3,7 @@
             <div class="container">
                 <div class="row-footer">
                     <div class="logo-bottom">
-                        <img src="/image/{{ $footer->logo }}" alt="NikiLa" title="NikiLa">
+                        <img src="/image/{{ $footer->footer_logo }}" alt="" title="NikiLa">
                     </div>
                     <div class="row">
                         <div class="col-md-4">

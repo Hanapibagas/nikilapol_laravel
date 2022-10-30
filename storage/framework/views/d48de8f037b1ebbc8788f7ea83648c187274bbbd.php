@@ -1,3 +1,4 @@
+
       <!-- Header -->
       <header class="section page-header">
         <!--RD Navbar-->
@@ -39,7 +40,9 @@
                     </ul>
                   </div>
                   <div class="rd-navbar-collapse">
-                    <a class="button button-secondary button-nuka" href="https://play.google.com/store/apps/details?id=com.nusantaraku.nusantaraku_app_user_merchant">Belanja Sekarang<span class="button-overlay"></span></a>
+                    <?php $__currentLoopData = $header; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $header): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                    <a class="button button-secondary button-nuka" href="<?php echo e($header->link); ?>">Belanja Sekarang<span class="button-overlay"></span></a>
+                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                   </div>
                   </ul>
                 </div>

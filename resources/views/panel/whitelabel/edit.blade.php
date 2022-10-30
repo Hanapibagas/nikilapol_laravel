@@ -106,6 +106,16 @@
                                             </div>
                                         </div>
                                         <div class="row mb-4">
+                                            <label for="logo" class="col-form-label col-lg-2">Logo Footer</label>
+                                            <div class="col-lg-5">
+                                                <label for="logo" class="form-label">Upload logo baru</label>
+                                                <input class="form-control" type="file" name="footer_logo" id="gambar">
+                                            </div>
+                                            <div class="col-md-5 text-center">
+                                                <img class="rounded me-2" alt="Logo" src="/image/{{$whitelabel->footer_logo}}" data-holder-rendered="true" height="100">
+                                            </div>
+                                        </div>
+                                        <div class="row mb-4">
                                             <label for="logo" class="col-form-label col-lg-2">Gambar FAQ</label>
                                             <div class="col-lg-5">
                                                 <label for="bantuan" class="form-label">Upload gambar faq</label>
@@ -153,25 +163,31 @@
                                             <div class="col-lg-2">
                                                 <div class="input-group">
                                                     <div class="input-group-text"><i class="bx bxl-instagram "></i></div>
-                                                    <input type="text" name="instagram" class="form-control" id="inlineFormInputGroupUsername" placeholder="Username" value="{{ $whitelabel->instagram }}">
+                                                    <input type="text" name="instagram" class="form-control" id="inlineFormInputGroupUsername" placeholder="link G" value="{{ $whitelabel->instagram }}">
                                                 </div>
                                             </div>
                                             <div class="col-lg-2">
                                                 <div class="input-group">
                                                     <div class="input-group-text"><i class=" bx bxl-twitter "></i></div>
-                                                    <input type="text" name="twitter" class="form-control" id="inlineFormInputGroupUsername" placeholder="Username" value="{{ $whitelabel->twitter }}">
+                                                    <input type="text" name="twitter" class="form-control" id="inlineFormInputGroupUsername" placeholder="link TWT" value="{{ $whitelabel->twitter }}">
                                                 </div>
                                             </div>
                                             <div class="col-lg-2">
                                                 <div class="input-group">
                                                     <div class="input-group-text"><i class=" bx bxl-facebook "></i></div>
-                                                    <input type="text" name="facebook" class="form-control" id="inlineFormInputGroupUsername" placeholder="Username" value="{{ $whitelabel->facebook }}">
+                                                    <input type="text" name="facebook" class="form-control" id="inlineFormInputGroupUsername" placeholder="link FB" value="{{ $whitelabel->facebook }}">
                                                 </div>
                                             </div>
                                             <div class="col-lg-2">
                                                 <div class="input-group">
                                                     <div class="input-group-text"><i class="bx bxl-youtube "></i></div>
-                                                    <input type="text" name="youtube" class="form-control" id="inlineFormInputGroupUsername" placeholder="Username" value="{{ $whitelabel->youtube }}">
+                                                    <input type="text" name="youtube" class="form-control" id="inlineFormInputGroupUsername" placeholder="link YT" value="{{ $whitelabel->youtube }}">
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-2">
+                                                <div class="input-group">
+                                                    <div class="input-group-text"><i class="bx bxl-youtube "></i></div>
+                                                    <input type="text" name="tiktok" class="form-control" id="inlineFormInputGroupUsername" placeholder="link TT" value="{{ $whitelabel->tiktok }}">
                                                 </div>
                                             </div>
                                         </div>

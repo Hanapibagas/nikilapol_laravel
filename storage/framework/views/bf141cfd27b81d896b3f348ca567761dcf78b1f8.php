@@ -77,7 +77,7 @@
             <div class="row">
               <?php $__currentLoopData = $category; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $category): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                 <a class="card2 pb-3" href="#">
-                      <img src="/image/<?php echo e($category->gambar); ?>" width="50px" alt="">
+                      <img alt="<?php echo e($category->title); ?>" src="/image/<?php echo e($category->gambar); ?>" width="50px" alt="">
                 <h3 style="font-family: var(--font-dasar);"><?php echo e($category->title); ?></h3>
                 <p class="small"><?php echo e($category->description); ?></p>
                 

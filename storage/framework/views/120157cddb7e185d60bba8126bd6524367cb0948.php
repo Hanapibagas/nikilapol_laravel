@@ -35,7 +35,7 @@
 
           <div class="col-lg-5 col-md-5 col-12 atf_home_img  atf_home_img4 text-center">
             <div class="atf-img-inner  wow fadeInRight" data-wow-duration="2s" data-wow-delay="0.4s" data-wow-offset="0">
-              <div class="home-image-box atf-particle-img"><img src="/image/<?php echo e($header->aplikasi); ?>" alt="portfolio" class="card-s"></div>
+              <div class="home-image-box atf-particle-img"><img alt="<?php echo e($header->description); ?>" src="/image/<?php echo e($header->aplikasi); ?>" alt="portfolio" class="card-s"></div>
             </div>
           </div>
         </div>
@@ -54,7 +54,7 @@
                   <path d="M18.0698 8.92762C19.3101 9.63455 19.3101 11.3655 18.0698 12.0724L2.85678 20.7432C1.59455 21.4626 -6.40869e-08 20.585 0 19.1708L7.85887e-07 1.82916C8.49974e-07 0.414998 1.59455 -0.462644 2.85678 0.256784L18.0698 8.92762Z"></path>
                 </svg>
               </a>
-              <img class="box-shadow" src="/image/<?php echo e($about->gambar); ?>" width="660" height="406" />
+              <img class="box-shadow" src="/image/<?php echo e($about->gambar); ?>" width="660" height="406" alt="<?php echo e($about->description); ?>" />
             </div>
           </div>
           <div class="col-xl-5 col-lg-6">
@@ -73,7 +73,7 @@
         <h2 class="my-5 text-center" class="poppins"> <span style="color: var(--warna-dasar);">Fasilitas</span> Yang Kami Sajikan</h2>
         <div class="owl-carousel owl-1 text-center">
           <?php $__currentLoopData = $banner; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $banner): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-          <div><img src="/image/<?php echo e($banner->gambar); ?>" alt="Image" class="img-fluid"></div>
+          <div><img src="/image/<?php echo e($banner->gambar); ?>" alt="<?php echo e($banner->title); ?>" class="img-fluid"></div>
           <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
         </div>
       </div>
@@ -90,7 +90,7 @@
             <p class="big"><?php echo e($profit->description); ?></p>
           </div>
           <div class="col-xl-6 col-lg-6">
-            <div class="text-center text-lg-left"><img src="/image/<?php echo e($profit->gambar); ?>" alt="" width="500" height="406" />
+            <div class="text-center text-lg-left"><img src="/image/<?php echo e($profit->gambar); ?>" alt="<?php echo e($profit->description); ?>" width="500" height="406" />
             </div>
           </div>
         </div>
@@ -110,7 +110,7 @@
           <div class="column pt-5">
             <div class="card">
               <div class="icon-wrapper">
-                <img src="/image/<?php echo e($service->gambar); ?>" width="60px" alt="">
+                <img alt="<?php echo e($service->gambar); ?>" src="/image/<?php echo e($service->gambar); ?>" width="60px">
               </div>
               <h3 style="padding-bottom: 10px; font-family: 'Poppins';"><?php echo e($service->title); ?></h3>
               <p>
@@ -135,7 +135,7 @@
           <div class="col-xl-7 col-lg-9">
             <ul class="list-brands">
               <?php $__currentLoopData = $category; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $category): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-              <li class="list-brands-item"><a class="list-brands-link" href="javascript: void(0);"><img class="list-brands-img" src="/image/<?php echo e($category->gambar); ?>" alt="" width="50" height="71" /></a></li>
+              <li class="list-brands-item"><a class="list-brands-link" href="javascript: void(0);"><img class="list-brands-img" src="/image/<?php echo e($category->gambar); ?>" alt="<?php echo e($category->title); ?>" width="50" height="71" /></a></li>
               <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
             </ul>
           </div>
@@ -153,7 +153,7 @@
       <div class="row">
         <?php $__currentLoopData = $mitra; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $mitra): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
         <a class="card2" href="#">
-          <img src="/image/<?php echo e($mitra->gambar); ?>" width="80px" alt="">
+          <img alt="<?php echo e($mitra->description); ?>" src="/image/<?php echo e($mitra->gambar); ?>" width="80px" alt="">
           <h3 class="poppins"><?php echo e($mitra->title); ?></h3>
           <p class="small"><?php echo e($mitra->description); ?></p>
 
@@ -169,16 +169,20 @@
   </div>
   </section>
   <!-- Akhir Ajakan Driver -->
+
+
   <!-- Showcase -->
+  <?php $__currentLoopData = $showcase; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $showcase): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
   <section class="section section-md bg-default">
     <div class="container">
       <div class="row">
         <div class="col-md-6 ">
           <div class="col4">
             <div class="content wow fadeInUp">
-              <h6>Nikila</h6>
-              <p class=" h2 mb-4">Lebih Dari Sekedar Marketplace</p>
-              <p class="text-muted mb-4">Nikila merupakan solusi dan layanan untuk memberdayakan jutaan penjual produk kearifan lokal dan konsumen agar dapat berpartisipasi membangun ketahanan ekonomi Kabupaten Lamongan
+              <h6><?php echo e($showcase->brand); ?></h6>
+              <p class=" h2 mb-4"><?php echo e($showcase->title); ?></p>
+              <p class="text-muted mb-4"><?php echo e($showcase->description); ?>
+
               <p><a href="/layanan" class="button button-secondary button-nuka">Selengkapnya</a></p>
             </div>
           </div>
@@ -186,24 +190,24 @@
         <div class="col-md-6">
           <div class="align-items-center justify-content-center">
             <div id="carousel" class="owl-carousel wow fadeInUp ">
-              <div>
-                <img width="75%" id="img-1" class="image-app" src="/home/assets/img/Showcase Mockup/Homescreen.png">
+            <div>
+                <img alt="<?php echo e($showcase->title); ?>" width="75%" id="img-1" class="image-app" src="/home/assets/img/Showcase Mockup/Homescreen.png">
               </div>
 
               <div>
-                <img width="75%" id="img-2" class="image-app" src="/home/assets/img/Showcase Mockup/Anterin.png">
+                <img alt="<?php echo e($showcase->title); ?> width="75%" id="img-2" class="image-app" src="/home/assets/img/Showcase Mockup/Anterin.png">
               </div>
 
               <div>
-                <img width="75%" id="img-3" class="image-app" src="/home/assets/img/Showcase Mockup/All Produk.png">
+                <img alt="<?php echo e($showcase->title); ?> width="75%" id="img-3" class="image-app" src="/home/assets/img/Showcase Mockup/All Produk.png">
               </div>
 
               <div>
-                <img width="75%" id="img-4" class="image-app" src="/home/assets/img/Showcase Mockup/Produk Screen.png">
+                <img alt="<?php echo e($showcase->title); ?> width="75%" id="img-4" class="image-app" src="/home/assets/img/Showcase Mockup/Produk Screen.png">
               </div>
 
               <div>
-                <img width="75%" id="img-5" class="image-app" src="/home/assets/img/Showcase Mockup/Reservasi.png">
+                <img alt="<?php echo e($showcase->title); ?> width="75%" id="img-5" class="image-app" src="/home/assets/img/Showcase Mockup/Reservasi.png">
               </div>
             </div>
           </div>
@@ -211,9 +215,11 @@
       </div>
     </div>
   </section>
+  <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
   <!-- End Showcae -->
 
-<section class="bg-default">
+  <!-- Playlist Youtube -->
+<!-- <section class="bg-default">
       <div class="text-center wow fadeInUp pb-5">
         <h6>Butuh Bantuan?</h6>
         <h2 class="poppins">Cek Playlist Video Dibawah ini ya </h2>
@@ -224,9 +230,10 @@
       </div>
   </div>
   </div>
-  </section>
+  </section> -->
+    <!-- End Playlist Youtube -->
 
-  <!-- End Blog -->
+
   <!-- Banner CTA -->
   <?php echo $__env->make('master.cta', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
   <!-- End Banner CTA -->

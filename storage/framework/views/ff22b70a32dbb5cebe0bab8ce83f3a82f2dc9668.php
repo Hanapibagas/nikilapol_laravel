@@ -110,7 +110,7 @@
           <div class="column pt-5">
             <div class="card">
               <div class="icon-wrapper">
-                <img alt="<?php echo e($service->gambar); ?>" src="/image/<?php echo e($service->gambar); ?>" width="60px">
+                <img alt="<?php echo e($service->title); ?>" src="/image/<?php echo e($service->gambar); ?>" width="60px">
               </div>
               <h3 style="padding-bottom: 10px; font-family: 'Poppins';"><?php echo e($service->title); ?></h3>
               <p>

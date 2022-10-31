@@ -51,7 +51,7 @@ Route::get('blog/{slug}', [BlogDetailsController::class, 'details'])->name('deta
 Route::get('privacy', [PrivacyController::class, 'index'])->name('privacies');
 
 
-Route::prefix('admin')->group(function () {
+Route::prefix('admin')->middleware(['auth', 'admin'])->group(function () {
     // Rombakan route backend
     Route::get('/', [PanelController::class, 'index'])->name('dashboard');
 
@@ -87,8 +87,6 @@ Route::prefix('admin')->group(function () {
 
 Route::resource('whitelabel', WhitelabelController::class);
 
-
-Route::resource('whitelabel', WhitelabelController::class);
 //Update User Details
 Route::post('/update-profile/{id}', [App\Http\Controllers\PanelController::class, 'updateProfile'])->name('updateProfile');
 Route::post('/update-password/{id}', [App\Http\Controllers\PanelController::class, 'updatePassword'])->name('updatePassword');
@@ -97,5 +95,3 @@ Route::post('/update-password/{id}', [App\Http\Controllers\PanelController::clas
 Route::get('index/{locale}', [App\Http\Controllers\HomeController::class, 'lang']);
 
 Route::put('panel/{$id}', [MerctutorController::class, 'update']);
-
-//Konfigurasi Layanan

@@ -107,8 +107,22 @@
                         <li>
                             <a href="javascript: void(0);" class="has-arrow" key="t-level-1-2">Persyaratan</a>
                             <ul class="sub-menu" aria-expanded="true">
-                                <li><a href="{{ route('mercbanner.index') }}" key="t-level-2-2">Syarat Driver</a></li>
-                                <li><a href="{{ route('merchant.index') }}" key="t-level-2-1">Syarat Merchant</a></li>
+                                <li>
+                                    <a href="javascript: void(0);" class="has-arrow" key="t-level-1-2">Syarat Merchant</a>
+                                    <ul class="sub-menu" aria-expanded="true">
+                                    <ol><a href="{{ route('mercbanner.index') }}" key="t-level-2-2">Header</a></ol>
+                                    <ol><a href="{{ route('merchant.index') }}" key="t-level-2-1">Detail Persyaratan</a></ol>
+                                    </ul>
+                                </li>
+
+                                 <li>
+                                    <a href="javascript: void(0);" class="has-arrow" key="t-level-1-2">Syarat Driver</a>
+                                    <ul class="sub-menu" aria-expanded="true">
+                                    <ol><a href="{{ route('mercbanner.index') }}" key="t-level-2-2">Header</a></ol>
+                                    <ol><a href="{{ route('merchant.index') }}" key="t-level-2-1">Detail Persyaratan</a></ol>
+                                    <ol><a href="{{ route('merchant.index') }}" key="t-level-2-1">Reward</a></ol>
+                                    </ul>
+                                </li>
                             </ul>
                         </li>
                     </ul>

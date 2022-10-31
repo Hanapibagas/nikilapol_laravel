@@ -19,7 +19,7 @@
                 <div class="rd-navbar-main-element">
                   <div class="rd-navbar-nav-wrap">
                     <ul class="rd-navbar-nav">
-                      <li class="rd-nav-item"><a class="rd-nav-link" href="#">Mitra</a>
+                      <li class="rd-nav-item"><a class="rd-nav-link" href="#">Gabung Mitra</a>
                         <ul class="rd-menu rd-navbar-dropdown">
                           <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="/merchant">Mitra Merchant</a>
                           </li>
@@ -31,8 +31,8 @@
                       </li>
                       <li class="rd-nav-item"><a class="rd-nav-link" href="/kontak">Kontak</a>
                       </li>
-                        <li class="rd-nav-item"><a class="rd-nav-link" href="/faq">Bantuan</a>
-                      </li>
+                        <!-- <li class="rd-nav-item"><a class="rd-nav-link" href="/faq">Bantuan</a>
+                      </li> -->
                       <li class="rd-nav-item"><a class="rd-nav-link" href="/blog">Blog</a>
                       </li>
                         {{-- <li class="rd-nav-item"><a class="rd-nav-link" href="#">

@@ -48,13 +48,13 @@
                       <!-- Persyaratan -->
            <section class="section section-lg bungkus-fitur bg-gray-100">
             <div class="container text-center text-lg-left">
-              <h2><span class="text-bold text-white wow fadeInUp" style="font-family: 'Poppins';">Gabung Driver Mana nih ?</h2>
+              <h2><span class="text-bold text-white wow fadeInUp" style="font-family: 'Poppins';">Driver</h2>
               <div class="row mt-5 justify-content-center flex-wrap row-30 number-counter-2   wow fadeInUp">
                 <?php $__currentLoopData = $drivebenefit; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $drivebenefit): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?> 
               <div class="col-md-4">
                   <div class="box-numbered-left unit">
                     <div class="unit-body">
-                      <img src="/image/<?php echo e($drivebenefit->gambar); ?>" alt="<?php echo e($drivebenefit->title); ?>" width="100px"><h4 style="color: var(--warna-dasar); margin-top: 20px; font-family: var(--font-dasar);"><?php echo e($drivebenefit->title); ?></h4>
+                      <img src="/image/<?php echo e($drivebenefit->gambar); ?>" alt="<?php echo e($drivebenefit->title); ?>" width="100px"><h4 style="color: var(--warna-putih1); margin-top: 20px; font-family: var(--font-dasar);"><?php echo e($drivebenefit->title); ?></h4>
                       <div  style="color: #fff;" class="content"><?php echo e($drivebenefit->description); ?></div>
                       <a href="./syarat.html" class="button button-secondary button-nuka">Daftar</a>
                     </div>

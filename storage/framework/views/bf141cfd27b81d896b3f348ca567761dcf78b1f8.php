@@ -33,8 +33,8 @@
       <image xlink:href="/image/<?php echo e($layanan->cover); ?>" x="0" y="0" width="100%" height="100%"></image>
     </svg>
     <section class="b b2">
-      <h2 style="color: #fff;">Transportasi & Logistik</h2>
-      <p style="color: #fff;">Anter barang, antar penumpang... Semua bisa dilakuin!</p>
+      <h2 style="color: #fff;"><?php echo e($layanan->title); ?></h2>
+      <p style="color: #fff;"><?php echo e($layanan->description); ?></p>
       <div class="btns pt-3">
          <a href="#" class="button button-secondary button-nuka">Gabung Mitra</a>
       </div>

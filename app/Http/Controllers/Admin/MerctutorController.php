@@ -41,7 +41,7 @@ class MerctutorController extends Controller
     {
         $this->validate($request, [
             'title' => 'required',
-            'description' => 'required',
+            'description' => 'nullable',
             'gambar' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
         ]);
 

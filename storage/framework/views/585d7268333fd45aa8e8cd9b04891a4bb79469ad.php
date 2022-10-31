@@ -71,9 +71,6 @@
 
 
     <!-- Tutor Pesen -->
-
-
-
 <div class="container">
       <h1 class="row text-center" style="font-family: 'Poppins'; font-size: 50px;">Cara pesan Delivery</h1>
       <div class="row">
@@ -85,6 +82,7 @@
           <div>
             <button id="btn-<?php echo e($angka++); ?>" class="btn btn-success aktif" type="button">
               <div class="box-tutor"> <?php echo e($merctutor->title); ?></div>
+              <div class="box-tutor"> <?php echo e($merctutor->description); ?></div>
             </button>
           </div>
           <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
@@ -144,23 +142,9 @@
       </div>
 
 
-<<<<<<< HEAD
   <!-- Banner CTA -->
   <?php echo $__env->make('master.cta', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
   <!-- End Banner CTA -->
-=======
-      <section id="cta">
-        <div class="container">
-            <div class="box-cta">
-                <div class="cta-text" data-aos="fade-right">Cintai Produk Lamongan.<br> Cintai Produk Daerah.<br> Yuk, download<br> sekarang juga</div>
-                <a href="" title="Download NikiLa" target="_blank" data-aos="fade-down">
-                <img src="/home/assets/img/googleplay.png" width="150px" alt="">
-                </a>
-            </div>
-        </div>
-    </section>
-
->>>>>>> 3e14d2de8d353b98008aeed92af42dfaaa97bbc0
 
     <!-- Footer -->
     <?php echo $__env->make('master.footer', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>

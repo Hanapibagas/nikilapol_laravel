@@ -21,7 +21,7 @@
                         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                     </div>
                 <?php endif; ?>
-                <h4 class="card-title mb-2">List Kategori</h4>
+                <h4 class="card-title mb-2">List Layanan Kategori</h4>
                 <div class="d-flex flex-wrap mb-2">
                     <a href="<?php echo e(route('category.create')); ?>" type="button" class="btn btn-success waves-effect btn-label waves-light mb-2"><i class="bx bx-add-to-queue label-icon"></i>Tambah Data</a>
                 </div>
@@ -63,4 +63,5 @@
 <?php $__env->stopSection(); ?>
 <?php $__env->startSection('script'); ?>
 <?php $__env->stopSection(); ?>
+
 <?php echo $__env->make('layouts.master', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\Users\saefu\OneDrive\Desktop\nikilapol_laravel\resources\views/panel/category/index.blade.php ENDPATH**/ ?>

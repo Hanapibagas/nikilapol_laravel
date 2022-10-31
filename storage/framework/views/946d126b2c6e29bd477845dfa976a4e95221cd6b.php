@@ -14,7 +14,7 @@
 
     <?php $__env->startComponent('components.breadcrumb'); ?>
         <?php $__env->slot('li_1'); ?> Konfigurasi <?php $__env->endSlot(); ?>
-        <?php $__env->slot('title'); ?> Konfigurasi About Us <?php $__env->endSlot(); ?>
+        <?php $__env->slot('title'); ?> About Us <?php $__env->endSlot(); ?>
     <?php echo $__env->renderComponent(); ?>
     <div class="row">
         <div class="col-lg-12">

@@ -46,9 +46,9 @@
                             </div>
                         </div>
                         <div class="row mb-4">
-                            <label for="projectname" class="col-form-label col-lg-2">Aplikasi</label>
+                            <label for="aplikasi" class="col-form-label col-lg-2">Aplikasi</label>
                             <div class="col-lg-5">
-                                <label for="formFile" class="form-label">Upload Aplikasi baru</label>
+                                <label for="aplikasi" class="form-label">Upload Aplikasi baru</label>
                                 <input class="form-control" name="aplikasi" type="file" id="aplikasi">
                             </div>
                             <div class="col-md-5 text-center">

@@ -22,7 +22,7 @@
 
     <?php $__env->startComponent('components.breadcrumb'); ?>
         <?php $__env->slot('li_1'); ?> Konfigurasi <?php $__env->endSlot(); ?>
-        <?php $__env->slot('title'); ?> Tambah banner <?php $__env->endSlot(); ?>
+        <?php $__env->slot('title'); ?> Artikel <?php $__env->endSlot(); ?>
     <?php echo $__env->renderComponent(); ?>
     <div class="row">
         <div class="col-lg-12">
@@ -37,7 +37,7 @@
                     </div>
                 <?php endif; ?>
                 <div class="card-body">
-                    <h4 class="card-title mb-4">Tambah banner</h4>
+                    <h4 class="card-title mb-4">Tambah Artikel</h4>
                     <form action="<?php echo e(route('blog.store')); ?>" method="POST" enctype="multipart/form-data">
                         <?php echo csrf_field(); ?>
                         <div class="row mb-4">

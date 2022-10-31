@@ -39,13 +39,6 @@ class CategoryController extends Controller
      */
     public function store(Request $request, Category $category)
     {
-        //validate form
-        $this->validate($request, [
-            'title'     => 'required|min:5',
-            'link'     => 'required|min:5',
-            'gambar'     => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
-        ]);
-
         $input = $request->all();
 
         //check if image is uploaded

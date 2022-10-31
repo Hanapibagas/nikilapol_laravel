@@ -6,7 +6,7 @@
 
 <?php $__env->startComponent('components.breadcrumb'); ?>
 <?php $__env->slot('li_1'); ?> Konfigurasi <?php $__env->endSlot(); ?>
-<?php $__env->slot('title'); ?> Header <?php $__env->endSlot(); ?>
+<?php $__env->slot('title'); ?> showcase <?php $__env->endSlot(); ?>
 <?php echo $__env->renderComponent(); ?>
 
 <div class="row">
@@ -21,7 +21,7 @@
                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                 </div>
                 <?php endif; ?>
-                <h4 class="card-title mb-4">List Header</h4>
+                <h4 class="card-title mb-4">List showcase</h4>
                 <div class="d-flex flex-wrap mb-2">
                     <a href="<?php echo e(route('show-case.create')); ?>" type="button" class="btn btn-success waves-effect btn-label waves-light mb-2"><i class="bx bx-add-to-queue label-icon"></i>Tambah Data</a>
                 </div>

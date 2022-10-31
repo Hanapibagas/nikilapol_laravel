@@ -14,13 +14,13 @@
 
     <?php $__env->startComponent('components.breadcrumb'); ?>
         <?php $__env->slot('li_1'); ?> Konfigurasi <?php $__env->endSlot(); ?>
-        <?php $__env->slot('title'); ?> Konfigurasi profit <?php $__env->endSlot(); ?>
+        <?php $__env->slot('title'); ?> keuntungan <?php $__env->endSlot(); ?>
     <?php echo $__env->renderComponent(); ?>
     <div class="row">
         <div class="col-lg-12">
             <div class="card">
                 <div class="card-body">
-                    <h4 class="card-title mb-4">Konfigurasi profit</h4>
+                    <h4 class="card-title mb-4">Konfigurasi keuntungan</h4>
                     <form action="<?php echo e(route('profit.update', $profit->id)); ?>" method="POST" enctype="multipart/form-data">
                         <?php echo csrf_field(); ?>
                         <?php echo method_field('PUT'); ?>

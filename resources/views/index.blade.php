@@ -110,7 +110,7 @@
           <div class="column pt-5">
             <div class="card">
               <div class="icon-wrapper">
-                <img alt="{{ $service->gambar }}" src="/image/{{$service->gambar}}" width="60px">
+                <img alt="{{ $service->title }}" src="/image/{{$service->gambar}}" width="60px">
               </div>
               <h3 style="padding-bottom: 10px; font-family: 'Poppins';">{{ $service->title }}</h3>
               <p>

@@ -79,9 +79,10 @@
                 $angka = 1
             @endphp
           @foreach ( $merctutor as $merctutor  )
-          <div>
+          <div> 
             <button id="btn-{{ $angka++ }}" class="btn btn-success aktif" type="button">
               <div class="box-tutor"> {{ $merctutor->title }}</div>
+              <div class="box-tutor"> {{ $merctutor->description }}</div>
             </button>
           </div>
           @endforeach
@@ -147,23 +148,9 @@
       </div>
 
 
-<<<<<<< HEAD
   <!-- Banner CTA -->
   @include('master.cta')
   <!-- End Banner CTA -->
-=======
-      <section id="cta">
-        <div class="container">
-            <div class="box-cta">
-                <div class="cta-text" data-aos="fade-right">Cintai Produk Lamongan.<br> Cintai Produk Daerah.<br> Yuk, download<br> sekarang juga</div>
-                <a href="" title="Download NikiLa" target="_blank" data-aos="fade-down">
-                <img src="/home/assets/img/googleplay.png" width="150px" alt="">
-                </a>
-            </div>
-        </div>
-    </section>
-{{-- @include('master.cta') --}}
->>>>>>> 3e14d2de8d353b98008aeed92af42dfaaa97bbc0
 
     <!-- Footer -->
     @include('master.footer')

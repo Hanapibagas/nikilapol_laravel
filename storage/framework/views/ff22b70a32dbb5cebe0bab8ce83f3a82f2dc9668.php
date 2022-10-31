@@ -172,7 +172,6 @@
 
 
   <!-- Showcase -->
-  <?php $__currentLoopData = $showcase; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $showcase): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
   <section class="section section-md bg-default">
     <div class="container">
       <div class="row">
@@ -190,32 +189,19 @@
         <div class="col-md-6">
           <div class="align-items-center justify-content-center">
             <div id="carousel" class="owl-carousel wow fadeInUp ">
-            <div>
-                <img alt="<?php echo e($showcase->title); ?>" width="75%" id="img-1" class="image-app" src="/home/assets/img/Showcase Mockup/Homescreen.png">
-              </div>
+                <?php $__currentLoopData = $galleri; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $galleri): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                <div>
+                    <img alt="Hello" width="75%" id="img-1" class="image-app" src="<?php echo e(Storage::url($galleri->gambar)); ?>">
+                  </div>
+                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 
-              <div>
-                <img alt="<?php echo e($showcase->title); ?> width="75%" id="img-2" class="image-app" src="/home/assets/img/Showcase Mockup/Anterin.png">
-              </div>
-
-              <div>
-                <img alt="<?php echo e($showcase->title); ?> width="75%" id="img-3" class="image-app" src="/home/assets/img/Showcase Mockup/All Produk.png">
-              </div>
-
-              <div>
-                <img alt="<?php echo e($showcase->title); ?> width="75%" id="img-4" class="image-app" src="/home/assets/img/Showcase Mockup/Produk Screen.png">
-              </div>
-
-              <div>
-                <img alt="<?php echo e($showcase->title); ?> width="75%" id="img-5" class="image-app" src="/home/assets/img/Showcase Mockup/Reservasi.png">
-              </div>
+              
             </div>
           </div>
         </div>
       </div>
     </div>
   </section>
-  <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
   <!-- End Showcae -->
 
   <!-- Playlist Youtube -->
@@ -247,4 +233,5 @@
   <script src="/home/js/script.js"></script>
 </body>
 
-</html><?php /**PATH D:\Project-web\Laravel\nikilapol_laravel\resources\views/index.blade.php ENDPATH**/ ?>
+</html>
+<?php /**PATH D:\Project-web\Laravel\nikilapol_laravel\resources\views/index.blade.php ENDPATH**/ ?>

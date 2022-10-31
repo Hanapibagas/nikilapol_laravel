@@ -1,49 +1,47 @@
-@extends('layouts.master')
+<?php $__env->startSection('title'); ?> <?php echo app('translator')->get('translation.Create_New'); ?> <?php $__env->stopSection(); ?>
 
-@section('title') @lang('translation.Create_New') @endsection
-
-@section('css')
+<?php $__env->startSection('css'); ?>
     <!-- bootstrap datepicker -->
-    <link href="{{ URL::asset('/assets/libs/bootstrap-datepicker/bootstrap-datepicker.min.css') }}" rel="stylesheet">
+    <link href="<?php echo e(URL::asset('/assets/libs/bootstrap-datepicker/bootstrap-datepicker.min.css')); ?>" rel="stylesheet">
 
     <!-- dropzone css -->
-    <link href="{{ URL::asset('/assets/libs/dropzone/dropzone.min.css') }}" rel="stylesheet" type="text/css" />
-@endsection
+    <link href="<?php echo e(URL::asset('/assets/libs/dropzone/dropzone.min.css')); ?>" rel="stylesheet" type="text/css" />
+<?php $__env->stopSection(); ?>
 
-@section('content')
+<?php $__env->startSection('content'); ?>
 
-    @component('components.breadcrumb')
-        @slot('li_1') Konfigurasi @endslot
-        @slot('title') Konfigurasi logistic @endslot
-    @endcomponent
+    <?php $__env->startComponent('components.breadcrumb'); ?>
+        <?php $__env->slot('li_1'); ?> Konfigurasi <?php $__env->endSlot(); ?>
+        <?php $__env->slot('title'); ?> Konfigurasi logistic <?php $__env->endSlot(); ?>
+    <?php echo $__env->renderComponent(); ?>
     <div class="row">
         <div class="col-lg-12">
             <div class="card">
                 <div class="card-body">
                     <h4 class="card-title mb-4">Konfigurasi logistic</h4>
 
-                    <form action="{{ route('logistic.update', $logistic->id) }}" method="POST" enctype="multipart/form-data">
-                        @csrf
-                        @method('PUT')
+                    <form action="<?php echo e(route('logistic.update', $logistic->id)); ?>" method="POST" enctype="multipart/form-data">
+                        <?php echo csrf_field(); ?>
+                        <?php echo method_field('PUT'); ?>
                         <div class="row mb-4">
                             <label for="title" class="col-form-label col-lg-2">Title</label>
                             <div class="col-lg-10">
                                 <input id="title" name="title" type="text" class="form-control"
-                                    placeholder="Enter Project Name..." value="{{ $logistic->title }}" >
+                                    placeholder="Enter Project Name..." value="<?php echo e($logistic->title); ?>" >
                             </div>
                         </div>
                         <div class="row mb-4">
                             <label for="description" class="col-form-label col-lg-2">Deskripsi</label>
                             <div class="col-lg-10">
                                 <textarea id="description" name="description" type="text" class="form-control" style="height:100px;"
-                                    placeholder="Enter Project Name...">{{ $logistic->description }}</textarea>
+                                    placeholder="Enter Project Name..."><?php echo e($logistic->description); ?></textarea>
                             </div>
                         </div>
                         <div class="row mb-4">
                             <label for="link" class="col-form-label col-lg-2">Link</label>
                             <div class="col-lg-10">
                                 <input id="link" name="link" type="text" class="form-control"
-                                    placeholder="Enter Project Name..." value="{{ $logistic->link }}" >
+                                    placeholder="Enter Project Name..." value="<?php echo e($logistic->link); ?>" >
                             </div>
                         </div>
                         <div class="row mb-4">
@@ -53,7 +51,7 @@
                                 <input class="form-control" name="gambar" type="file" id="gambar">
                             </div>
                             <div class="col-md-5 text-center">
-                            <img class="rounded me-2" alt="200x200" src="/image/{{$logistic->gambar}}" data-holder-rendered="true" width="200">
+                            <img class="rounded me-2" alt="200x200" src="/image/<?php echo e($logistic->gambar); ?>" data-holder-rendered="true" width="200">
                             </div>
                         </div>
                         <div class="row justify-content-end">
@@ -70,10 +68,12 @@
     </div>
     <!-- end row -->
 
-@endsection
-@section('script')
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('script'); ?>
     <!-- bootstrap datepicker -->
-    <script src="{{ URL::asset('/assets/libs/bootstrap-datepicker/bootstrap-datepicker.min.js') }}"></script>
+    <script src="<?php echo e(URL::asset('/assets/libs/bootstrap-datepicker/bootstrap-datepicker.min.js')); ?>"></script>
     <!-- dropzone plugin -->
-    <script src="{{ URL::asset('/assets/libs/dropzone/dropzone.min.js') }}"></script>
-@endsection
+    <script src="<?php echo e(URL::asset('/assets/libs/dropzone/dropzone.min.js')); ?>"></script>
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layouts.master', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH D:\Project-web\Laravel\nikilapol_laravel\resources\views/panel/layanan/editlogistic.blade.php ENDPATH**/ ?>

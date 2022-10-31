@@ -27,6 +27,7 @@ use App\Http\Controllers\Admin\MitraController;
 
 // route frontend
 use App\Http\Controllers\Admin\WhitelabelController;
+use App\Http\Controllers\Admin\WhyController;
 use App\Http\Controllers\BlogController as ControllersBlogController;
 use App\Http\Controllers\BlogDetailsController;
 use App\Http\Controllers\FaqController as ControllersFaqController;
@@ -82,6 +83,7 @@ Route::prefix('admin')->middleware(['auth', 'admin'])->group(function () {
     Route::resource('driver-banner', DriveController::class);
     Route::resource('driver-benefit', DriveBannerController::class);
     Route::resource('driver-tutorial', DrivTutorialController::class);
+    Route::resource('driver-mengapa', WhyController::class);
 });
 
 

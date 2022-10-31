@@ -2,7 +2,7 @@
 <html class="wide wow-animation" lang="en">
   <head>
     <title>Driver</title>
-<?php echo $__env->make('master.meta', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>  
+<?php echo $__env->make('master.meta', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 <?php echo $__env->make('master.head-css', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 <link rel="stylesheet" href="/home/css/driver.css">
 <?php echo $__env->make('master.root', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
@@ -50,21 +50,22 @@
             <div class="container text-center text-lg-left">
               <h2><span class="text-bold text-white wow fadeInUp" style="font-family: 'Poppins';">Gabung Driver Mana nih ?</h2>
               <div class="row mt-5 justify-content-center flex-wrap row-30 number-counter-2   wow fadeInUp">
-                 <?php $__currentLoopData = $drivebenefit; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $drivebenefit): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                <div class="col-md-4">
+                <?php $__currentLoopData = $drivebenefit; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $drivebenefit): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+              <div class="col-md-4">
                   <div class="box-numbered-left unit">
                     <div class="unit-body">
-                      <img src="/home/assets/img/Icon Gabung Driver Mana/Delivery.png" alt="Kita Delivery" width="100px"><h4 style="color: var(--warna-dasar); margin-top: 20px; font-family: var(--font-dasar);"><?php echo e($drivebenefit->title); ?></h4>
-                      <div  style="color: #fff;" class="content">Anter pesanan makanan kamu kemanapun dan kapanpun kamu mau</div>
+                      <img src="/image/<?php echo e($drivebenefit->gambar); ?>" alt="<?php echo e($drivebenefit->title); ?>" width="100px"><h4 style="color: var(--warna-dasar); margin-top: 20px; font-family: var(--font-dasar);"><?php echo e($drivebenefit->title); ?></h4>
+                      <div  style="color: #fff;" class="content"><?php echo e($drivebenefit->description); ?></div>
                       <a href="./syarat.html" class="button button-secondary button-nuka">Daftar</a>
                     </div>
                   </div>
                 </div>
+                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                </div>
               </div>
             </div>
-          </section>  
-           <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-             
+          </section>
+
     <!-- Kenapa Kami-->
     <section class="section section-md bg-default">
          <div class="text-center wow fadeInUp pb-5">
@@ -157,24 +158,23 @@
           <div id="carousel">
         <div>
           <img id="img-1" class="image-app" src="/home/assets/img/Order Anterin/1. Buka Aplikasi NikiLaPOL, lalu pilih NikiAnterin.png">
-          
           <p id="mobile" class="text-center text-1">1. Buka Aplikasi Nikila Lalu Pilih Niki Anterin</p>
         </div>
         <div>
           <img id="img-2" class="image-app" src="/home/assets/img/Order Anterin/2. Tentukan Lokasi Jemput.png">
            <p id="mobile" class="text-center text-1">2. Tentukan Lokasi Jemput</p>
         </div>
-        <div> 
+        <div>
           <img id="img-3" class="image-app" src="/home/assets/img/Order Anterin/3. Lalu pilih lokasi tujuan kamu mau di anterin.png">
           <p id="mobile" class="text-center text-1">3. Pilih Lokasi yang kamu mau</p>
         </div>
-        <div> 
+        <div>
           <img id="img-4" class="image-app" src="/home/assets/img/Order Anterin/4. Cek ulang pesanan, pilih metode pembayaran, lalu klik PESAN.png">
         <p id="mobile" class="text-center text-1">4. Cek Ulang Pemesanan Lalu Pilih Metode Pembayaran</p>
         </div>
         <div>
           <img id="img-5" class="image-app" src="/home/assets/img/Order Anterin/5. Driver menuju titik jemput kamu.png">
-        
+
           <p id="mobile" class="text-center text-1">5. Driver Menuju Tikik Jemput</p>
         </div>
         <div>
@@ -184,7 +184,7 @@
       </div>
       </div>
     </div>
-      </div>  
+      </div>
 
       <!-- CTA -->
       <?php echo $__env->make('master.cta', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
@@ -198,4 +198,5 @@
     <script src="/home/js/driver.js"></script>
     <script src="/home/js/script-merchant.js"></script>
   </body>
-</html><?php /**PATH D:\Project-web\Laravel\nikilapol_laravel\resources\views/driver.blade.php ENDPATH**/ ?>
+</html>
+<?php /**PATH D:\Project-web\Laravel\nikilapol_laravel\resources\views/driver.blade.php ENDPATH**/ ?>

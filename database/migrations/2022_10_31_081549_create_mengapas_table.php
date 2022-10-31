@@ -1,6 +1,5 @@
 <?php
 
-use App\Models\Showcase;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -14,14 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('showcases', function (Blueprint $table) {
+        Schema::create('mengapas', function (Blueprint $table) {
             $table->id();
-            $table->string('brand');
             $table->string('title');
-            $table->text('description');
+            $table->string('gambar');
             $table->timestamps();
         });
-        Showcase::create(['brand' => 'Hello word', 'title' => 'Ini hanya data dumy', 'description' => 'Silahkan menguhubungi pihak admin untuk mengubahnya']);
     }
 
     /**
@@ -31,6 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('showcases');
+        Schema::dropIfExists('mengapas');
     }
 };

@@ -92,11 +92,11 @@
             
               <!-- sosmed -->
               <ul class="sosmed-kontak">
-                <li><a href="https://facebook.com/<?php echo e($media->facebook); ?>"><i class="fa-brands fa-facebook"></i></a></li>
-                <li><a href="https://instagram.com/<?php echo e($media->instagram); ?>"><i class="fa-brands fa-instagram"></i></a></li>
-                <li><a href="https://twitter.com/<?php echo e($media->twitter); ?>"><i class="fa-brands fa-twitter"></i></a></li>
-                <li><a href="https://tiktok.com/<?php echo e($media->tiktok); ?>"><i class="fa-brands fa-tiktok"></i></a></li>
-                <li><a href="https://youtube.com/<?php echo e($media->youtube); ?>"><i class="fa-brands fa-youtube"></i></a></li>
+                <li><a href="<?php echo e($media->facebook); ?>"><i class="fa-brands fa-facebook"></i></a></li>
+                <li><a href="<?php echo e($media->instagram); ?>"><i class="fa-brands fa-instagram"></i></a></li>
+                <li><a href="<?php echo e($media->twitter); ?>"><i class="fa-brands fa-twitter"></i></a></li>
+                <li><a href="<?php echo e($media->tiktok); ?>"><i class="fa-brands fa-tiktok"></i></a></li>
+                <li><a href="<?php echo e($media->youtube); ?>"><i class="fa-brands fa-youtube"></i></a></li>
               </ul>
 
             </div>

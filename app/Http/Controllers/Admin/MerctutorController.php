@@ -57,7 +57,6 @@ class MerctutorController extends Controller
         }
         $merctutor->create($input);
 
-        //redirect to index
         return redirect()->route('merctutor.index')->with(['Sukses menambahkan data']);
     }
 

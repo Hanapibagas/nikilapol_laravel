@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="wide wow-animation" lang="en">
   <head>
-<?php echo $__env->make('master.meta', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>  
+<?php echo $__env->make('master.meta', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 <?php echo $__env->make('master.head-css', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 <link rel="stylesheet" href="/home/css/layanan.css">
 <?php echo $__env->make('master.root', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
@@ -9,7 +9,7 @@
 /* Banner CTA */
 
 /* End Banner CTA */
-</style>   
+</style>
 </head>
   <body>
     <div class="preloader">
@@ -77,10 +77,10 @@
             <div class="row">
               <?php $__currentLoopData = $category; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $category): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                 <a class="card2 pb-3" href="#">
-                      <img src="/image/<?php echo e($category->gambar); ?>" width="50px" alt="">
+                      <img alt="<?php echo e($category->title); ?>" src="/image/<?php echo e($category->gambar); ?>" width="50px" alt="">
                 <h3 style="font-family: var(--font-dasar);"><?php echo e($category->title); ?></h3>
                 <p class="small"><?php echo e($category->description); ?></p>
-                
+
                 <div class="go-corner" href="#">
                   <div class="go-arrow">
                     →
@@ -101,10 +101,10 @@
             <div class="row">
               <?php $__currentLoopData = $logistic; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $logistic): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                 <a class="card2 pb-3" href="#">
-                      <img src="/image/<?php echo e($logistic->cover); ?>" width="60px" alt="">
+                      <img src="/image/<?php echo e($logistic->gambar); ?>" width="60px" alt="">
                 <h3 style="font-family: var(--font-dasar);"><?php echo e($logistic->title); ?></h3>
                 <p class="small">A<?php echo e($logistic->description); ?></p>
-                
+
                 <div class="go-corner" href="#">
                   <div class="go-arrow">
                     →
@@ -120,7 +120,7 @@
 
 
 
- 
+
 
 
   <!-- Banner CTA -->
@@ -135,4 +135,5 @@
     <script src="/home/js/layanan.js"></script>
     <script src="/home/js/script-layanan.js"></script>
   </body>
-</html><?php /**PATH D:\Project-web\Laravel\nikilapol_laravel\resources\views/layanan.blade.php ENDPATH**/ ?>
+</html>
+<?php /**PATH D:\Project-web\Laravel\nikilapol_laravel\resources\views/layanan.blade.php ENDPATH**/ ?>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="wide wow-animation" lang="en">
   <head>
-@include('master.meta')  
+@include('master.meta')
 @include('master.head-css')
 <link rel="stylesheet" href="/home/css/layanan.css">
 @include('master.root')
@@ -9,7 +9,7 @@
 /* Banner CTA */
 
 /* End Banner CTA */
-</style>   
+</style>
 </head>
   <body>
     <div class="preloader">
@@ -80,7 +80,7 @@
                       <img alt="{{ $category->title }}" src="/image/{{$category->gambar}}" width="50px" alt="">
                 <h3 style="font-family: var(--font-dasar);">{{ $category->title }}</h3>
                 <p class="small">{{ $category->description }}</p>
-                
+
                 <div class="go-corner" href="#">
                   <div class="go-arrow">
                     →
@@ -101,10 +101,10 @@
             <div class="row">
               @foreach ($logistic as $logistic)
                 <a class="card2 pb-3" href="#">
-                      <img src="/image/{{ $logistic->cover }}" width="60px" alt="">
+                      <img src="/image/{{$logistic->gambar}}" width="60px" alt="">
                 <h3 style="font-family: var(--font-dasar);">{{ $logistic->title }}</h3>
                 <p class="small">A{{ $logistic->description }}</p>
-                
+
                 <div class="go-corner" href="#">
                   <div class="go-arrow">
                     →
@@ -120,7 +120,7 @@
 
 
 
- 
+
 
 
   <!-- Banner CTA -->

@@ -3,12 +3,11 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\Logistic;
+use App\Models\Mengapa;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\File;
 
-class LogisticController extends Controller
+class WhyController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,8 +16,9 @@ class LogisticController extends Controller
      */
     public function index()
     {
-        $logistic = Logistic::all();
-        return view('panel.layanan.logistic', compact('logistic'));
+        $mengapa = Mengapa::all();
+
+        return view('panel.driver.mengapa.index', compact('mengapa'));
     }
 
     /**
@@ -28,7 +28,7 @@ class LogisticController extends Controller
      */
     public function create()
     {
-        return view('panel.layanan.createlogistic');
+        return view('panel.driver.mengapa.create');
     }
 
     /**
@@ -37,18 +37,10 @@ class LogisticController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request, Logistic $logistic)
+    public function store(Request $request, Mengapa $mengapa)
     {
-        //Validasi input data
-        $this->validate($request, [
-            'title'    => 'required|min:5',
-            'link'     => 'required|min:5',
-            'gambar'   => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
-        ]);
-
         $input = $request->all();
 
-        //cek jika ada cover yang di upload
         if ($gambar = $request->file('gambar')) {
             $destinationPath = 'image/';
             $gambarName = Str::random(3) . "-" . date('Ymd') . "." . $gambar->getClientOriginalExtension();
@@ -57,11 +49,9 @@ class LogisticController extends Controller
         } else {
             unset($input['gambar']);
         }
+        $mengapa->create($input);
 
-        $logistic->create($input);
-
-        //redirect to index
-        return redirect()->route('logistic.index')->with(['success' => 'Data Berhasil Ditambah!']);
+        return redirect()->route('driver-mengapa.index')->with(['Sukses menambahkan data']);
     }
 
     /**
@@ -81,9 +71,10 @@ class LogisticController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Logistic $logistic)
+    public function edit($id)
     {
-        return view('panel.layanan.editlogistic', compact('logistic'));
+        $mengapa = Mengapa::findOrFail($id);
+        return view('panel.driver.mengapa.edit', compact('mengapa'));
     }
 
     /**
@@ -93,30 +84,22 @@ class LogisticController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Logistic $logistic)
+    public function update(Request $request, $id)
     {
-        //validate form
-        $this->validate($request, [
-            'title'     => 'required|min:5',
-            'description'     => 'required|min:5',
-            'link'     => 'required|min:5',
-            // 'cover'     => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-        ]);
-
         $input = $request->all();
 
-        //check if image is uploaded
         if ($gambar = $request->file('gambar')) {
             $destinationPath = 'image/';
             $gambarName = Str::random(3) . "-" . date('Ymd') . "." . $gambar->getClientOriginalExtension();
             $gambar->move($destinationPath, $gambarName);
             $input['gambar'] = $gambarName;
+        } else {
+            unset($input['gambar']);
         }
+        $mengapa = Mengapa::findOrFail($id);
+        $mengapa->update($input);
 
-        $logistic->update($input);
-
-        //redirect to index
-        return redirect()->route('logistic.index')->with(['success' => 'Data Berhasil Diubah!']);
+        return redirect()->route('driver-mengapa.index')->with(['Sukses menambahkan data']);
     }
 
     /**
@@ -125,15 +108,8 @@ class LogisticController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Logistic $logistic)
+    public function destroy($id)
     {
-        //Hapus file di public path
-        if (File::exists(public_path('image/' . $logistic->gambar))) {
-            File::delete(public_path('image/' . $logistic->gambar));
-        }
-
-        $logistic->delete();
-        //redirect to index
-        return redirect()->route('logistic.index')->with(['success' => 'Data Berhasil Hapus!']);
+        //
     }
 }

@@ -171,7 +171,6 @@
 
 
   <!-- Showcase -->
-  @foreach ($showcase as $showcase)
   <section class="section section-md bg-default">
     <div class="container">
       <div class="row">
@@ -188,11 +187,13 @@
         <div class="col-md-6">
           <div class="align-items-center justify-content-center">
             <div id="carousel" class="owl-carousel wow fadeInUp ">
-            <div>
-                <img alt="{{ $showcase->title }}" width="75%" id="img-1" class="image-app" src="/home/assets/img/Showcase Mockup/Homescreen.png">
-              </div>
+                @foreach ( $galleri as $galleri )
+                <div>
+                    <img alt="Hello" width="75%" id="img-1" class="image-app" src="{{ Storage::url($galleri->gambar) }}">
+                  </div>
+                @endforeach
 
-              <div>
+              {{-- <div>
                 <img alt="{{ $showcase->title }} width="75%" id="img-2" class="image-app" src="/home/assets/img/Showcase Mockup/Anterin.png">
               </div>
 
@@ -206,14 +207,13 @@
 
               <div>
                 <img alt="{{ $showcase->title }} width="75%" id="img-5" class="image-app" src="/home/assets/img/Showcase Mockup/Reservasi.png">
-              </div>
+              </div> --}}
             </div>
           </div>
         </div>
       </div>
     </div>
   </section>
-  @endforeach
   <!-- End Showcae -->
 
   <!-- Playlist Youtube -->

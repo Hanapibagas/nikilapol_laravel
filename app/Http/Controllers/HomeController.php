@@ -20,6 +20,7 @@ use App\Models\Merctutor;
 use App\Models\Whitelabel;
 use App\Models\Privacy;
 use App\Models\Showcase;
+use App\Models\ShowcaseGalleri;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Session;
 
@@ -43,8 +44,8 @@ class HomeController extends Controller
 
     public function root()
     {
-        $galleri = Showcase::all();
-        $showcase = Showcase::all();
+        $galleri = ShowcaseGalleri::all();
+        $showcase = Showcase::first();
         $header = Header::all();
         $about = About::all();
         $blog = Blog::orderBy('id', 'desc')->get();
@@ -125,9 +126,11 @@ class HomeController extends Controller
         $whitelabel = Whitelabel::all();
         $mercbanner = Mercbanner::all();
         $merctutor = Merctutor::all();
+        $gambar = Merctutor::all();
+        // dd($merctutor);
         $merchant = Merchant::all();
 
-        return view('merchant', compact('whitelabel', 'merchant', 'mercbanner', 'merctutor', 'header'));
+        return view('merchant', compact('whitelabel', 'merchant', 'mercbanner', 'merctutor', 'header', 'gambar'));
     }
 
     public function driver()

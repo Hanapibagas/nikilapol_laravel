@@ -78,9 +78,9 @@
             @php
                 $angka = 1
             @endphp
-          @foreach ( $merctutor as $merctutor  )
-          <div> 
-            <button id="btn-{{ $angka++ }}" class="btn btn-success aktif" type="button">
+          @foreach ( $merctutor as $key => $merctutor  )
+          <div>
+            <button id="btn-{{ $angka++ }}" class="btn btn-success" type="button">
               <div class="box-tutor"> {{ $merctutor->title }}</div>
               <div class="box-tutor"> {{ $merctutor->description }}</div>
             </button>
@@ -90,58 +90,15 @@
           </div>
         <div class="col-md-6">
           <div id="carousel">
-            {{-- @php
-                $nilai = 1
+            @php
+                $a = 1
             @endphp
+            @foreach ( $gambar as $gambar )
             <div>
-                <img id="img-{{ $nilai++ }}" class="image-app" src="/image/{{$merctutor->gambar}}">
+                <img id="img-{{ $a++ }}" class="image-app" src="/image/{{$gambar->gambar ?? ''}}">
                 <p id="mobile" class="text-center text-1">1. Buka Aplikasi Nikila, Lalu Pilih Salah Satu Kategori</p>
-            </div> --}}
-
-            <div>
-              <img id="img-1" class="image-app" src="/home/assets/img/Order Delivery/1. Buka Aplikasi NikiLaPOL, lalu pilih salah satu kategori.png">
-            <p id="mobile" class="text-center text-1">1. Buka Aplikasi Nikila, Lalu Pilih Salah Satu Kategori</p>
             </div>
-
-            <div>
-              <img id="img-2" class="image-app" src="/home/assets/img/Order Delivery/2. Tentukan Produk yang ingin di beli.png">
-                <p id="mobile" class="text-center text-1">2. Tentukan Produk Yang Ingin Dibeli</p>
-            </div>
-
-            <div>
-              <img id="img-3" class="image-app" src="/home/assets/img/Order Delivery/3. Kalau sudah yakin dengan barangnya, kamu tinggal klik BELI LANGSUNG.png">
-                <p id="mobile" class="text-center text-1">3. Kalau Sudah, Klik BELI</p>
-            </div>
-
-            <div>
-              <img id="img-4" class="image-app" src="/home/assets/img/Order Delivery/4. Sekarang kamu hanya perlu isi semua data dengan benar.png">
-              <p id="mobile" class="text-center text-1">4. Isi Semua Kolom Yang Sudah Tersedia</p>
-            </div>
-
-           <div>
-              <img id="img-5" class="image-app" src="/home/assets/img/Order Delivery/5. Pilih Alamat tempat kamu berada.png">
-              <p id="mobile" class="text-center text-1">5. Pilih Alamat Tujuan Pengiriman Kamu</p>
-            </div>
-
-            <div>
-              <img id="img-6" class="image-app" src="/home/assets/img/Order Delivery/6. Lalu pilih mau pake jasa pengiriman apa.png">
-              <p id="mobile" class="text-center text-1">6. Pilih Jasa Pengiriman</p>
-            </div>
-
-            <div>
-              <img id="img-7" class="image-app" src="/home/assets/img/Order Delivery/7. Dan pilih metode pembayaran mau pake apa.png">
-              <p id="mobile" class="text-center text-1">7. Pilih Metode Pembayaran</p>
-            </div>
-
-            <div>
-              <img id="img-8" class="image-app" src="/home/assets/img/Order Delivery/8. Cek kembali apakah semuanya sudah benar, kalau sudah kamu tinggal klik CHECKOUT.png">
-              <p id="mobile" class="text-center text-1">8. Pastikan Semua Data Yang Kamu Isi Sudah Benar</p>
-            </div>
-
-            <div>
-              <img id="img-9" class="image-app" src="/home/assets/img/Order Delivery/9. Kamu tinggal tungguin barangnya sampai ke tempatmu.png">
-              <p id="mobile" class="text-center text-1">9. Tunggu Hingga Pesanan Kamu Sampai Ke Tujuan</p>
-            </div>
+            @endforeach
           </div>
       </div>
     </div>

@@ -66,10 +66,10 @@ unset($__errorArgs, $__bag); ?>
                             </div>
                         </div>
                         <div class="row mb-4">
-                            <label for="cover" class="col-form-label col-lg-2">Cover</label>
+                            <label for="gambar" class="col-form-label col-lg-2">Cover</label>
                             <div class="col-lg-5">
-                                <label for="cover" class="form-label">Upload Cover baru</label>
-                                <input class="form-control" name="cover" type="file" id="cover">
+                                <label for="gambar" class="form-label">Upload Cover baru</label>
+                                <input class="form-control" name="gambar" type="file" id="cover">
                             </div>
                             <?php $__errorArgs = ['cover'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
@@ -103,16 +103,16 @@ unset($__errorArgs, $__bag); ?>
 <?php $__env->startSection('script'); ?>
 <script type="text/javascript">
     $('#cover').change(function(){
-           
+
     let reader = new FileReader();
 
-    reader.onload = (e) => { 
+    reader.onload = (e) => {
 
-      $('#gambar-view').attr('src', e.target.result); 
+      $('#gambar-view').attr('src', e.target.result);
     }
 
-    reader.readAsDataURL(this.files[0]); 
-  
+    reader.readAsDataURL(this.files[0]);
+
    });
   </script>
     <!-- bootstrap datepicker -->

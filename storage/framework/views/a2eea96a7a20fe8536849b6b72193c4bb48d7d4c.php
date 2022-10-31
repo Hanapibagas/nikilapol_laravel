@@ -101,6 +101,14 @@
                                 <li><a href="<?php echo e(route('driver-banner.index')); ?>" key="t-level-2-2">Setting Banner</a></li>
                                 <li><a href="<?php echo e(route('driver-benefit.index')); ?>" key="t-level-2-1">Setting Benefit</a></li>
                                 <li><a href="<?php echo e(route('driver-tutorial.index')); ?>" key="t-level-2-2">Setting Tutorial</a></li>
+                                <li><a href="<?php echo e(route('driver-mengapa.index')); ?>" key="t-level-2-2">Setting Mengapa</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="javascript: void(0);" class="has-arrow" key="t-level-1-2">Persyaratan</a>
+                            <ul class="sub-menu" aria-expanded="true">
+                                <li><a href="<?php echo e(route('mercbanner.index')); ?>" key="t-level-2-2">Syarat Driver</a></li>
+                                <li><a href="<?php echo e(route('merchant.index')); ?>" key="t-level-2-1">Syarat Merchant</a></li>
                             </ul>
                         </li>
                     </ul>

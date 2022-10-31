@@ -104,6 +104,13 @@
                                 <li><a href="{{ route('driver-mengapa.index') }}" key="t-level-2-2">Setting Mengapa</a></li>
                             </ul>
                         </li>
+                        <li>
+                            <a href="javascript: void(0);" class="has-arrow" key="t-level-1-2">Persyaratan</a>
+                            <ul class="sub-menu" aria-expanded="true">
+                                <li><a href="{{ route('mercbanner.index') }}" key="t-level-2-2">Syarat Driver</a></li>
+                                <li><a href="{{ route('merchant.index') }}" key="t-level-2-1">Syarat Merchant</a></li>
+                            </ul>
+                        </li>
                     </ul>
                 </li>
                 <!-- <li>

@@ -51,7 +51,7 @@ Route::get('blog/{slug}', [BlogDetailsController::class, 'details'])->name('deta
 Route::get('privacy', [PrivacyController::class, 'index'])->name('privacies');
 
 
-Route::prefix('admin')->middleware(['auth', 'admin'])->group(function () {
+Route::prefix('admin')->group(function () {
     // Rombakan route backend
     Route::get('/', [PanelController::class, 'index'])->name('dashboard');
 

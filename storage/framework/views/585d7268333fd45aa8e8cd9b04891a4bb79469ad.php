@@ -79,7 +79,7 @@
                 $angka = 1
             ?>
           <?php $__currentLoopData = $merctutor; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $merctutor): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-          <div>
+          <div> 
             <button id="btn-<?php echo e($angka++); ?>" class="btn btn-success aktif" type="button">
               <div class="box-tutor"> <?php echo e($merctutor->title); ?></div>
               <div class="box-tutor"> <?php echo e($merctutor->description); ?></div>

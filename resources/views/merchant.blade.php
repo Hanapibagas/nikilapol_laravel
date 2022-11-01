@@ -96,7 +96,8 @@
             @foreach ( $gambar as $gambar )
             <div>
                 <img id="img-{{ $a++ }}" class="image-app" src="/image/{{$gambar->gambar ?? ''}}">
-                <p id="mobile" class="text-center text-1">1. Buka Aplikasi Nikila, Lalu Pilih Salah Satu Kategori</p>
+                <p id="mobile" class="text-center text-1">{{ $gambar->title }}</p>
+                <p id="mobile" class="text-center text-1">{{ $gambar->description }}</p>
             </div>
             @endforeach
           </div>

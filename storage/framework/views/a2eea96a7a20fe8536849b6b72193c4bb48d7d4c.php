@@ -110,17 +110,17 @@
                                 <li>
                                     <a href="javascript: void(0);" class="has-arrow" key="t-level-1-2">Syarat Merchant</a>
                                     <ul class="sub-menu" aria-expanded="true">
-                                    <ol><a href="<?php echo e(route('mercbanner.index')); ?>" key="t-level-2-2">Header</a></ol>
-                                    <ol><a href="<?php echo e(route('merchant.index')); ?>" key="t-level-2-1">Detail Persyaratan</a></ol>
+                                    <ol><a href="<?php echo e(route('syarat-header.index')); ?>" key="t-level-2-2">Header</a></ol>
+                                    <ol><a href="<?php echo e(route('syarat-details.index')); ?>" key="t-level-2-1">Detail Persyaratan</a></ol>
                                     </ul>
                                 </li>
 
                                  <li>
                                     <a href="javascript: void(0);" class="has-arrow" key="t-level-1-2">Syarat Driver</a>
                                     <ul class="sub-menu" aria-expanded="true">
-                                    <ol><a href="<?php echo e(route('mercbanner.index')); ?>" key="t-level-2-2">Header</a></ol>
-                                    <ol><a href="<?php echo e(route('merchant.index')); ?>" key="t-level-2-1">Detail Persyaratan</a></ol>
-                                    <ol><a href="<?php echo e(route('merchant.index')); ?>" key="t-level-2-1">Reward</a></ol>
+                                    <ol><a href="<?php echo e(route('syarat-headers.index')); ?>" key="t-level-2-2">Header</a></ol>
+                                    <ol><a href="<?php echo e(route('syarat-detail.index')); ?>" key="t-level-2-1">Detail Persyaratan</a></ol>
+                                    <ol><a href="<?php echo e(route('syarat-reward.index')); ?>" key="t-level-2-1">Reward</a></ol>
                                     </ul>
                                 </li>
                             </ul>

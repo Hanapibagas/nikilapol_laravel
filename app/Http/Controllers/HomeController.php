@@ -13,7 +13,9 @@ use App\Models\Service;
 use App\Models\Category;
 use App\Models\Drivbanner;
 use App\Models\Drivbenefit;
+use App\Models\Drivtutor;
 use App\Models\Logistic;
+use App\Models\Mengapa;
 use App\Models\Mercbanner;
 use App\Models\Merchant;
 use App\Models\Merctutor;
@@ -127,7 +129,6 @@ class HomeController extends Controller
         $mercbanner = Mercbanner::all();
         $merctutor = Merctutor::all();
         $gambar = Merctutor::all();
-        // dd($merctutor);
         $merchant = Merchant::all();
 
         return view('merchant', compact('whitelabel', 'merchant', 'mercbanner', 'merctutor', 'header', 'gambar'));
@@ -135,11 +136,13 @@ class HomeController extends Controller
 
     public function driver()
     {
+        $drivemengapa = Mengapa::all();
+        $drivetutor = Drivtutor::all();
         $drivebenefit = Drivbenefit::all();
         $drivebanner = Drivbanner::all();
         $header = Header::all();
         $whitelabel = Whitelabel::all();
-        return view('driver', compact('whitelabel', 'header', 'drivebanner', 'drivebenefit'));
+        return view('driver', compact('whitelabel', 'header', 'drivebanner', 'drivebenefit', 'drivetutor', 'drivemengapa'));
     }
 
     /*Language Translation*/

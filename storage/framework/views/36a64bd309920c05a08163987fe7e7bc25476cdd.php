@@ -12,14 +12,14 @@
 
     <?php $__env->startComponent('components.breadcrumb'); ?>
         <?php $__env->slot('li_1'); ?> Konfigurasi <?php $__env->endSlot(); ?>
-        <?php $__env->slot('title'); ?> Driver <?php $__env->endSlot(); ?>
+        <?php $__env->slot('title'); ?> merchant <?php $__env->endSlot(); ?>
     <?php echo $__env->renderComponent(); ?>
     <div class="row">
         <div class="col-lg-12">
             <div class="card">
                 <div class="card-body">
-                    <h4 class="card-title mb-4">Konfigurasi Mengapa</h4>
-                    <form action="<?php echo e(route('driver-mengapa.store')); ?>" method="POST" enctype="multipart/form-data">
+                    <h4 class="card-title mb-4">Konfigurasi merchant</h4>
+                    <form action="<?php echo e(route('syarat-reward.store')); ?>" method="POST" enctype="multipart/form-data">
                         <?php echo csrf_field(); ?>
                         <div class="row mb-4">
                             <label for="title" class="col-form-label col-lg-2">Title</label>
@@ -86,4 +86,4 @@ unset($__errorArgs, $__bag); ?>
     <script src="<?php echo e(URL::asset('/assets/libs/dropzone/dropzone.min.js')); ?>"></script>
 <?php $__env->stopSection(); ?>
 
-<?php echo $__env->make('layouts.master', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH D:\Project-web\Laravel\nikilapol_laravel\resources\views/panel/driver/mengapa/create.blade.php ENDPATH**/ ?>
+<?php echo $__env->make('layouts.master', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH D:\Project-web\Laravel\nikilapol_laravel\resources\views/panel/persyaratan/driver/reward/create.blade.php ENDPATH**/ ?>

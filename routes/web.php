@@ -14,12 +14,17 @@ use App\Http\Controllers\Admin\ServiceController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\DriveBannerController;
 use App\Http\Controllers\Admin\DriveController;
+use App\Http\Controllers\Admin\DriveSyaratDetailController;
+use App\Http\Controllers\Admin\DriveSyaratHeaderController;
+use App\Http\Controllers\Admin\DriveSyaratRewardController;
 use App\Http\Controllers\Admin\DrivTutorialController;
 use App\Http\Controllers\Admin\GalleriShowcaseController;
 use App\Http\Controllers\Admin\ProfitController;
 use App\Http\Controllers\Admin\LayananController;
 use App\Http\Controllers\Admin\LogisticController;
 use App\Http\Controllers\Admin\MercbannerController;
+use App\Http\Controllers\Admin\MerchanSyaratDetailController;
+use App\Http\Controllers\Admin\MerchanSyaratHeaderController;
 use App\Http\Controllers\Admin\MerchantController;
 use App\Http\Controllers\Admin\MerctutorController;
 use App\Http\Controllers\Admin\ShowcaseController;
@@ -84,6 +89,11 @@ Route::prefix('admin')->group(function () {
     Route::resource('driver-benefit', DriveBannerController::class);
     Route::resource('driver-tutorial', DrivTutorialController::class);
     Route::resource('driver-mengapa', WhyController::class);
+    Route::resource('syarat-header', MerchanSyaratHeaderController::class);
+    Route::resource('syarat-details', MerchanSyaratDetailController::class);
+    Route::resource('syarat-headers', DriveSyaratHeaderController::class);
+    Route::resource('syarat-detail', DriveSyaratDetailController::class);
+    Route::resource('syarat-reward', DriveSyaratRewardController::class);
 });
 
 

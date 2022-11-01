@@ -47,13 +47,13 @@
                             </div>
                         </div>
                         <div class="row mb-4">
-                            <label for="cover" class="col-form-label col-lg-2">Cover</label>
+                            <label for="gambar" class="col-form-label col-lg-2">Cover</label>
                             <div class="col-lg-5">
-                                <label for="cover" class="form-label">Upload Cover baru</label>
-                                <input class="form-control" name="cover" type="file" id="cover">
+                                <label for="gambar" class="form-label">Upload Cover baru</label>
+                                <input class="form-control" name="gambar" type="file" id="gambar">
                             </div>
                             <div class="col-md-5 text-center">
-                            <img class="rounded me-2" alt="200x200" src="/image/<?php echo e($logistic->cover); ?>" data-holder-rendered="true" width="200">
+                            <img class="rounded me-2" alt="200x200" src="/image/<?php echo e($logistic->gambar); ?>" data-holder-rendered="true" width="200">
                             </div>
                         </div>
                         <div class="row justify-content-end">

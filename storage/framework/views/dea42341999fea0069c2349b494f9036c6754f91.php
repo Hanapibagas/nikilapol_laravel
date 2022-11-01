@@ -72,47 +72,15 @@
               <h2 style="font-family: var(--font-dasar);">Kenapa Gabung Mitra Kami ?</h2>
             </div>
         <div class="why-driver wow fadeInUp">
+          <?php $__currentLoopData = $drivemengapa; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $drivemengapa): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
     <a href="#" class="card education">
   <div class="overlay"></div>
   <div class="circle">
-
-      <img src="/home/assets/img/Icon Kelebihan/Sistem Integrasi.png" style="z-index: 1;" width="80px" alt="">
+      <img src="image/<?php echo e($drivemengapa->gambar); ?>" style="z-index: 1;" width="80px" alt="">
   </div>
-  <p style="font-weight: 600;" class="text-center">Sistem terintregasi dan aman</p>
+  <p style="font-weight: 600;" class="text-center"><?php echo e($drivemengapa->title); ?></p>
 </a>
-
-<a href="#" class="card credentialing">
-  <div class="overlay"></div>
-  <div class="circle">
-      <img src="/home/assets/img/Icon Kelebihan/Fee_100__Milik_Mitra_Merchant.png" style="z-index: 1;" width="80px" alt="">
-  </div>
-  <p  style="font-weight: 600;" class="text-center" class="text-center">Untung 100% untuk driver </p>
-</a>
-
-<a href="#" class="card wallet">
-  <div class="overlay"></div>
-  <div class="circle">
-      <img src="/home/assets/img/Icon Kelebihan/Punya Banyak Mitra.png" style="z-index: 1;" width="80px" alt="">
-  </div>
-  <p  style="font-weight: 600;" class="text-center" class="text-center">Punya Banyak Mitra Merchant</p>
-</a>
-
-<a href="#" class="card human-resources">
-  <div class="overlay"></div>
-  <div class="circle">
-      <img src="/home/assets/img/Icon Kelebihan/Bisa Cairin Saldo Kapan Saja.png" style="z-index: 1;" width="80px" alt="">
-  </div>
-  <p  style="font-weight: 600;" class="text-center" class="text-center">Bisa Cairin Saldo Kapan Saja</p>
-</a>
-
-<a href="#" class="card human-resources">
-  <div class="overlay"></div>
-  <div class="circle">
-      <img src="/home/assets/img/Icon Kelebihan/Bisa Buat Promo Sendiri.png" style="z-index: 1;" width="80px" alt="">
-  </div>
-  <p style="font-weight: 600;" class="text-center" class="text-center">Banyak Reward</p>
-</a>
-
+ <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 </div>
 </section>
 
@@ -154,6 +122,8 @@
             </button>
           </div>
           </div>
+
+          
         <div class="col-md-6">
           <div id="carousel">
         <div>

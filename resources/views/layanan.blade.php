@@ -103,7 +103,7 @@
                 <a class="card2 pb-3" href="#">
                       <img src="/image/{{$logistic->gambar}}" width="60px" alt="">
                 <h3 style="font-family: var(--font-dasar);">{{ $logistic->title }}</h3>
-                <p class="small">A{{ $logistic->description }}</p>
+                <p class="small">{{ $logistic->description }}</p>
 
                 <div class="go-corner" href="#">
                   <div class="go-arrow">

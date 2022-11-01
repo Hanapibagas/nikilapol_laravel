@@ -15,6 +15,7 @@ use App\Models\Drivbanner;
 use App\Models\Drivbenefit;
 use App\Models\Drivtutor;
 use App\Models\Logistic;
+use App\Models\Mengapa;
 use App\Models\Mercbanner;
 use App\Models\Merchant;
 use App\Models\Merctutor;
@@ -135,13 +136,14 @@ class HomeController extends Controller
 
     public function driver()
     {
+        $drivemengapa = Mengapa::all();
         $drivetutor = Drivtutor::all();
         $drivetutorgambar = Drivtutor::all();
         $drivebenefit = Drivbenefit::all();
         $drivebanner = Drivbanner::all();
         $header = Header::all();
         $whitelabel = Whitelabel::all();
-        return view('driver', compact('whitelabel', 'header', 'drivebanner', 'drivebenefit', 'drivetutor', 'drivetutorgambar'));
+        return view('driver', compact('whitelabel', 'header', 'drivebanner', 'drivebenefit', 'drivetutor', 'drivemengapa', 'drivetutorgambar'));
     }
 
     /*Language Translation*/

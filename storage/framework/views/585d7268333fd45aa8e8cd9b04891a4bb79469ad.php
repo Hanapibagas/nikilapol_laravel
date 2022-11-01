@@ -78,9 +78,9 @@
             <?php
                 $angka = 1
             ?>
-          <?php $__currentLoopData = $merctutor; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $merctutor): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-          <div> 
-            <button id="btn-<?php echo e($angka++); ?>" class="btn btn-success aktif" type="button">
+          <?php $__currentLoopData = $merctutor; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $key => $merctutor): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+          <div>
+            <button id="btn-<?php echo e($angka++); ?>" class="btn btn-success" type="button">
               <div class="box-tutor"> <?php echo e($merctutor->title); ?></div>
               <div class="box-tutor"> <?php echo e($merctutor->description); ?></div>
             </button>
@@ -90,52 +90,16 @@
           </div>
         <div class="col-md-6">
           <div id="carousel">
-            
-
+            <?php
+                $a = 1
+            ?>
+            <?php $__currentLoopData = $gambar; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $gambar): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
             <div>
-              <img id="img-1" class="image-app" src="/home/assets/img/Order Delivery/1. Buka Aplikasi NikiLaPOL, lalu pilih salah satu kategori.png">
-            <p id="mobile" class="text-center text-1">1. Buka Aplikasi Nikila, Lalu Pilih Salah Satu Kategori</p>
+                <img id="img-<?php echo e($a++); ?>" class="image-app" src="/image/<?php echo e($gambar->gambar ?? ''); ?>">
+                <p id="mobile" class="text-center text-1"><?php echo e($gambar->title); ?></p>
+                <p id="mobile" class="text-center text-1"><?php echo e($gambar->description); ?></p>
             </div>
-
-            <div>
-              <img id="img-2" class="image-app" src="/home/assets/img/Order Delivery/2. Tentukan Produk yang ingin di beli.png">
-                <p id="mobile" class="text-center text-1">2. Tentukan Produk Yang Ingin Dibeli</p>
-            </div>
-
-            <div>
-              <img id="img-3" class="image-app" src="/home/assets/img/Order Delivery/3. Kalau sudah yakin dengan barangnya, kamu tinggal klik BELI LANGSUNG.png">
-                <p id="mobile" class="text-center text-1">3. Kalau Sudah, Klik BELI</p>
-            </div>
-
-            <div>
-              <img id="img-4" class="image-app" src="/home/assets/img/Order Delivery/4. Sekarang kamu hanya perlu isi semua data dengan benar.png">
-              <p id="mobile" class="text-center text-1">4. Isi Semua Kolom Yang Sudah Tersedia</p>
-            </div>
-
-           <div>
-              <img id="img-5" class="image-app" src="/home/assets/img/Order Delivery/5. Pilih Alamat tempat kamu berada.png">
-              <p id="mobile" class="text-center text-1">5. Pilih Alamat Tujuan Pengiriman Kamu</p>
-            </div>
-
-            <div>
-              <img id="img-6" class="image-app" src="/home/assets/img/Order Delivery/6. Lalu pilih mau pake jasa pengiriman apa.png">
-              <p id="mobile" class="text-center text-1">6. Pilih Jasa Pengiriman</p>
-            </div>
-
-            <div>
-              <img id="img-7" class="image-app" src="/home/assets/img/Order Delivery/7. Dan pilih metode pembayaran mau pake apa.png">
-              <p id="mobile" class="text-center text-1">7. Pilih Metode Pembayaran</p>
-            </div>
-
-            <div>
-              <img id="img-8" class="image-app" src="/home/assets/img/Order Delivery/8. Cek kembali apakah semuanya sudah benar, kalau sudah kamu tinggal klik CHECKOUT.png">
-              <p id="mobile" class="text-center text-1">8. Pastikan Semua Data Yang Kamu Isi Sudah Benar</p>
-            </div>
-
-            <div>
-              <img id="img-9" class="image-app" src="/home/assets/img/Order Delivery/9. Kamu tinggal tungguin barangnya sampai ke tempatmu.png">
-              <p id="mobile" class="text-center text-1">9. Tunggu Hingga Pesanan Kamu Sampai Ke Tujuan</p>
-            </div>
+            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
           </div>
       </div>
     </div>

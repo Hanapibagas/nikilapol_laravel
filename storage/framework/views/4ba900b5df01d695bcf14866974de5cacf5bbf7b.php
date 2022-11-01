@@ -96,7 +96,8 @@
             <?php $__currentLoopData = $gambar; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $gambar): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
             <div>
                 <img id="img-<?php echo e($a++); ?>" class="image-app" src="/image/<?php echo e($gambar->gambar ?? ''); ?>">
-                <p id="mobile" class="text-center text-1">1. Buka Aplikasi Nikila, Lalu Pilih Salah Satu Kategori</p>
+                <p id="mobile" class="text-center text-1"><?php echo e($gambar->title); ?></p>
+                <p id="mobile" class="text-center text-1"><?php echo e($gambar->description); ?></p>
             </div>
             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
           </div>

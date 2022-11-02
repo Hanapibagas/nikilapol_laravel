@@ -33,6 +33,7 @@
                             <tr>
                                 <th class="align-middle">No</th>
                                 <th class="align-middle">Title</th>
+                                <th class="align-middle">Description</th>
                                 <th class="align-middle">Gambar</th>
                                 <th class="align-middle">Action</th>
                             </tr>
@@ -43,6 +44,7 @@
                             <tr>
                                 <td><a href="javascript: void(0);" class="text-body fw-bold">{{ $no++ }}</a> </td>
                                 <td>{{ $drivtutor->title }}</td>
+                                <td>{{ $drivtutor->description }}</td>
                                 <td><img src="/image/{{$drivtutor->gambar}}" class="rounded me-2" data-holder-rendered="true" width="50"></td>
                                 <td>
                                     <form action="{{ route('driver-tutorial.destroy', $drivtutor->id) }}" method="POST">

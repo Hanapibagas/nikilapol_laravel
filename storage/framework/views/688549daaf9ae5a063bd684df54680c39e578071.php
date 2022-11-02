@@ -14,35 +14,19 @@
 
     <?php $__env->startComponent('components.breadcrumb'); ?>
         <?php $__env->slot('li_1'); ?> Konfigurasi <?php $__env->endSlot(); ?>
-        <?php $__env->slot('title'); ?> Driver <?php $__env->endSlot(); ?>
+        <?php $__env->slot('title'); ?> merchant <?php $__env->endSlot(); ?>
     <?php echo $__env->renderComponent(); ?>
     <div class="row">
         <div class="col-lg-12">
             <div class="card">
                 <div class="card-body">
-                    <h4 class="card-title mb-4">Konfigurasi driver</h4>
-                    <form action="<?php echo e(route('driver-tutorial.store')); ?>" method="POST" enctype="multipart/form-data">
+                    <h4 class="card-title mb-4">Konfigurasi merchant</h4>
+                    <form action="<?php echo e(route('syarat-reward.store')); ?>" method="POST" enctype="multipart/form-data">
                         <?php echo csrf_field(); ?>
                         <div class="row mb-4">
                             <label for="title" class="col-form-label col-lg-2">Title</label>
                             <div class="col-lg-10">
                                 <input id="title" name="title" type="text" class="form-control" placeholder="Nama judul..." >
-                                <?php $__errorArgs = ['title'];
-$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
-if ($__bag->has($__errorArgs[0])) :
-if (isset($message)) { $__messageOriginal = $message; }
-$message = $__bag->first($__errorArgs[0]); ?>
-                                <div class="alert alert-danger mt-1 mb-1"><?php echo e($message); ?></div>
-                                <?php unset($message);
-if (isset($__messageOriginal)) { $message = $__messageOriginal; }
-endif;
-unset($__errorArgs, $__bag); ?>
-                            </div>
-                        </div>
-                        <div class="row mb-4">
-                            <label for="description" class="col-form-label col-lg-2">Description</label>
-                            <div class="col-lg-10">
-                                <input id="description" name="description" type="text" class="form-control" placeholder="Nama Desc..." >
                                 <?php $__errorArgs = ['title'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
@@ -104,4 +88,4 @@ unset($__errorArgs, $__bag); ?>
     <script src="<?php echo e(URL::asset('/assets/libs/dropzone/dropzone.min.js')); ?>"></script>
 <?php $__env->stopSection(); ?>
 
-<?php echo $__env->make('layouts.master', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\Users\saefu\OneDrive\Desktop\nikilapol_laravel\resources\views/panel/driver/tutorial/create.blade.php ENDPATH**/ ?>
+<?php echo $__env->make('layouts.master', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\Users\saefu\OneDrive\Desktop\nikilapol_laravel\resources\views/panel/persyaratan/driver/reward/create.blade.php ENDPATH**/ ?>

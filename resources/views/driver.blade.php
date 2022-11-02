@@ -45,23 +45,44 @@
       @endforeach
            <!-- End Hero -->
 
+   <!-- Persyaratan -->
+           <section class="section section-lg bungkus-fitur bg-gray-100">
+            <div class="container text-center text-lg-left">
+              <h2><span class="text-bold text-white wow fadeInUp" style="font-family: 'Poppins';">Driver</h2>
+              <div class="row mt-5 justify-content-center flex-wrap row-30 number-counter-2   wow fadeInUp">
+                @foreach ($drivebenefit as $drivebenefit)
+              <div class="col-md-4">
+                  <div class="box-numbered-left unit">
+                    <div class="unit-body">
+                      <img src="/image/{{$drivebenefit->gambar}}" alt="{{ $drivebenefit->title }}" width="100px"><h4 style="color: var(--warna-putih1); margin-top: 20px; font-family: var(--font-dasar);">{{ $drivebenefit->title }}</h4>
+                      <div  style="color: #fff;" class="content">{{ $drivebenefit->description }}</div>
+                      <a href="./syarat.html" class="button button-secondary button-nuka">Daftar</a>
+                    </div>
+                  </div>
+                </div>
+                @endforeach
+                </div>
+              </div>
+            </div>
+          </section>
+
     <!-- Kenapa Kami-->
     <section class="section section-md bg-default">
-        <div class="text-center wow fadeInUp pb-5">
-            <h2 style="font-family: var(--font-dasar);">Kenapa Gabung Mitra Kami ?</h2>
-        </div>
+         <div class="text-center wow fadeInUp pb-5">
+              <h2 style="font-family: var(--font-dasar);">Kenapa Gabung Mitra Kami ?</h2>
+            </div>
         <div class="why-driver wow fadeInUp">
-            @foreach ( $drivebenefit as $drivebenefit )
-            <a href="#" class="card education">
-                <div class="overlay"></div>
-                <div class="circle">
-                    <img src="/image/{{$drivebenefit->gambar}}" style="z-index: 1;" width="80px" alt="">
-                </div>
-                <p style="font-weight: 600;" class="text-center">{{ $drivebenefit->title }}</p>
-            </a>
-            @endforeach
-        </div>
-    </section>
+          @foreach ($drivemengapa as $drivemengapa )
+    <a href="#" class="card education">
+  <div class="overlay"></div>
+  <div class="circle">
+      <img src="image/{{ $drivemengapa->gambar }}" style="z-index: 1;" width="80px" alt="">
+  </div>
+  <p style="font-weight: 600;" class="text-center">{{ $drivemengapa->title }}</p>
+</a>
+ @endforeach
+</div>
+</section>
 
 <!-- Tutor Pesen -->
 <!-- Tutor Pesen -->
@@ -76,6 +97,7 @@
           <div>
             <button id="btn-{{ $angka++ }}" class="btn btn-success" type="button">
               <div class="box-tutor">{{ $drivetutor->title }}</div>
+              <div class="box-tutor">{{ $drivetutor->description }}</div>
             </button>
           </div>
           @endforeach

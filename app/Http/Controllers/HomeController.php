@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Controllers\Admin\MerchanSyaratHeaderController;
 use App\Models\Blog;
 use App\Models\About;
 use App\Models\Mitra;
@@ -23,6 +24,11 @@ use App\Models\Whitelabel;
 use App\Models\Privacy;
 use App\Models\Showcase;
 use App\Models\ShowcaseGalleri;
+use App\Models\Syaratdridel;
+use App\Models\Syaratdrihed;
+use App\Models\Syaratdrirew;
+use App\Models\Syaratmerban;
+use App\Models\Syaratmerdel;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Session;
 
@@ -132,6 +138,23 @@ class HomeController extends Controller
         $merchant = Merchant::all();
 
         return view('merchant', compact('whitelabel', 'merchant', 'mercbanner', 'merctutor', 'header', 'gambar'));
+    }
+
+    public function syaratmerchant() {
+        $syaratmitra = Syaratmerdel::all();
+        $syaratheader = Syaratmerban::all();
+        $whitelabel = Whitelabel::all();
+        $header = Header::all();
+        return view('syaratmerchant', compact('whitelabel', 'header', 'syaratheader', 'syaratmitra'));
+    }
+
+    public function syaratdriver() {
+        $syaratreward = Syaratdrirew::all();
+        $driversyarat = Syaratdridel::all();
+        $driveheader = Syaratdrihed::all();
+        $whitelabel = Whitelabel::all();
+        $header = Header::all();
+        return view('syaratdriver', compact('whitelabel', 'header', 'driveheader', 'driversyarat', 'syaratreward'));
     }
 
     public function driver()

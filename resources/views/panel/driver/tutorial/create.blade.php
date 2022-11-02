@@ -33,6 +33,15 @@
                             </div>
                         </div>
                         <div class="row mb-4">
+                            <label for="description" class="col-form-label col-lg-2">Description</label>
+                            <div class="col-lg-10">
+                                <input id="description" name="description" type="text" class="form-control" placeholder="Nama Desc..." >
+                                @error('title')
+                                <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
+                                @enderror
+                            </div>
+                        </div>
+                        <div class="row mb-4">
                             <label for="gambar" class="col-form-label col-lg-2">Gambar</label>
                             <div class="col-lg-5">
                                 <label for="gambar" class="form-label">Upload gambar baru</label>

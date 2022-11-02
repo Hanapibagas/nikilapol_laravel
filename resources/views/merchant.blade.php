@@ -41,7 +41,7 @@
             <p>{{ $mercbanner->description }}</p>
           </div>
           <div class="btns row">
-            <a href="#" class="button button-secondary button-nuka">Daftar Sekarang</a>
+            <a href="/syaratmerchant" class="button button-secondary button-nuka">Daftar Sekarang</a>
           </div>
         </div>
       </div>

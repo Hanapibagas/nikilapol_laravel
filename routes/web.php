@@ -55,7 +55,8 @@ Route::get('faq', [ControllersFaqController::class, 'faq'])->name('faq');
 Route::get('blog', [ControllersBlogController::class, 'blog'])->name('blog');
 Route::get('blog/{slug}', [BlogDetailsController::class, 'details'])->name('detail');
 Route::get('privacy', [PrivacyController::class, 'index'])->name('privacies');
-
+Route::get('syaratmerchant', [HomeController::class, 'syaratmerchant'])->name('syaratmerchant');
+Route::get('syaratdriver', [HomeController::class, 'syaratdriver'])->name('syaratdriver');
 
 Route::prefix('admin')->group(function () {
     // Rombakan route backend

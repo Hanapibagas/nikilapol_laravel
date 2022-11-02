@@ -30,6 +30,12 @@
                                 <input id="title" name="title" type="text" class="form-control" placeholder="Nama judul..." value="{{ $drivtutor->title }}"  >
                             </div>
                         </div>
+                         <div class="row mb-4">
+                            <label for="description" class="col-form-label col-lg-2">Description</label>
+                            <div class="col-lg-10">
+                                <input id="description" name="description" type="text" class="form-control" placeholder="Nama judul..." value="{{ $drivtutor->description }}"  >
+                            </div>
+                        </div>
                         <div class="row mb-4">
                             <label for="gambar" class="col-form-label col-lg-2">Gambar</label>
                             <div class="col-lg-5">

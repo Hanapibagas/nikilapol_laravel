@@ -21,6 +21,7 @@ use App\Http\Controllers\Admin\DrivTutorialController;
 use App\Http\Controllers\Admin\GalleriShowcaseController;
 use App\Http\Controllers\Admin\ProfitController;
 use App\Http\Controllers\Admin\LayananController;
+use App\Http\Controllers\Admin\ListKontakController;
 use App\Http\Controllers\Admin\LogisticController;
 use App\Http\Controllers\Admin\MercbannerController;
 use App\Http\Controllers\Admin\MerchanSyaratDetailController;
@@ -35,6 +36,7 @@ use App\Http\Controllers\Admin\WhitelabelController;
 use App\Http\Controllers\Admin\WhyController;
 use App\Http\Controllers\BlogController as ControllersBlogController;
 use App\Http\Controllers\BlogDetailsController;
+use App\Http\Controllers\ContakController;
 use App\Http\Controllers\FaqController as ControllersFaqController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PrivacyController;
@@ -48,10 +50,12 @@ Route::get('/', [HomeController::class, 'root'])->name('root');
 Route::get('merchant', [HomeController::class, 'merchant'])->name('merchant');
 Route::get('driver', [HomeController::class, 'driver'])->name('driver');
 Route::get('layanan', [HomeController::class, 'layanan'])->name('layanan');
-Route::get('kontak', [HomeController::class, 'kontak'])->name('kontak');
-Route::get('faq', [HomeController::class, 'faq'])->name('faq');
-Route::get('detailfaq', [HomeController::class, 'detailfaq'])->name('detailfaq');
+
+Route::resource('kontak', ContakController::class);
+
 Route::get('faq', [ControllersFaqController::class, 'faq'])->name('faq');
+Route::get('faq/{slug}', [ControllersFaqController::class, 'details'])->name('details');
+
 Route::get('blog', [ControllersBlogController::class, 'blog'])->name('blog');
 Route::get('blog/{slug}', [BlogDetailsController::class, 'details'])->name('detail');
 Route::get('privacy', [PrivacyController::class, 'index'])->name('privacies');
@@ -95,6 +99,8 @@ Route::prefix('admin')->group(function () {
     Route::resource('syarat-headers', DriveSyaratHeaderController::class);
     Route::resource('syarat-detail', DriveSyaratDetailController::class);
     Route::resource('syarat-reward', DriveSyaratRewardController::class);
+
+    Route::resource('list-kontak', ListKontakController::class);
 });
 
 

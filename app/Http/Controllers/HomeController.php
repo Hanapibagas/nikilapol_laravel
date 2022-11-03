@@ -90,34 +90,11 @@ class HomeController extends Controller
         return view('layanan', compact('whitelabel', 'layanan', 'category', 'logistic', 'header'));
     }
 
-    public function kontak()
-    {
-        $header = Header::all();
-        $whitelabel = Whitelabel::all();
-        return view('kontak', compact('whitelabel', 'header'));
-    }
-
     public function privacy()
     {
         $whitelabel = Whitelabel::all();
         $header = Header::all();
         return view('privacy', compact('whitelabel', 'header'));
-    }
-
-    public function detailblog()
-    {
-        $header = Header::all();
-        $whitelabel = Whitelabel::all();
-        $blog = Blog::all();
-        return view('detail', compact('whitelabel', 'blog', 'header'));
-    }
-
-    public function faq()
-    {
-        $header = Header::all();
-        $whitelabel = Whitelabel::all();
-        $logistic = Logistic::all();
-        return view('faq', compact('whitelabel', 'logistic', 'header'));
     }
 
     public function detailfaq()
@@ -140,7 +117,8 @@ class HomeController extends Controller
         return view('merchant', compact('whitelabel', 'merchant', 'mercbanner', 'merctutor', 'header', 'gambar'));
     }
 
-    public function syaratmerchant() {
+    public function syaratmerchant()
+    {
         $syaratmitra = Syaratmerdel::all();
         $syaratheader = Syaratmerban::all();
         $whitelabel = Whitelabel::all();
@@ -148,7 +126,8 @@ class HomeController extends Controller
         return view('syaratmerchant', compact('whitelabel', 'header', 'syaratheader', 'syaratmitra'));
     }
 
-    public function syaratdriver() {
+    public function syaratdriver()
+    {
         $syaratreward = Syaratdrirew::all();
         $driversyarat = Syaratdridel::all();
         $driveheader = Syaratdrihed::all();

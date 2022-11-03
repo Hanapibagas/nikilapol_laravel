@@ -9,7 +9,7 @@
 
 @component('components.breadcrumb')
 @slot('li_1') Konfigurasi @endslot
-@slot('title') logistic @endslot
+@slot('title') Kontak @endslot
 @endcomponent
 
 <div class="row">
@@ -23,37 +23,33 @@
                         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                     </div>
                 @endif
-                <h4 class="card-title mb-2">List logistic</h4>
+                <h4 class="card-title mb-2">List Pesan</h4>
                 <div class="d-flex flex-wrap mb-2">
-                    <a href="{{ route('logistic.create') }}" type="button" class="btn btn-success waves-effect btn-label waves-light mb-2"><i class="bx bx-add-to-queue label-icon"></i>Tambah Data</a>
+                    <a href="{{ route('list-kontak.create') }}" type="button" class="btn btn-success waves-effect btn-label waves-light mb-2"><i class="bx bx-add-to-queue label-icon"></i>Tambah Data</a>
                 </div>
                 <div class="table-responsive">
                     <table class="table align-middle table-nowrap mb-0">
                         <thead class="table-light">
                             <tr>
                                 <th class="align-middle">No</th>
-                                <th class="align-middle">Title</th>
-                                <th class="align-middle">Link Tujuan</th>
-                                <th class="align-middle">Gambar</th>
-                                <th class="align-middle">Action</th>
+                                <th class="align-middle">Nama Depan</th>
+                                <th class="align-middle">Nama Belakang</th>
+                                <th class="align-middle">Email</th>
+                                <th class="align-middle">No Hp</th>
+                                <th class="align-middle">Pesan</th>
+                                {{-- <th class="align-middle">Action</th> --}}
                             </tr>
                         </thead>
                         <tbody>
                             @php $no=1; @endphp
-                            @foreach($logistic  as $logistic )
+                            @foreach($listkontak  as $listkontak )
                             <tr>
                                 <td><a href="javascript: void(0);" class="text-body fw-bold">{{ $no++ }}</a> </td>
-                                <td>{{ $logistic->title }}</td>
-                                <td>{{ $logistic->link }}</td>
-                                <td><img src="/image/{{$logistic->gambar}}" class="rounded me-2" data-holder-rendered="true" width="75"></td>
-                                <td>
-                                    <form action="{{ route('logistic.destroy',$logistic->id) }}" method="POST">
-                                        <a class="btn btn-primary waves-effect btn-label waves-light btn-sm" href="{{ route('logistic.edit',$logistic->id) }}"><i class="bx bx-edit  label-icon"></i>Edit</a>
-                                        @csrf
-                                        @method('DELETE')
-                                        <button type="submit" class="btn btn-danger waves-effect btn-label waves-light btn-sm show_confirm"><i class="bx bxs-trash   label-icon"></i>Hapus</button>
-                                    </form>
-                                </td>
+                                <td>{{ $listkontak->name_depan }}</td>
+                                <td>{{ $listkontak->name_belakang }}</td>
+                                <td>{{ $listkontak->email }}</td>
+                                <td>{{ $listkontak->no_hp }}</td>
+                                <td>{{ $listkontak->pesan }}</td>
                             </tr>
                             @endforeach
                         </tbody>

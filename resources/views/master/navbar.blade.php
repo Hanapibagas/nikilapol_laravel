@@ -29,10 +29,10 @@
                       </li>
                       <li class="rd-nav-item"><a class="rd-nav-link" href="/layanan">Layanan</a>
                       </li>
-                      <li class="rd-nav-item"><a class="rd-nav-link" href="/kontak">Kontak</a>
+                      <li class="rd-nav-item"><a class="rd-nav-link" href="{{ route('kontak.index') }}">Kontak</a>
                       </li>
-                        <!-- <li class="rd-nav-item"><a class="rd-nav-link" href="/faq">Bantuan</a>
-                      </li> -->
+                        <li class="rd-nav-item"><a class="rd-nav-link" href="/faq">Bantuan</a>
+                      </li>
                       <li class="rd-nav-item"><a class="rd-nav-link" href="/blog">Blog</a>
                       </li>
                         {{-- <li class="rd-nav-item"><a class="rd-nav-link" href="#">

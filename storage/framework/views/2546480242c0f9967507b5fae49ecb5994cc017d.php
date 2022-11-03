@@ -45,6 +45,12 @@
                         <li><a href="#" key="t-buy">Kategori FAQ</a></li>
                     </ul>
                 </li>
+                <li>
+                    <a href="<?php echo e(route('list-kontak.index')); ?>" class="waves-effect">
+                        <i class="bx bx-book "></i>
+                        <span key="t-invoices">List kontak</span>
+                    </a>
+                </li>
                 <li class="menu-title" key="t-apps">Konfigurasi</li>
                 <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">
@@ -154,6 +160,7 @@
                         <span key="t-invoices">White Label</span>
                     </a>
                 </li>
+
                 <!-- <li class="menu-title" key="t-apps">User Permission</li>
                 <li>
                     <a href="javascript: void(0);" class="waves-effect">

@@ -58,36 +58,8 @@
         <div class="container">
             <h2 class="col-12 c-heading__h2 mb-3 mb-md-4 mb-lg-5">Masalah yang sering dialami</h2>
             <div class="row">
-                <a href="{{ route('detailfaq') }}" class="col-md-6 col-12 pr-md-2 mb-12px mb-md-3">
-                    <div class="row col-12 c-top-faq__item--variant-2">
-                        <div class="c-top-faq__question text-center">Bagaimana Cara Mendaftar Akun User?</div>
-                    </div>
-                </a>
-                <a href="{{ route('detailfaq') }}" class="col-md-6 col-12 pr-md-2 mb-12px mb-md-3">
-                    <div class="row col-12 c-top-faq__item--variant-2">
-                        <div class="c-top-faq__question text-center">Mengapa saya tidak bisa mendaftar?</div>
-                    </div>
-                </a>
-                <a href="{{ route('detailfaq') }}" class="col-md-6 col-12 pr-md-2 mb-12px mb-md-3">
-                    <div class="row col-12 c-top-faq__item--variant-2">
-                        <div class="c-top-faq__question text-center">Apa syarat menjadi mitra driver?</div>
-                    </div>
-                </a>
-                <a href="{{ route('detailfaq') }}" class="col-md-6 col-12 pr-md-2 mb-12px mb-md-3">
-                    <div class="row col-12 c-top-faq__item--variant-2">
-                        <div class="c-top-faq__question text-center">Bagaimana saya menerima pengembalian dana?</div>
-                    </div>
-                </a>
-                <a href="{{ route('detailfaq') }}" class="col-md-6 col-12 pr-md-2 mb-12px mb-md-3">
-                    <div class="row col-12 c-top-faq__item--variant-2">
-                        <div class="c-top-faq__question text-center">Bagaimana cara menjadi mitra merchant?</div>
-                    </div>
-                </a>
-                <a href="{{ route('detailfaq') }}" class="col-md-6 col-12 pr-md-2 mb-12px mb-md-3">
-                    <div class="row col-12 c-top-faq__item--variant-2">
-                        <div class="c-top-faq__question text-center">Bagaimana Cara Mendaftar Akun driver?</div>
                 @foreach ( $faqs as $faq )
-                <a href="./akun/blog/blog_akun.html" class="col-md-6 col-12 pr-md-2 mb-12px mb-md-3">
+                <a href="{{ route('details', $faq->slug) }}" class="col-md-6 col-12 pr-md-2 mb-12px mb-md-3">
                     <div class="row col-12 c-top-faq__item--variant-2">
                         <div class="c-top-faq__question text-center">{{ $faq->title }}</div>
                     </div>
@@ -116,7 +88,7 @@
                             <a href="./niki_belanjain/niki_belanjain.html">
                                 <div class="c-category c-category__item c-category__hover--down-high row">
                                     <div class="c-category__icon">
-                                        <img src="/image/{{ $logistic->cover }}" class="lazy" alt="belanjain icon">
+                                        <img src="/image/{{$logistic->gambar}}"" class="lazy" alt="belanjain icon">
                                         <span style="background-color: var(--warna-dasar); margin-top: 10px;" data-has-category="true" class="badge">{{ $logistic->title }}</span>
                                     </div>
                                 </div>

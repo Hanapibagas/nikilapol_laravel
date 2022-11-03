@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html class="wide wow-animation" lang="en">
   <head>
-@include('master.meta')  
+@include('master.meta')
 @include('master.head-css')
 <link rel="stylesheet" href="/home/css/kontak.css">
 @include('master.root')
- 
+
 </head>
   <body>
     <div class="preloader">
@@ -31,45 +31,51 @@
           <!-- form -->
           <div id="contact-form" class="contact form">
             <h3 style="font-family: var(--font-dasar);">Tulis pesan</h3>
-            <form id="contact-form">
-              <div class="formBox">
-                <div class="row50">
-                  <div class="inputBox">
-                    <span>Nama Depan</span>
-                    <input type="text" placeholder="Nama Depan Kamu">
-                  </div>
-                  <div class="inputBox">
-                    <span>Nama Belakang</span>
-                    <input type="text" placeholder="Nama Belakang Kamu">
-                  </div>
+                @if ( $errors->any() )
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach ( $errors->all() as $error )
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
+            <form action="{{ route('kontak.store') }}" method="POST" enctype="multipart/form-data">
+                @csrf
+                <div class="formBox">
+                    <div class="row50">
+                        <div class="inputBox">
+                            <span>Nama Depan</span>
+                            <input name="name_depan" type="text" placeholder="Nama Depan Kamu">
+                        </div>
+                        <div class="inputBox">
+                            <span>Nama Belakang</span>
+                            <input name="name_belakang" type="text" placeholder="Nama Belakang Kamu">
+                        </div>
+                    </div>
+                    <div class="row50">
+                        <div class="inputBox">
+                            <span>Email</span>
+                            <input name="email" type="email" placeholder="contoh12@email.com">
+                        </div>
+                        <div class="inputBox">
+                            <span>No HP</span>
+                            <input name="no_hp" type="number" placeholder="08XXXXXXXXX">
+                        </div>
+                    </div>
+                    <div class="row100">
+                        <div class="inputBox">
+                            <span>Pesan</span>
+                            <textarea name="pesan" placeholder="Tulis suatu pesan"></textarea>
+                        </div>
+                    </div>
                 </div>
-
-                 <div class="row50">
-                  <div class="inputBox">
-                    <span>Email</span>
-                    <input type="text" placeholder="contoh12@email.com">
-                  </div>
-                  <div class="inputBox">
-                    <span>No HP</span>
-                    <input type="text" placeholder="08XXXXXXXXX">
-                  </div>
-                </div>
-
-                <div class="row100">
-                  <div class="inputBox">
-                    <span>Pesan</span>
-                    <textarea placeholder="Tulis suatu pesan"></textarea>
-                  </div>
-                </div>
-
-                <div class="row100">
-                  <div class="inputBox">
-                      <input type="submit" value="Kirim">
-                  </div>
-                </div>
-              </div>
+                <button type="submit" class="btn btn-primary btn-block">
+                    Simpan
+                </button>
             </form>
           </div>
+
           @foreach ($whitelabel as $media)
           <!-- Info -->
           <div class="contact info">
@@ -89,7 +95,7 @@
                 <span><i class="fa-brands fa-whatsapp"></i></span>
                 <a href="#">+6223498023948</a>
               </div>
-            
+
               <!-- sosmed -->
               <ul class="sosmed-kontak">
                 <li><a href="{{ $media->facebook }}"><i class="fa-brands fa-facebook"></i></a></li>
@@ -110,7 +116,7 @@
         </div>
       </div>
       @endforeach
-  
+
 
   <!-- Banner CTA -->
   @include('master.cta')

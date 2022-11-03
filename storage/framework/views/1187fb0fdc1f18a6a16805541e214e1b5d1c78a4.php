@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html class="wide wow-animation" lang="en">
   <head>
-   @include('master.meta')
-@include('master.head-css')
+   <?php echo $__env->make('master.meta', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+<?php echo $__env->make('master.head-css', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 <link rel="stylesheet" href="/home/html/blog/konten.css">
-@include('master.root')
+<?php echo $__env->make('master.root', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 
   </head>
   <body>
@@ -16,7 +16,7 @@
       </div>
     </div>
     <div class="page">
-        @include('master.navbar')
+        <?php echo $__env->make('master.navbar', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 
   <main class="component-wrapper">
 
@@ -77,7 +77,7 @@
 			</li>
 			<li class="c-breadcrumbs-item active" itemprop="itemListElement" itemscope
 				itemtype="http://schema.org/ListItem" aria-current="page">
-				<span itemprop="name">{{ $faqs->title }}</span>
+				<span itemprop="name"><?php echo e($faqs->title); ?></span>
 				<meta itemprop="position" content="4" />
 			</li>
 		</ol>
@@ -88,10 +88,11 @@
 			<div class="row">
 				<div class="c-faq-detail__content col-12 offset-md-2 col-md-8">
 					<div class="c-faq-detail__header">
-						<h1 class="c-faq-detail__title">{{ $faqs->title }}</h1>
+						<h1 class="c-faq-detail__title"><?php echo e($faqs->title); ?></h1>
 					</div>
 					<div class="c-faq-detail__body">
-                        {!! $faqs->description !!}
+                        <?php echo $faqs->description; ?>
+
                     </div>
 
                     <div class="c-faq-detail__footer">
@@ -124,17 +125,18 @@
 
 
   <!-- Banner CTA -->
-  @include('master.cta')
+  <?php echo $__env->make('master.cta', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
   <!-- End Banner CTA -->
 
     <!-- Akhir Content -->
 
     <!-- Footer -->
-    @include('master.footer')
+    <?php echo $__env->make('master.footer', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
     <!-- Akhir Footer -->
     <div class="snackbars" id="form-output-global"></div>
-    @include('master.scripts')
+    <?php echo $__env->make('master.scripts', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
     <script src="/home/js/script.js"></script>
     <script src="/home/js/konten_blog.js"></script>
   </body>
 </html>
+<?php /**PATH D:\Project-web\Laravel\nikilapol_laravel\resources\views/detailfaq.blade.php ENDPATH**/ ?>

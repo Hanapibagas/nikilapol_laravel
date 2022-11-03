@@ -69,11 +69,12 @@
                             <textarea name="pesan" placeholder="Tulis suatu pesan"></textarea>
                         </div>
                     </div>
+                    <button type="submit" class="btn">
+                        Simpan
+                    </button>
                 </div>
-                <button type="submit" class="btn btn-primary btn-block">
-                    Simpan
-                </button>
             </form>
+
           </div>
 
           @foreach ($whitelabel as $media)
@@ -128,7 +129,7 @@
         <!-- Akhir Footer -->
     <div class="snackbars" id="form-output-global"></div>
     @include('master.scripts')
-    <script src="/home/js/kontak.js"></script>
+    {{-- <script src="/home/js/kontak.js"></script> --}}
     <script src="/home/js/script-kontak.js"></script>
   </body>
 </html>

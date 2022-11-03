@@ -69,11 +69,12 @@
                             <textarea name="pesan" placeholder="Tulis suatu pesan"></textarea>
                         </div>
                     </div>
+                    <button type="submit" class="btn">
+                        Simpan
+                    </button>
                 </div>
-                <button type="submit" class="btn btn-primary btn-block">
-                    Simpan
-                </button>
             </form>
+
           </div>
 
           <?php $__currentLoopData = $whitelabel; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $media): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
@@ -128,7 +129,7 @@
         <!-- Akhir Footer -->
     <div class="snackbars" id="form-output-global"></div>
     <?php echo $__env->make('master.scripts', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
-    <script src="/home/js/kontak.js"></script>
+    
     <script src="/home/js/script-kontak.js"></script>
   </body>
 </html>

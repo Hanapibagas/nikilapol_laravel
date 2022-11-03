@@ -62,7 +62,7 @@ Route::get('privacy', [PrivacyController::class, 'index'])->name('privacies');
 Route::get('syaratmerchant', [HomeController::class, 'syaratmerchant'])->name('syaratmerchant');
 Route::get('syaratdriver', [HomeController::class, 'syaratdriver'])->name('syaratdriver');
 
-Route::prefix('admin')->group(function () {
+Route::prefix('admin')->middleware('auth', 'admin')->group(function () {
     // Rombakan route backend
     Route::get('/', [PanelController::class, 'index'])->name('dashboard');
 

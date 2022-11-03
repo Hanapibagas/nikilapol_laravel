@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('name_depan');
             $table->string('name_belakang');
             $table->string('email');
-            $table->integer('no_hp');
+            $table->string('no_hp');
             $table->longText('pesan');
             $table->timestamps();
         });
